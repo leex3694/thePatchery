@@ -50,7 +50,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use('local', new localStrategy({passReqToCallback : true, usernameField: 'username'},
+passport.use('local', new LocalStrategy({passReqToCallback : true, usernameField: 'username'},
     function(request, username, password, done) {
       User.findOne({username:username}, function(err, user){
 
