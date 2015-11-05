@@ -5,13 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var passport = require('passport');
-var session = require('passport');
+var session = require('express-session');
 var localStrategy = require('passport-local').Strategy;
 var mongoose = require('mongoose');
 
 var User = require('./models/user');
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var signUp = require('./routes/signUp');
+var register = require('./routes/register');
 
 var app = express();
 
@@ -49,7 +50,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use('local', new LocalStrategy({passReqToCallback : true, usernameField: 'username'},
+passport.use('local', new localStrategy({passReqToCallback : true, usernameField: 'username'},
     function(request, username, password, done) {
       User.findOne({username:username}, function(err, user){
 
@@ -82,7 +83,8 @@ passport.deserializeUser(function(id, done) {
 
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/signUp', signUp);
+app.use('/register', register);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
