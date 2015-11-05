@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="patcheryapp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <script src="stylesheets/bootstrap/dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="stylesheets/bootstrap/dist/css/bootstrap.min.css">
+
+
+    <script src="../javascripts/angular/angular.min.js"></script>
+    <script src="../javascripts/angular-route/angular-route.min.js"></script>
+    <script src="../javascripts/jquery/dist/jquery.min.js"></script>
+    <script src="../stylesheets/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../javascripts/app.js"></script>
+    <script src="../javascripts/WorkController.js"></script>
+    <script src="../javascripts/HomeController.js"></script>
+
+    <link rel="stylesheet" href="../stylesheets/bootstrap/dist/css/bootstrap.min.css">
     <!--<link rel="stylesheet" href="stylesheets/style.css">-->
     <base href="/">
     <title>The Patchery</title>
 </head>
+
 <header>
     <nav class="navbar navbar-default">
         <div class="container">
@@ -26,10 +36,12 @@
 
 </header>
 
-<header>
-
-</header>
 <body>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/work">Work</a></li>
+    </ul>
+
     <div id="main">
         <ng-view>
 
@@ -37,10 +49,7 @@
     </div>
 
 
-    <script src="/javascripts/angular/angular.min.js"></script>
-    <script src="javascripts/jquery/dist/jquery.min.js"></script>
-    <script src="/javascripts/angular-route/angular-route.min.js"></script>
-    <script src="javascripts/app.js"></script>
+
 
 </body>
 </html>
