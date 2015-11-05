@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="patcheryapp">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +12,7 @@
     <script src="../javascripts/jquery/dist/jquery.min.js"></script>
     <script src="../stylesheets/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../javascripts/app.js"></script>
-    <script src="../javascripts/WorkController.js"></script>
-    <script src="../javascripts/HomeController.js"></script>
+    <script src="../javascripts/admin/HomeController.js"></script>
 
     <link rel="stylesheet" href="../stylesheets/bootstrap/dist/css/bootstrap.min.css">
     <!--<link rel="stylesheet" href="stylesheets/style.css">-->
@@ -37,15 +36,19 @@
 </header>
 
 <body>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/work">Work</a></li>
-    </ul>
+    <div ng-app="patcheryapp">
+       <ul>
+           <li><a href="/">Home</a></li>
+           <li><a href="/work">Work</a></li>
+       </ul>
 
-    <div id="main">
-        <ng-view>
+        <div id="main">
+            <ng-view>
 
-        </ng-view>
+            </ng-view>
+        </div>
+
+
     </div>
 
 

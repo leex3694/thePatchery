@@ -9,10 +9,6 @@ app.config(function($routeProvider, $locationProvider){
         .when('/',{
             templateUrl:'/views/home.html',
             controller: 'HomeController'
-        })
-        .when('/work', {
-            templateUrl: '/views/work.html',
-            controller: 'WorkController'
         });
 
     $locationProvider.html5Mode(true);
