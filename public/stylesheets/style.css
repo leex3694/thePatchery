@@ -6,3 +6,10 @@ body {
 a {
   color: #00B7FF;
 }
+
+.landingHeader {
+  color: #FFFFFF;
+  padding-top: 15%;
+  text-align: center;
+  z-index: 3;
+}
