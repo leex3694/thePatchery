@@ -26,6 +26,7 @@
     "passport-facebook": "^2.0.0",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
+    "sendgrid": "^1.9.2",
     "serve-favicon": "~2.3.0"
   }
 }
