@@ -32,10 +32,10 @@ app.config(function($routeProvider, $locationProvider){
 
 
 app.controller('FormController', ['$scope', '$http', function($scope, $http) {
-
-    $http({
-        method: 'POST',
-        url: "/email/sentEmail"
-    });
-
+    function sendEmail(){
+        $http({
+            method: 'POST',
+            url: "/email/sentEmail"
+        });
+    };
 }]);
