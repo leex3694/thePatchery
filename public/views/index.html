@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="patcheryapp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,10 @@
     <script src="../javascripts/jquery/dist/jquery.min.js"></script>
     <script src="../stylesheets/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../javascripts/app.js"></script>
-    <script src="../javascripts/admin/HomeController.js"></script>
+    <script src="../javascripts/HomeController.js"></script>
+    <script src="../javascripts/CreateCampaignController.js"></script>
+    <script src="../javascripts/MakeListController.js"></script>
+    <script src="../javascripts/ViewCampaignController.js"></script>
 
     <link rel="stylesheet" href="../stylesheets/bootstrap/dist/css/bootstrap.min.css">
     <!--<link rel="stylesheet" href="stylesheets/style.css">-->
@@ -26,18 +29,19 @@
             </div>
 
             <ul id="navis" class="nav navbar-nav navbar-right">
-                <li><a href="http://www.thepatchery.com"><i class="fa fa-home"></i>The Patchery Website</a></li>
-            </ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/CreateCampaign">Create Campaign</a></li>
+                    <li><a href="/MakeList">Make List</a></li>
+                    <li><a href="/ViewCampaign">View Campaign</a></li>
+            <!--</ul>-->
         </div>
     </nav>
 
 </header>
 
 <body>
-    <div ng-app="patcheryapp">
-       <ul>
-           <li><a href="/">Home</a></li>
-       </ul>
+    <!--<div ng-app="patcheryapp">-->
+
 
         <div id="main">
             <ng-view>
@@ -46,7 +50,7 @@
         </div>
 
 
-    </div>
+    <!--</div>-->
 
 
 

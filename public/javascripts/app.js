@@ -9,7 +9,20 @@ app.config(function($routeProvider, $locationProvider){
         .when('/',{
             templateUrl:'/views/home.html',
             controller: 'HomeController'
-        });
+        })
+        .when('/CreateCampaign',{
+            templateUrl:'/views/createCampaign.html',
+            controller: 'CreateCampaignController'
+        })
+        .when('/MakeList',{
+            templateUrl:'/views/makeList.html',
+            controller: 'MakeListController'
+        })
+        .when('/ViewCampaign',{
+            templateUrl:'/views/viewCampaign.html',
+            controller: 'ViewCampaignController'
+        })
+    ;
 
     $locationProvider.html5Mode(true);
 
