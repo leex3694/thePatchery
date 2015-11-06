@@ -28,5 +28,14 @@ app.config(function($routeProvider, $locationProvider){
     $locationProvider.html5Mode(true);
 
 
-
 });
+
+
+app.controller('FormController', ['$scope', '$http', function($scope, $http) {
+
+    $http({
+        method: 'POST',
+        url: "/email/sentEmail"
+    });
+
+}]);
