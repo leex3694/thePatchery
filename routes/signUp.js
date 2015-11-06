@@ -9,13 +9,13 @@ var path = require('path');
 //  res.sendFile('');
 //});
 
-router.get('/signUp', function(req,res,next){
-  res.sendFile(path.resolve(__dirname, '../views/volunteerSignUp.html'));
+router.get('/', function(req,res,next){
+  res.sendFile(path.resolve(__dirname, '../public/views/users/volunteerSignUp.html'));
 });
 
 router.post('/',
     passport.authenticate('local', {
-      successRedirect: '/views/signUpForm.html',
+      successRedirect: '/views/users/signUpForm.html',
       failureRedirect: '/'
     })
 );
