@@ -5,7 +5,7 @@ var path = require('path');
 var Users = require('../models/user');
 
 router.get('/', function(req, res, next){
-    res.sendFile(path.resolve(__dirname, '../views/volunteerRegister.html'));
+    res.sendFile(path.resolve(__dirname, '../public/views/volunteerRegister.html'));
 });
 
 router.post('/', function(req,res,next) {
@@ -13,7 +13,7 @@ router.post('/', function(req,res,next) {
         if (err)
             next(err);
         else
-            res.redirect('/users');
+            res.redirect('/signUp');
     })
 });
 
