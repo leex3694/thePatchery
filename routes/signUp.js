@@ -20,4 +20,23 @@ router.post('/',
     })
 );
 
+router.get('/facebook', passport.authenticate('facebook', { scope : 'email' }));
+
+// handle the callback after facebook has authenticated the user
+router.get('/facebook/callback',
+    passport.authenticate('facebook', {
+        successRedirect : '/views/signUpForm.html',
+        failureRedirect : '/'
+    }));
+
+// =====================================
+// LOGOUT ==============================
+// =====================================
+//app.get('/logout', function(req, res) {
+//    req.logout();
+//    res.redirect('/');
+//});
+
+
+
 module.exports = router;
