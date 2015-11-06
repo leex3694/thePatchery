@@ -87,6 +87,7 @@ passport.deserializeUser(function(id, done) {
 app.use('/', routes);
 app.use('/signUp', signUp);
 app.use('/register', register);
+app.use('/email', email);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
