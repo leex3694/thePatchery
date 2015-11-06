@@ -32,12 +32,10 @@ app.config(function($routeProvider, $locationProvider){
 
 
 app.controller('FormController', ['$scope', '$http', function($scope, $http) {
-
-    //This may or may not have to be here in order to send the email. I think brian was working on getting
-    //this into a function.
-    $http({
-        method: 'POST',
-        url: "/email/sentEmail"
-    });
-
+    function sendEmail(){
+        $http({
+            method: 'POST',
+            url: "/email/sentEmail"
+        });
+    };
 }]);
