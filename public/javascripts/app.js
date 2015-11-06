@@ -22,6 +22,7 @@ app.config(function($routeProvider, $locationProvider){
             templateUrl:'/views/viewCampaign.html',
             controller: 'ViewCampaignController'
         })
+
     ;
 
     $locationProvider.html5Mode(true);
