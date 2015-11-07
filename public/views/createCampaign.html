@@ -1,7 +1,15 @@
 
 <h1>Create Campaign</h1>
     <div class="overallContainer">
+        <form>
+            <h3>Name of Campaign: </h3><input type="string" class="createNameOfCampaign" ng-model="createNameOfCampaign">
 
+            <h4>Start Sign Up Date </h4><input type="date" class="createStartSignUpDate" ng-model="createStartSignUpDate">
+            <h4>End Sign Up Date </h4><input type="date" class="createEndSignUpDate" ng-model="createEndSignUpDate">
 
+            <h4>Start Survey Date</h4> <input type="date" class="createStartSurveyDate" ng-model="createStartSurveyDate">
+            <h4>End Survey Date</h4> <input type="date" class="createEndSurveyDate" ng-model="createEndSurveyDate">
+            <button ng-click="submitCreateSurveyData()">Submit</button>
+        </form>
     </div>
 

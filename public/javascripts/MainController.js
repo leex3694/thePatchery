@@ -3,7 +3,6 @@
  */
 app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 
-    alert("hello");
 
     //the send Email Post that will send and email when accept list button is clicked
     function sendEmail(){
@@ -11,5 +10,5 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
             method: 'POST',
             url: "/email/sentEmail"
         });
-    };
+    }
 }]);
