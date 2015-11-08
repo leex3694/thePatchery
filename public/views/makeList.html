@@ -1,2 +1,64 @@
-<h1>Make List</h1>
-<p>{{message}}</p>
+<div class = "wrapper">
+    <div class = "test-title">
+        <h3 class = "nameOfTest">Name of Test: </h3>
+    </div>
+
+        <div class="dropdown">
+            <button class = "btn btn-default dropdown-toggle" type = "button" id = "dropdownTestName"
+                    data-toggle = "dropdown" aria-haspopup="true" aria-expanded="true">
+                Name of Campaign :
+                <span class = "caret"></span>
+            </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownTestName">
+                        <li ng-repeat="thing in campaignList">{{thing.campaignName}}</li>
+                    </ul>
+
+                            <div class="peopleSignedUp">
+                                 <!--Don't know if number of volunteers.length will work -->
+                                <h2 class="numOfPeople">Total People Signed Up: {{thing.volunteers.length}}</h2>
+                            </div>
+
+                                <div class="makeListSizes">
+                                    <h3 class="sizesHeader">Sizes</h3>
+                                </div>
+
+                                    <!--inline checkboxes-->
+
+                                    <div class="makeListCheckBoxes">
+                                        <form role="form">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="">2T
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="">3T
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="">4T
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="">5T
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="">6
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="">7/8
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="">9/10
+                                            </label>
+                                        </form>
+                                    </div>
+                    <div class="generateList">
+                        <a class="generateListButton" href="/listToAccept">Generate Random List</a>
+                    </div>
+
+        </div>
+
+
+
+
+
+
+
+</div>
