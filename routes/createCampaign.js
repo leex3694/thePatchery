@@ -4,11 +4,18 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path');
+var Campaign = require('../models/campaign');
 
 
 router.post('/postCreateCampaignData', function(req, res, next){
-   console.log('hit the router');
-    console.log(req.body);
+   var saveNewCampaign = new Campaign(req.body);
+    console.log('hit the router');
+    console.log(saveNewCampaign);
+    saveNewCampaign.save(function(err){
+        if(err)throw err;
+        console.log("error : ", err);
+        res.send(saveNewCampaign);
+    })
 });
 
 

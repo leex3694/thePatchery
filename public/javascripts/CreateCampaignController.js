@@ -11,11 +11,11 @@ app.controller('CreateCampaignController', ['$scope', '$http', function($scope, 
         var createEndSurveyDate = $scope.createEndSurveyDate;
 
         var createCampaignObj = {
-            nameOfCampaign: createNameOfCampaign,
-            startSignUpDate: createStartSignUpDate,
-            endSignupDate: createEndSignUpDate,
-            startSurveyDate: createStartSurveyDate,
-            endSurveyDate: createEndSurveyDate
+            campaignName: createNameOfCampaign,
+            signupStart: createStartSignUpDate,
+            signupEnd: createEndSignUpDate,
+            surveyStart: createStartSurveyDate,
+            surveyEnd: createEndSurveyDate
         };
         $http({
             method: 'POST',
