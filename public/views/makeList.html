@@ -11,11 +11,11 @@
             </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownTestName">
                         <li ng-repeat="thing in campaignList">{{thing.campaignName}}</li>
-                    </ul>
-
+                </ul>
+        </div>
                             <div class="peopleSignedUp">
                                  <!--Don't know if number of volunteers.length will work -->
-                                <h2 class="numOfPeople">Total People Signed Up: {{thing.volunteers.length}}</h2>
+                                <h3 class="numOfPeople">Total People Signed Up: {{thing.volunteers.length}}</h3>
                             </div>
 
                                 <div class="makeListSizes">
@@ -47,13 +47,13 @@
                                             <label class="checkbox-inline">
                                                 <input type="checkbox" value="">9/10
                                             </label>
-                                        </form>
+                                        </form><br>
                                     </div>
                     <div class="generateList">
                         <a class="generateListButton" href="/listToAccept">Generate Random List</a>
                     </div>
 
-        </div>
+
 
 
 
