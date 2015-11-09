@@ -1,3 +1,27 @@
 
-    <h1>Create Campaign</h1>
-    <p>{{message}}</p>
+<h1 class="pageTitle">Create Campaign</h1>
+    <div class="overallContainer">
+        <form>
+            <div class="formText">
+                <div class="oneLineCreateCampaign"><label class="createCampaignTitles nameCampaign">Name of Campaign </label>
+                    <input type="string" class="createCampaignInputs" ng-model="createNameOfCampaign"></div>
+                <div class="oneLineCreateCampaign"><label class="createCampaignTitles startSignUp">Start Sign Up Date </label>
+                    <input type="date" class="createCampaignInputs" ng-model="createStartSignUpDate"></div>
+                <div class="oneLineCreateCampaign"><label class="createCampaignTitles endSignup">End Sign Up Date </label>
+                    <input type="date" class="createCampaignInputs" ng-model="createEndSignUpDate"></div>
+                <div class="oneLineCreateCampaign"><label class="createCampaignTitles startSurvey">Start Survey Date </label>
+                    <input type="date" class="createCampaignInputs" ng-model="createStartSurveyDate"></div>
+                <div class="oneLineCreateCampaign"><label class="createCampaignTitles endSurvey">End Survey Date </label>
+                    <input type="date" class="createCampaignInputs" ng-model="createEndSurveyDate"></div>
+            </div>
+            <div class="oneLineCreateCampaign createCampaignSubmit"><button ng-click="submitCreateSurveyData()" class="submitNewCampaign">Submit</button>
+        </form>
+    </div>
+    <div class="newCampaignDisplay">
+        <p class="displayFinalCampaign" ng-show="showNewCampaign">Name of Campaign: <span class="resultedCampaignTitle">{{resultedCampaignTitle}}</span></p>
+        <p class="displayFinalCampaign" ng-show="showNewCampaign">Start Sign Up Date: <span class="resultedCampaignStartSignUp">{{resultedCampaignStartSignUp}}</span></p>
+        <p class="displayFinalCampaign" ng-show="showNewCampaign">End Sign Up Date: <span class="resultedCampaignEndSignUp"> {{resultedCampaignEndSignUp}}</span></p>
+        <p class="displayFinalCampaign" ng-show="showNewCampaign">Start Survey Date: <span class="resultedCampaignStartSurvey">{{resultedCampaignStartSurvey}}</span></p>
+        <p class="displayFinalCampaign" ng-show="showNewCampaign">End Survey Date: <span class="resultedCampaignEndSurvey">{{resultedCampaignEndSurvey}}</span></p>
+    </div>
+

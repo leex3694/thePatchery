@@ -1,6 +1,3 @@
-/**
- * Created by usuario on 11/4/15.
- */
 
 var app = angular.module('patcheryapp', ['ngRoute']);
 
@@ -22,7 +19,10 @@ app.config(function($routeProvider, $locationProvider){
             templateUrl:'/views/viewCampaign.html',
             controller: 'ViewCampaignController'
         })
-
+        .when('/listToAccept',{
+            templateUrl:'/views/listToAccept.html',
+            controller: 'ListToAcceptController'
+        })
     ;
 
     $locationProvider.html5Mode(true);
@@ -31,11 +31,4 @@ app.config(function($routeProvider, $locationProvider){
 });
 
 
-app.controller('FormController', ['$scope', '$http', function($scope, $http) {
 
-    $http({
-        method: 'POST',
-        url: "/email/sentEmail"
-    });
-
-}]);

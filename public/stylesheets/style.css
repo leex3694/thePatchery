@@ -6,3 +6,97 @@ body {
 a {
   color: #00B7FF;
 }
+
+/*.logoImg img {*/
+  /*width: 50px;*/
+  /*height: 50px;*/
+/*}*/
+
+/*.landingHeader {*/
+  /*color: #FFFFFF;*/
+  /*!*padding-top: 15%;*!*/
+  /*text-align: center;*/
+  /*z-index: 3;*/
+/*}*/
+
+.landingButtons {
+  margin: 15px 40px 15px 40px;
+}
+
+
+/* ***************************** START CREATE CAMPAIGN CSS **************************************/
+.pageTitle,.test-title{
+  text-align: center;
+}
+
+.overallContainer,.makeListContainer{
+  width: 75%;
+  background-color: #E6E6E6;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 33px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(197, 197, 197, 0.33);
+  box-shadow: 10px 10px 10px #E0E0E0;
+}
+
+.createCampaignTitles{
+  font-size: 20px;
+  width:30%;
+}
+
+.createCampaignInputs{
+  width:38%;
+}
+
+.oneLineCreateCampaign{
+  display:block;
+  margin-bottom: 9px;
+}
+
+
+
+/*Individual titles on Create Campaign. Moving them a little bit so they align together. Also the resulted new Campaign */
+.startSignUp{
+  position: relative;
+  left: 5px;
+}
+
+.endSignup{
+  position: relative;
+  left: 10px;
+}
+
+.startSurvey{
+  position: relative;
+  left: 10px;
+}
+
+.endSurvey{
+  position: relative;
+  left: 17px;
+}
+/******* END ************/
+
+.displayFinalCampaign{
+  font-size: 20px;
+  font-weight:bold;
+}
+
+.newCampaignDisplay{
+  background-color: rgba(167, 168, 192, 0.8);
+  margin-top: 50px;
+}
+
+.submitNewCampaign{
+  float:right;
+  width: 20%;
+  background-color: rgba(94, 141, 102, 0.76)
+}
+
+.formText, .makeListBody,#dropdownTestName{
+  text-align:center;
+}
+
+/* ***************************** END CREATE CAMPAIGN CSS **************************************/
