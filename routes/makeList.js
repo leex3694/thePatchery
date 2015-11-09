@@ -1,37 +1,34 @@
-/**
- * Created by briandaves on 11/9/15.
- */
 var express = require('express');
 var router = express.Router();
 var path = require('path');
 var Campaign = require('../models/campaign');
-var Sizes = require('..models/sizes');
+var Sizes = require('../models/sizes');
 
 
 router.post('/sizes', function(request, response, next) {
 
-    var createObj = request.body.swatchData;
+    var createObj = request.body.sizeData;
 
-    createObj.img = request.file;
 
-    Swatch.model.create(createObj, function (err, swatch) {
+
+    Sizes.model.create(createObj, function (err, sizes) {
         //console.log(swatch);
         //console.log(request.user);
 
         if(err) throw err;
 
-        Campaign.findOne({campaignName:req.campaign.campaignName}, function(err, name){
+        Campaign.findOne({campaignName:req.campaign.campaignName}, function(err, campaign){
 
-            console.log('This is the campaign name: ',name);
+            console.log('This is the campaign name: ',campaign);
 
 
-            if(!user.fabricStash){
-                user.fabricStash = [];
+            if(!campaign.sizes){
+                campaign.sizes = [];
             }
 
-            names.sizes.push(sizes);
+            campaign.sizes.push(sizes);
 
-            user.save(function(err) {
+            campaign.save(function(err) {
                 if(err) throw err;
             })
 
@@ -39,28 +36,13 @@ router.post('/sizes', function(request, response, next) {
         response.sendStatus(200);
     });
 });
-//router.post('/sizes/:campaignName', function(req,res,next){
-//    //var sizes = new Campaign(req.body);
-//    //saveNewList.save(function(err){
-//    //    if(err)throw err;
-//    //    console.log("error : ", err);
-//    //    res.send(saveNewList);
-//    //})
-//    if
-//    Campaign.findOne({campaignName:req.campaign.campaignName}, function(err, name){
-//
-//        console.log('This is the campaign name: ',name);
-//
-//
-//        if(!name.sizes){
-//            name.sizes = [];
-//        }
-//
-//        name.sizes.push()
-//
-//
-//
-//
-//
-//    }
-//})
+
+router.get('/getVolunteers', function(request,response,next){
+    Campaign.find(function(err,volunteers){
+        console.log('This is the volunteer info'+ volunteers);
+        response.json(volunteers);
+    })
+
+
+});
+module.exports = router;

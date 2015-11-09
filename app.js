@@ -17,6 +17,7 @@ var register = require('./routes/register');
 var email= require('./routes/email');
 var users = require('./routes/users');
 var createCampaign = require('./routes/createCampaign');
+var makeList = require('./routes/makeList');
 
 var app = express();
 
@@ -144,6 +145,7 @@ app.use('/signUp', signUp);
 app.use('/register', register);
 app.use('/email', email);
 app.use('/createCampaign', createCampaign);
+app.use('/makeList',makeList);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

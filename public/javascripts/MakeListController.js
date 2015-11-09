@@ -1,7 +1,7 @@
 /**
  * Created by usuario on 11/6/15.
  */
-app.controller('MakeListController', ['$scope','$http' function($scope,$http){
+app.controller('MakeListController', ['$scope','$http', function($scope,$http){
 
 //    This controller will first display the names of the created campaigns in a drop down
 //    Once a campaign name is chosen the number of volunteers for that campaign will be displayed
@@ -15,29 +15,11 @@ app.controller('MakeListController', ['$scope','$http' function($scope,$http){
 
         $http({
             method: 'GET',
-            url: '/'
-        })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            url: '/makeList/getVolunteers'
+        }).then(function (response){
+            var volunteer  = response.data;
+            console.log(volunteer);
+        });
 
 
 
