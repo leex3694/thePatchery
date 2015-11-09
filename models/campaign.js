@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 var testerSchema = require('./tester').schema;
 var volunteerSchema = require('./volunteer').schema;
-var sizesSchema = require('.sizes').schema;
+var sizesSchema = require('./sizes').schema;
 
 
 var Schema = mongoose.Schema;
