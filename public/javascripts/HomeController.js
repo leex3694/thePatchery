@@ -3,13 +3,17 @@
  */
 app.controller('HomeController', ['$scope', '$location', function($scope, $location){
 
-    $scope.currentPath = $location.path();
-
-    $scope.isHome = function($location){
-        if ($location === currentPath)
-            return true;
-        else
-            return false;
-    };
+    //$scope.currentPath = $location.path();
+    //
+    //console.log('current path', $scope.currentPath);
+    //console.log('location', $location);
+    //console.log('location path', $location.path('/'));
+    //
+    //$scope.isHome = function($location){
+    //    if ($location.path('/') === $scope.currentPath)
+    //        return true;
+    //    else
+    //        return false;
+    //};
 
 }]);
