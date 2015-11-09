@@ -1,12 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title></title>
 </head>
 <body>
 
-<h1>Sign up form goes here</h1>
+<h1>Volunteer Sign Up</h1>
+
+<form>
+    <div class="form-group">
+    <label>Full Name: </label><input type="text" ng-model="name"><br/>
+    <label>street: </label><input type="text" ng-model="street"><br/>
+    <label>city: </label><input type="text" ng-model="city"><br/>
+    <label>state: </label><input type="text" ng-model="state"><br/>
+    <label>zip: </label><input type="number" ng-model="zip"><br/>
+    <label>email: </label><input type="text" ng-model="email"><br/>
+    <label>gender: </label>
+       <select ng-model="gender">
+           <option>select</option>
+           <option>Male</option>
+           <option>Female</option>
+       </select><br/>
+    <label>size: </label>
+    <select ng-model="size">
+        <option>select size</option>
+        <option>2T</option>
+        <option>3T</option>
+        <option>4T</option>
+        <option>5T</option>
+        <option>6</option>
+        <option>7/8</option>
+        <option>9/10</option>
+    </select><br/>
+    <label>How does it fit? </label>
+        <select ng-model="sizeQualifying">
+            <option>select option</option>
+            <option>Typically fits just right</option>
+            <option>Typically fist small</option>
+            <option>Typically fits big</option>
+        </select>
+    </div>
+</form>
+
+
 
 </body>
 </html>

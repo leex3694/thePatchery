@@ -20,6 +20,7 @@ router.post('/',
     })
 );
 
+
 router.get('/facebook', passport.authenticate('facebook', { scope : 'email' }));
 
 // handle the callback after facebook has authenticated the user
