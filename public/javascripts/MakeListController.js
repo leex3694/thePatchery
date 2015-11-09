@@ -8,8 +8,8 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
 //    Checkboxes will capture the input of the sizes required for the campaign
 //    and finally a button is pushed to generate a random list that contains one  person for each size chosen
 
-
-        $scope.campaignName = "";
+        $scope.campaignList = [];
+        $scope.volunteer = [];
 
 
 
@@ -17,9 +17,26 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
             method: 'GET',
             url: '/makeList/getVolunteers'
         }).then(function (response){
-            var volunteer  = response.data;
-            console.log(volunteer);
+            $scope.volunteer  = response.data;
+            console.log($scope.volunteer);
+
+
+            $scope.campaignList.push($scope.volunteer);
+            console.log($scope.campaignList);
+
+            //$scope.campaignList.push($scope.sizes);
+            //console.log($scope.campaignList);
+
+            //console.log($scope.campaignlist);
+
+
         });
+
+        $scope.chooseTestName = function(){
+
+        }
+
+
 
 
 
