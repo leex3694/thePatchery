@@ -1,7 +1,10 @@
-<div class = "wrapper">
+
     <div class = "test-title">
-        <h3 class = "nameOfTest">Name of Test: </h3>
+        <h1 class = "nameOfTest">Name of Test: </h1>
     </div>
+    <div class = "makeListContainer">
+        <div class = "makeListBody">
+
 
         <div class="dropdown">
             <button class = "btn btn-default dropdown-toggle" type = "button" id = "dropdownTestName"
@@ -10,7 +13,7 @@
                 <span class = "caret"></span>
             </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownTestName">
-                        <li ng-repeat="thing in campaignList">{{thing.campaignName}}</li>
+                        <li class= "dropDownTest" ng-repeat="thing in campaignList">{{thing.campaignName}}</li>
                 </ul>
         </div>
                             <div class="peopleSignedUp">
@@ -54,11 +57,11 @@
                     </div>
 
 
+        </div>
 
 
 
 
 
 
-
-</div>
+    </div>
