@@ -18,9 +18,9 @@ var email= require('./routes/email');
 var users = require('./routes/users');
 var createCampaign = require('./routes/createCampaign');
 var something = require ('./routes/auth');
+var makeList = require('./routes/makeList');
 
 var app = express();
-
 
 
 
@@ -78,9 +78,9 @@ passport.use('local', new localStrategy({passReqToCallback : true, usernameField
 //FACEBOOK BELOW
 
 passport.use(new FacebookStrategy({
-      clientID: something.facebookAuth.clientID,
-      clientSecret: something.facebookAuth.clientSecret,
-      callbackURL: something.facebookAuth.callbackURL,
+      clientID: 711298905667165,
+      clientSecret: 'fbf9bc40358b4b2a03ca8c07934a7b63',
+      callbackURL: "http://localhost:3000/signUp/facebook/callback",
       profileFields: ["emails", "displayName", "name"]
     },
 
