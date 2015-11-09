@@ -10,8 +10,8 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
 
         $scope.campaignList = [];
         $scope.volunteer = [];
-
-
+       // $scope.campaignList.name = "";
+        $scope.testNameChosen = "";
 
         $http({
             method: 'GET',
@@ -24,18 +24,11 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
             $scope.campaignList.push($scope.volunteer);
             console.log($scope.campaignList);
 
-            //$scope.campaignList.push($scope.sizes);
-            //console.log($scope.campaignList);
-
-            //console.log($scope.campaignlist);
 
 
         });
 
-        $scope.chooseTestName = function(){
-
-        }
-
+    console.log($scope.campaignList.name);
 
 
 

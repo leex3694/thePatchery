@@ -7,8 +7,8 @@
                 <div class = "makeListBody">
                         <form role="form">
                             <div class="form-group">
-                                <select class="form-control" id="sel1">
-                                    <option ng-repeat="thing in volunteer">{{thing.campaignName}}</option>
+                                <select class="form-control" id="sel1" ng-model ="campaignList">
+                                    <option value = "{{thing.campaignName}}" ng-repeat="thing in volunteer">{{thing.campaignName}}</option>
                                 </select>
                             </div>
                         </form>
@@ -53,7 +53,7 @@
                         <a class="generateListButton" href="/listToAccept">Generate Random List</a>
                     </div>
 
-            {{campaignlist}}
+
         </div>
 
 
