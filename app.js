@@ -148,6 +148,7 @@ app.use('/register', register);
 app.use('/email', email);
 app.use('/createCampaign', createCampaign);
 app.use('/makeList',makeList);
+app.use('/userSurvey', userSurvey);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
