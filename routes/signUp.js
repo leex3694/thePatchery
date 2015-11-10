@@ -3,6 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 var path = require('path');
 var Volunteers = require('../models/volunteer');
+var Campaign = require('../models/campaign');
 
 
 /* GET users listing. */
@@ -34,12 +35,18 @@ router.get('/facebook/callback',
 
 router.post('/volunteersData', function (req, res, next){
    console.log('hit this spot');
-    Volunteers.create(req.body, function (err, post){
-        if (err)
-            next(err);
-        else
-            res.redirect('/');
+    Campaign.findOne({campaignName: req.campaign.campaignName} ,function(err, campaign){
+        console.log('this is the campaign name: ', campaign);
     });
+
+
+
+    //Volunteers.create(req.body, function (err, post){
+    //    if (err)
+    //        next(err);
+    //    else
+    //        res.redirect('/');
+    //});
     res.sendStatus(200);
 });
 

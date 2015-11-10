@@ -62,10 +62,20 @@
             <option>Typically fist small</option>
             <option>Typically fits big</option>
         </select>
-        <label>Campaign Selected: </label>
-        <select ng-model="campaignSelected">
+        <div class = "makeListBody">
+            <form name="myForm">
+                <label for="mySelect">Select Campaign:</label>
+                <select name="mySelect" id="mySelect"
+                        ng-options="option.campaignName for option in campaignList.availableOptions"
+                        ng-model="campaignSelect"></select>
+            </form>
+            <hr>
+            <!--<select>-->
+                <!--<option>{{campaignList.selectedOption.campaignName}}</option>-->
+                <!--<option>{{campaignList.selectedOption.signupStart}}</option>-->
+            <!--</select>-->
+        </div>
 
-        </select>
     </div>
     <button ng-click="sendSignUpForm()">Submit</button>
 
