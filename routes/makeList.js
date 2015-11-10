@@ -7,17 +7,20 @@ var Sizes = require('../models/sizes');
 
 router.put('/sizes', function(req, res, next) {
 
-    var createObj = request.body.formData;
+    var createObj = req.body.selectedSizes.sizes;
 
+    console.log(req.body);
 
+    Campaign.findOne({campaignName:req.body.selectedCampaign.campaignName}, function(err, campaign){
 
-    Sizes.model.create(createObj, function (err, sizes) {
-        //console.log(swatch);
-        //console.log(request.user);
+        console.log(campaign);
 
-        if(err) throw err;
+        Sizes.model.create(createObj, function (err, sizes) {
+            //console.log(swatch);
+            //console.log(request.user);
 
-        Campaign.findOne({campaignName:req.campaign.campaignName}, function(err, campaign){
+            if(err) throw err;
+
 
             console.log('This is the campaign name: ',campaign);
 
@@ -33,8 +36,10 @@ router.put('/sizes', function(req, res, next) {
             })
 
         });
-        res.sendStatus(200);
     });
+
+    res.sendStatus(200);
+
 });
 
 router.get('/getVolunteers', function(req,res,next){

@@ -12,7 +12,7 @@ var campaignSchema = new Schema ({
     campaignName: String,
     volunteers: [volunteerSchema],
     testers: [testerSchema],
-    sizes: Object,
+    sizes: [sizesSchema],
     signupStart: Date,
     signupEnd: Date,
     surveyStart: Date,

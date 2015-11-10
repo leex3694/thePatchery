@@ -61,19 +61,17 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
                 console.log($scope.formData);
                 console.log(dataToSend);
 
-               dataToSend.selectedSizes = $scope.formData;
+                dataToSend.selectedSizes = $scope.formData;
 
-                console.log("This should be the sizes chosen "+ dataToSend.selectedSizes);
+                console.log("This should be the sizes chosen "+ JSON.stringify(dataToSend.selectedSizes));
 
 
                 $http({
                     method: 'PUT',
-                    URL: '/sizes',
-                    data: dataToSend.selectedSizes
+                    url: '/makeList/sizes',
+                    data: dataToSend
                 }).then(function(response){
-
-                        console.log("Sizes sent");
-
+                    console.log("Sizes sent");
                 });
 
 
