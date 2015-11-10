@@ -39,7 +39,7 @@ router.post('/sizes', function(request, response, next) {
 
 router.get('/getVolunteers', function(request,response,next){
     Campaign.find(function(err,volunteers){
-        console.log('This is the volunteer info'+ volunteers);
+        //console.log('This is the volunteer info'+ volunteers);
         response.json(volunteers);
     })
 
