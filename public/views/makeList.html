@@ -59,9 +59,14 @@
                                                 <input type="checkbox" ng-model="formData.sizes.nine_ten">9/10
                                             </label>
                                         </form><br>
+
+
+
+
+                                        <p>{{formData}}</p>
                                     </div>
                     <div class="generateList">
-                        <a class="generateListButton" href="/listToAccept">Generate Random List</a>
+                        <a class="generateListButton" ng-click="sendData()" href="#">Generate Random List</a>
                     </div>
 
 

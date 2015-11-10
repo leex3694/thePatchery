@@ -7,12 +7,12 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
 //    Once a campaign name is chosen the number of volunteers for that campaign will be displayed
 //    Checkboxes will capture the input of the sizes required for the campaign
 //    and finally a button is pushed to generate a random list that contains one  person for each size chosen
-
-        $scope.campaignList = [];
-        $scope.volunteer = [];
-       $scope.volunteer.campaignName = "";
-        $scope.testNameChosen = "";
-
+            $scope.tempList = [];
+            $scope.campaignList = [];
+            $scope.volunteer = [];
+            $scope.volunteer.campaignName = "";
+            $scope.testNameChosen = "";
+            $scope.formData ={};
         $http({
             method: 'GET',
             url: '/makeList/getVolunteers'
@@ -38,10 +38,11 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
 
             console.log($scope.campaignList);
             console.log($scope.campaignList.length);
+
         });
 
 
-        $scope.formData ={};
+       // $scope.formData ={};
 
 
 
@@ -51,11 +52,39 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
 
 
     $scope.sendData = function(){
-        var dataToSend = {};
+                var dataToSend = {};
 
-        dataToSend.selectedCampaign = $scope.campaignList.selectedOption;
 
-        //dataToSend.selectedSizes = $scope.chosenSizes;
+                dataToSend.selectedCampaign = $scope.campaignList.selectedOption;
+
+
+                console.log($scope.formData);
+                console.log(dataToSend);
+
+               dataToSend.selectedSizes = $scope.formData;
+
+                console.log("This should be the sizes chosen "+ dataToSend.selectedSizes);
+
+
+                $http({
+                    method: 'PUT',
+                    URL: '/sizes',
+                    data: dataToSend.selectedSizes
+                }).then(function(response){
+
+                        console.log("Sizes sent");
+
+                });
+
+
+
+
+
+
+
+
+
+
         //add sizes to data to send
 
         //http POST
