@@ -5,17 +5,28 @@
     <div class = "makeListContainer">
 
                 <div class = "makeListBody">
-                        <form role="form">
-                            <div class="form-group">
-                                <select class="form-control" id="sel1" ng-model ="campaignList">
-                                    <option value = "{{thing.campaignName}}" ng-repeat="thing in volunteer">{{thing.campaignName}}</option>
-                                </select>
-                            </div>
-                        </form>
+                        <!--<form role="form">-->
+                            <!--<div class="form-group">-->
+                                <!--<select class="form-control" id="sel1" ng-model ="volunteer.campaignName">-->
+                                    <!--<option value = "{{thing.campaignName}}" ng-repeat="thing in volunteer">{{thing.campaignName}}</option>-->
+                                <!--</select>-->
+                            <!--</div>-->
+                        <!--</form>-->
+                    <form name="myForm">
+                        <label for="mySelect">Make a choice:</label>
+                        <select name="mySelect" id="mySelect"
+                        ng-options="option.campaignName for option in campaignList.availableOptions"
+                        ng-model="campaignList.selectedOption"></select>
+                    </form>
+                    <hr>
+                    <p>option = {{campaignList.selectedOption.campaignName}}</p><br/>
+                    <p>option = {{campaignList.selectedOption.signupStart}}</p><br/>
                 </div>
+
+
                                     <div class="peopleSignedUp">
                                  <!--Don't know if number of volunteers.length will work -->
-                                <h3 class="numOfPeople">Total People Signed Up: {{thing.volunteers.length}}</h3>
+                                <h3 class="numOfPeople">Total People Signed Up: {{campaignList.selectedOption.volunteers}}</h3>
                             </div>
 
                                 <div class="makeListSizes">
@@ -56,7 +67,7 @@
 
         </div>
 
-
+    <!--ng-options="option.campaignName for option in campaignList.availableOptions track by option.volunteers"-->
 
 
 

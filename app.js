@@ -146,6 +146,7 @@ app.use('/signUp', signUp);
 app.use('/register', register);
 app.use('/email', email);
 app.use('/createCampaign', createCampaign);
+app.use('/makeList',makeList);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
