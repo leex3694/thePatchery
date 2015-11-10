@@ -18,7 +18,7 @@ router.post('/postCreateCampaignData', function(req, res, next){
 
 router.get('/getCreatedCampaign', function (req, res, next){
     Campaign.find(function(err, newCampaign) {
-        console.log("this is the newest Campaig " + newCampaign);
+        console.log("this is the newest Campaign " + newCampaign);
         res.json(newCampaign);
     })
 });

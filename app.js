@@ -19,6 +19,7 @@ var users = require('./routes/users');
 var createCampaign = require('./routes/createCampaign');
 var something = require ('./routes/auth');
 var makeList = require('./routes/makeList');
+var userSurvey = require('./routes/userSurvey');
 
 var app = express();
 
