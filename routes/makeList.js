@@ -39,13 +39,10 @@ router.put('/sizes', function(req, res, next) {
 
 router.get('/getVolunteers', function(req,res,next){
     Campaign.find(function(err,volunteers){
-<<<<<<< HEAD
-        //console.log('This is the volunteer info'+ volunteers);
-        response.json(volunteers);
-=======
+
         console.log('This is the volunteer info'+ volunteers);
         res.json(volunteers);
->>>>>>> 3a29fbf79db068bf10a0085a30a1072b7b3f0d9f
+
     })
 
 
