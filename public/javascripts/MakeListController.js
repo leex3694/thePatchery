@@ -40,6 +40,16 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
             console.log($scope.campaignList.length);
         });
 
+
+        $scope.formData ={};
+
+
+
+
+
+
+
+
     $scope.sendData = function(){
         var dataToSend = {};
 
