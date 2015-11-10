@@ -10,7 +10,7 @@ app.controller('CreateCampaignController', ['$scope', '$http', function($scope, 
 // will be saved in the database, creating a new Campaign
     $scope.submitCreateSurveyData = function submitCreateSurveyData() {
 
-    //These are the variables for what is input in the inputs on the Create Campagin screen
+    //These are the variables for what is input in the inputs on the Create Campaign screen
         var createNameOfCampaign = $scope.createNameOfCampaign;
         var createStartSignUpDate = $scope.createStartSignUpDate;
         var createEndSignUpDate = $scope.createEndSignUpDate;
@@ -19,30 +19,9 @@ app.controller('CreateCampaignController', ['$scope', '$http', function($scope, 
         var createCampaignObj = {};
 
 
-        verifyDates();
+        verifyDates();  //funciton to verify end dates are after start dates
 
 
-    //The POST and GET for the inputs on Create Campaign
-        function postAndGetCreateCampaign(){
-            $http({
-                method: 'POST',
-                url: '/createCampaign/postCreateCampaignData',
-                data: createCampaignObj
-            }).then(function () {
-                $http({
-                    method: 'GET',
-                    url: '/createCampaign/getCreatedCampaign'
-                }).then(function (response) {
-                    var res = response.data;
-
-                    $scope.resultedCampaignTitle = (res[res.length - 1].campaignName);
-                    $scope.resultedCampaignStartSignUp = (res[res.length - 1].signupStart);
-                    $scope.resultedCampaignEndSignUp = (res[res.length - 1].signupEnd);
-                    $scope.resultedCampaignStartSurvey = (res[res.length - 1].surveyStart);
-                    $scope.resultedCampaignEndSurvey = (res[res.length - 1].surveyEnd);
-                });
-            });
-        }
 
         //This function makes sure that the end dates are after start dates. If end date is before
         //  start date then it will cancel the submit until the dates are correct.
@@ -66,6 +45,29 @@ app.controller('CreateCampaignController', ['$scope', '$http', function($scope, 
             };
             postAndGetCreateCampaign(); //Once all inputs are valid, the data will POST and GET the data
             $scope.showNewCampaign = true;
+        }
+
+
+        //The POST and GET for the inputs on Create Campaign
+        function postAndGetCreateCampaign(){
+            $http({
+                method: 'POST',
+                url: '/createCampaign/postCreateCampaignData',
+                data: createCampaignObj
+            }).then(function () {
+                $http({
+                    method: 'GET',
+                    url: '/createCampaign/getCreatedCampaign'
+                }).then(function (response) {
+                    var res = response.data;
+
+                    $scope.resultedCampaignTitle = (res[res.length - 1].campaignName);
+                    $scope.resultedCampaignStartSignUp = (res[res.length - 1].signupStart);
+                    $scope.resultedCampaignEndSignUp = (res[res.length - 1].signupEnd);
+                    $scope.resultedCampaignStartSurvey = (res[res.length - 1].surveyStart);
+                    $scope.resultedCampaignEndSurvey = (res[res.length - 1].surveyEnd);
+                });
+            });
         }
 
     };

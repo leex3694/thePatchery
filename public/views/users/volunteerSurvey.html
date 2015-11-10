@@ -1,78 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="UserSurveyApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>The Patchery: Product Testing Survey</title>
 
+    <script src="/vendors/angular/angular.min.js"></script>
+    <script src="/vendors/angular-route/angular-route.min.js"></script>
+    <script src="/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="/stylesheets/bootstrap/dist/js/bootstrap.min.js"></script>
+
     <link href="/vendors/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="../../stylesheets/volunteerStyle.css" rel="stylesheet">
+    <!--<script src="../models/surveyResults.js"></script>-->
+    <script src="javascripts/user/survey.js"></script>
 </head>
 <body>
 
-    <header>
-        <img src="LOGO_SOURCE" alt="The Patchery logo" />
-        <p>The Patchery Product Test Survey</p>
-        <p>Infant Layette</p>
-    </header>
+    <div ng-controller="userSurvey">
+        <header>
+            <!--<img src="LOGO_SOURCE" alt="The Patchery logo" />-->
+            <p>The Patchery Product Test Survey</p>
+            <p>Infant Layette</p>
+        </header>
 
-        <p>
-            Thank you for helping us in this critical step of our product development process.  Please be candid in your responses.  If something isn't right, we <i>need</i> to know.  Through your honest feedback, we can make the improvements necessary to deliver an exceptional product and experience.<br />
+            <p>
+                Thank you for helping us in this critical step of our product development process.  Please be candid in your responses.  If something isn't right, we <i>need</i> to know.  Through your honest feedback, we can make the improvements necessary to deliver an exceptional product and experience.<br />
 
-            The survey should take under 10 minutes to complete.<br />
+                The survey should take under 10 minutes to complete.<br />
 
-            Thank you,<br />
-            The Patchery makers
-        </p>
+                Thank you,<br />
+                The Patchery makers
+            </p>
 
-    <form method="POST" enctype="multipart/form-data" class="surveyForm">
-        <label>1. What was your initial impression of the clothes?</label>
-        <input type="text">
+        <form method="POST" enctype="multipart/form-data" class="surveyForm">
+            <label>1. What was your initial impression of the clothes?</label>
+            <input type="text" ng-model="volunteerSurveyQ1">
 
-        <label>2. What did you think of the quality of the fabric and sewing?</label>
-        <input type="text">
+            <label>2. What did you think of the quality of the fabric and sewing?</label>
+            <input type="text" ng-model="volunteerSurveyQ2">
 
-        <label>3. How did the product fit? Was it too loose or too tight? Was it too long or too short? Are the arm, neck and leg openings big enough?*</label>
-        <input type="text">
+            <label>3. How did the product fit? Was it too loose or too tight? Was it too long or too short? Are the arm, neck and leg openings big enough?*</label>
+            <input type="text" ng-model="volunteerSurveyQ3">
 
-        <label>4. Based on your overall experience, how likely would you be to:</label>
-            <fieldset id="purchaseFrom">
-                <input type="radio" value="Definitely will" name="purchaseFrom">Definitely will
-                <input type="radio" value="Very likely" name="purchaseFrom">Very likely
-                <input type="radio" value="Maybe, but not sure" name="purchaseFrom">Maybe, but not sure
-                <input type="radio" value="Probably not" name="purchaseFrom">Probably not
-                <input type="radio" value="Definitely not" name="purchaseFrom">
-            </fieldset>
+            <label>4. Based on your overall experience, how likely would you be to:</label>
+                <fieldset id="purchaseFrom">
+                    <input type="radio" value="Definitely will" name="purchaseFrom" ng-model="formData.purchaseForm">Definitely will
+                    <input type="radio" value="Very likely" name="purchaseFrom" ng-model="formData.purchaseForm">Very likely
+                    <input type="radio" value="Maybe, but not sure" name="purchaseFrom" ng-model="formData.purchaseForm">Maybe, but not sure
+                    <input type="radio" value="Probably not" name="purchaseFrom" ng-model="formData.purchaseForm" >Probably not
+                    <input type="radio" value="Definitely not" name="purchaseFrom" ng-model="formData.purchaseForm">Definitely Not
+                </fieldset>
 
-            <fieldset id="recommend">
-                <input type="radio" value="Definitely will" name="recommend">Definitely will
-                <input type="radio" value="Very likely" name="recommend">Very likely
-                <input type="radio" value="Maybe, but not sure" name="recommend">Maybe, but not sure
-                <input type="radio" value="Probably not" name="recommend">Probably not
-                <input type="radio" value="Definitely not" name="recommend">Definitely not
-            </fieldset>
+                <fieldset id="recommend">
+                    <input type="radio" value="Definitely will" name="recommend" ng-model="formData.recommended">Definitely will
+                    <input type="radio" value="Very likely" name="recommend" ng-model="formData.recommended">Very likely
+                    <input type="radio" value="Maybe, but not sure" name="recommend" ng-model="formData.recommended">Maybe, but not sure
+                    <input type="radio" value="Probably not" name="recommend" ng-model="formData.recommended">Probably not
+                    <input type="radio" value="Definitely not" name="recommend" ng-model="formData.recommended">Definitely not
+                </fieldset>
 
-        <label>5. If "maybe," "probably not" or "definitely not" for either of the above, why?</label>
-        <input type="text">
+            <label>5. If "maybe," "probably not" or "definitely not" for either of the above, why?</label>
+            <input type="text" ng-model="volunteerSurveyQ5">
 
-        <label>6. Anything on your mind that we didn't ask about?  Here's your chance to say anything!</label>
-        <input type="text">
+            <label>6. Anything on your mind that we didn't ask about?  Here's your chance to say anything!</label>
+            <input type="text" ng-model="volunteerSurveyQ6">
 
-        <p>Please upload three photos of your child wearing the outfit. Photos should be taken from the front, back, and side.</p>
+            <p>Please upload three photos of your child wearing the outfit. Photos should be taken from the front, back, and side.</p>
 
-        <label>Front Image:</label>
-        <input type="file" ng-model="file" ngf-select="" ng-model="picFile" name="frontFile" accept="image/*" required="" class="ng-pristine ng-invalid ng-invalid-required">
+            <!--<label>Front Image:</label>-->
+            <!--<input type="file" ng-model="file" ngf-select="" ng-model="picFile" name="frontFile" accept="image/*" required="" class="ng-pristine ng-invalid ng-invalid-required">-->
 
-        <label>Back Image:</label>
-        <input type="file" ng-model="file" ngf-select="" ng-model="picFile" name="backFile" accept="image/*" required="" class="ng-pristine ng-invalid ng-invalid-required">
+            <!--<label>Back Image:</label>-->
+            <!--<input type="file" ng-model="file" ngf-select="" ng-model="picFile" name="backFile" accept="image/*" required="" class="ng-pristine ng-invalid ng-invalid-required">-->
 
-        <label>Side Image:</label>
-        <input type="file" ng-model="file" ngf-select="" ng-model="picFile" name="sideFile" accept="image/*" required="" class="ng-pristine ng-invalid ng-invalid-required">
+            <!--<label>Side Image:</label>-->
+            <!--<input type="file" ng-model="file" ngf-select="" ng-model="picFile" name="sideFile" accept="image/*" required="" class="ng-pristine ng-invalid ng-invalid-required">-->
 
-        <input type="submit">
+            <button ng-click="submitSurveyForm()"> Submit </button>
 
-    </form>
+        </form>
+<!--<p>{{formData}}</p>-->
+
+    </div> <!--close ng-controller -->
 
 </body>
 </html>

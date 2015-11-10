@@ -20,6 +20,7 @@ var createCampaign = require('./routes/createCampaign');
 var something = require ('./routes/auth');
 var makeList = require('./routes/makeList');
 var viewCampaigns = require('./routes/viewCampaigns');
+var userSurvey = require('./routes/userSurvey');
 
 var app = express();
 
@@ -148,6 +149,8 @@ app.use('/register', register);
 app.use('/email', email);
 app.use('/createCampaign', createCampaign);
 app.use('/viewCampaigns', viewCampaigns);
+app.use('/makeList',makeList);
+app.use('/userSurvey', userSurvey);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

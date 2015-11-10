@@ -5,17 +5,28 @@
     <div class = "makeListContainer">
 
                 <div class = "makeListBody">
-                        <form role="form">
-                            <div class="form-group">
-                                <select class="form-control" id="sel1" ng-model ="campaignList">
-                                    <option value = "{{thing.campaignName}}" ng-repeat="thing in volunteer">{{thing.campaignName}}</option>
-                                </select>
-                            </div>
-                        </form>
+                        <!--<form role="form">-->
+                            <!--<div class="form-group">-->
+                                <!--<select class="form-control" id="sel1" ng-model ="volunteer.campaignName">-->
+                                    <!--<option value = "{{thing.campaignName}}" ng-repeat="thing in volunteer">{{thing.campaignName}}</option>-->
+                                <!--</select>-->
+                            <!--</div>-->
+                        <!--</form>-->
+                    <form name="myForm">
+                        <label for="mySelect">Make a choice:</label>
+                        <select name="mySelect" id="mySelect"
+                        ng-options="option.campaignName for option in campaignList.availableOptions"
+                        ng-model="campaignList.selectedOption"></select>
+                    </form>
+                    <hr>
+                    <p>option = {{campaignList.selectedOption.campaignName}}</p><br/>
+                    <p>option = {{campaignList.selectedOption.signupStart}}</p><br/>
                 </div>
+
+
                                     <div class="peopleSignedUp">
                                  <!--Don't know if number of volunteers.length will work -->
-                                <h3 class="numOfPeople">Total People Signed Up: {{thing.volunteers.length}}</h3>
+                                <h3 class="numOfPeople">Total People Signed Up: {{campaignList.selectedOption.volunteers}}</h3>
                             </div>
 
                                 <div class="makeListSizes">
@@ -27,25 +38,25 @@
                                     <div class="makeListCheckBoxes">
                                         <form role="form">
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" ng-model="campaignList.sizes.twoT">2T
+                                                <input type="checkbox" ng-model="formData.sizes.twoT">2T
                                             </label>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" ng-model="campaignList.sizes.threeT">3T
+                                                <input type="checkbox" ng-model="formData.sizes.threeT">3T
                                             </label>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" ng-model="campaignList.sizes.fourT">4T
+                                                <input type="checkbox" ng-model="formData.sizes.fourT">4T
                                             </label>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" ng-model="campaignList.sizes.fiveT">5T
+                                                <input type="checkbox" ng-model="formData.sizes.fiveT">5T
                                             </label>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" ng-model="campaignList.sizes.six">6
+                                                <input type="checkbox" ng-model="formData.sizes.six">6
                                             </label>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" ng-model="campaignList.sizes.seven_eight">7/8
+                                                <input type="checkbox" ng-model="formData.sizes.seven_eight">7/8
                                             </label>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" ng-model="campaignList.sizes.nine_ten">9/10
+                                                <input type="checkbox" ng-model="formData.sizes.nine_ten">9/10
                                             </label>
                                         </form><br>
                                     </div>
@@ -56,7 +67,7 @@
 
         </div>
 
-
+    <!--ng-options="option.campaignName for option in campaignList.availableOptions track by option.volunteers"-->
 
 
 

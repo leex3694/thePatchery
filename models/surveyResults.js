@@ -7,7 +7,7 @@ var surveySchema = new Schema ({
     question2: String,
     question3: String,
     question4a: String,
-    question4b: Number,
+    question4b: String,
     question5: String,
     question6: String,
     imgFront: Object,
@@ -17,5 +17,6 @@ var surveySchema = new Schema ({
 
 var Survey = mongoose.model('Survey', surveySchema);
 
-exports.schema = surveySchema;
-exports.model = Survey;
+//exports.schema = surveySchema;
+//exports.model = Survey;
+module.exports = Survey;

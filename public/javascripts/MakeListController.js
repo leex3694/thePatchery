@@ -10,25 +10,56 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
 
         $scope.campaignList = [];
         $scope.volunteer = [];
-       // $scope.campaignList.name = "";
+       $scope.volunteer.campaignName = "";
         $scope.testNameChosen = "";
 
         $http({
             method: 'GET',
             url: '/makeList/getVolunteers'
         }).then(function (response){
-            $scope.volunteer  = response.data;
-            console.log($scope.volunteer);
+            //$scope.volunteer = response.data;
+            //console.log($scope.volunteer);
+            //console.log($scope.volunteer.length);
 
 
-            $scope.campaignList.push($scope.volunteer);
+
+
+            $scope.tempList = response.data;
+
+            //console.log($scope.campaignList.volunteers[0].length);
+
+            $scope.campaignList.selectedOption = {};
+            $scope.campaignList.availableOptions = [];
+            $scope.tempList.forEach(function(item){
+               $scope.campaignList.availableOptions.push(item);
+            });
+
+            $scope.campaignList.selectedOption = $scope.campaignList.availableOptions[0];
+
             console.log($scope.campaignList);
-
-
-
+            console.log($scope.campaignList.length);
         });
 
-    console.log($scope.campaignList.name);
+
+        $scope.formData ={};
+
+
+
+
+
+
+
+
+    $scope.sendData = function(){
+        var dataToSend = {};
+
+        dataToSend.selectedCampaign = $scope.campaignList.selectedOption;
+
+        //dataToSend.selectedSizes = $scope.chosenSizes;
+        //add sizes to data to send
+
+        //http POST
+    }
 
 
 
