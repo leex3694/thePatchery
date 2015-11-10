@@ -10,7 +10,8 @@ var volunteerSchema = new Schema ({
     email: String,
     gender: String,
     size: String,
-    sizeQualifying: String
+    sizeQualifying: String,
+    campaignSelected: String
 });
 
 

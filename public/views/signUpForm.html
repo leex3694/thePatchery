@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en" ng-app="sign">
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <script src="../vendors/angular/angular.min.js"></script>
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+
+    <script src="../stylesheets/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../javascripts/SignUpController.js"></script>
+
+
 </head>
-<body>
+<body ng-controller="SignUpController">
 
 <h1>Volunteer Sign Up</h1>
 
-<form>
+
     <div class="form-group">
     <label>Full Name: </label><input type="text" ng-model="name"><br/>
     <label>street: </label><input type="text" ng-model="street"><br/>
@@ -41,7 +48,8 @@
             <option>Typically fits big</option>
         </select>
     </div>
-</form>
+    <button ng-click="sendSignUpForm()">Submit</button>
+
 
 
 

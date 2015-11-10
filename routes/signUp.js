@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var path = require('path');
+var Volunteers = require('../models/volunteer');
 
 
 /* GET users listing. */
@@ -21,14 +22,26 @@ router.post('/',
 );
 
 
+
 router.get('/facebook', passport.authenticate('facebook', { scope : 'email' }));
 
 // handle the callback after facebook has authenticated the user
 router.get('/facebook/callback',
     passport.authenticate('facebook', {
-        successRedirect : '/views/signUpForm.html',
+        successRedirect : '/signUp',
         failureRedirect : '/'
     }));
+
+router.post('/volunteersData', function (req, res, next){
+   console.log('hit this spot');
+    Volunteers.create(req.body, function (err, post){
+        if (err)
+            next(err);
+        else
+            res.redirect('/');
+    });
+    res.sendStatus(200);
+});
 
 // =====================================
 // LOGOUT ==============================
