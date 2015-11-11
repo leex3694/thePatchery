@@ -1,6 +1,3 @@
-/**
- * Created by usuario on 11/6/15.
- */
 app.controller('MakeListController', ['$scope','$http', function($scope,$http){
 
 //    This controller will first display the names of the created campaigns in a drop down

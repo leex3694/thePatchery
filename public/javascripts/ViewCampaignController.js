@@ -1,6 +1,3 @@
-/**
- * Created by usuario on 11/6/15.
- */
 app.controller('ViewCampaignController', ['$scope', '$http', function($scope, $http){
 
     $scope.tempList = [];
