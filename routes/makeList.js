@@ -49,7 +49,7 @@ router.get('/getVolunteers', function(req,res,next){
         res.json(volunteers);
 
     })
-
+    res.sendStatus(200);
 
 });
 module.exports = router;
