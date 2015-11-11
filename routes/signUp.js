@@ -34,13 +34,10 @@ router.get('/facebook/callback',
     }));
 
 router.post('/volunteersData', function (req, res, next){
-   console.log('hit this spot');
-    console.log(req.body);
     Campaign.findOne({campaignName: req.body.campaignSelect.campaignName} ,function(err, campaign){
         console.log('this is the campaign name: ', campaign);
 
         var volunteer = new Volunteer(req.body);
-        console.log(volunteer);
 
         campaign.volunteers.push(volunteer);
 
