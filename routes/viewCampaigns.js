@@ -6,7 +6,14 @@ var Campaign = require('../models/campaign');
 var router = express.Router();
 
 router.get('/getCampaigns', function(req, res, next){
-    Campaign.find()
+    Campaign.find(function(err, campaigns){
+
+        console.log('This is the volunteer info'+ campaigns);
+        res.json(campaigns);
+
+    })
+
+
 });
 
 module.exports = router;
