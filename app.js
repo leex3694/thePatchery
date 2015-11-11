@@ -27,6 +27,7 @@ var app = express();
 
 
 var mongoURI = "mongodb://localhost:27017/thepatchery";
+//var mongoURI = "mongodb://patches:kids_clothes@ds053194.mongolab.com:53194/the_patchery"
 var MongoDB = mongoose.connect(mongoURI).connection;
 
 MongoDB.on('error', function (err) {
