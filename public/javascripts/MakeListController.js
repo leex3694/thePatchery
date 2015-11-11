@@ -66,62 +66,7 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
 
     $scope.sendData = function(){
 
-
-            var volunteerList = $scope.campaignList.selectedOption.volunteers;
-
-    //function that goes through all volunteers and puts them into a tempArray depending on what size they selected on signUp
-        for (var i = 0; i < volunteerList.length; i++) {
-            console.log(volunteerList[i].size);
-            switchSizes(volunteerList[i]);
-            //randomTesterPushTempArray(fourTTempArray);
-
-
-        }
-
-
-        function getRandomVolunteer(min, max) {
-            return Math.round(Math.random() * (max - min) + min);
-        }
-
-        function randomTesterPushTempArray(array){
-                var randomVolunteer = getRandomVolunteer(0,(array.length -1));
-                console.log(randomVolunteer);
-                var tester = array[randomVolunteer];
-                console.log("this is the tester selected " + tester);
-                console.log(tester);
-                tempTestersArray.push(tester);
-                console.log('this is the temp testers array');
-                console.log(tempTestersArray);
-
-        }
-
-        function selectTester(){
-            if ($scope.formData.sizes.twoT == true) {
-                randomTesterPushTempArray(twoTTempArray);
-            }
-            if ($scope.formData.sizes.threeT == true) {
-                randomTesterPushTempArray(threeTTempArray);
-            }
-            if ($scope.formData.sizes.fourT == true) {
-                randomTesterPushTempArray(fourTTempArray);
-            }
-            if ($scope.formData.sizes.fiveT == true) {
-                randomTesterPushTempArray(fiveTTempArray);
-            }
-            if ($scope.formData.sizes.six == true) {
-                randomTesterPushTempArray(sixTempArray);
-            }
-            if ($scope.formData.sizes.seven_eight == true) {
-                randomTesterPushTempArray(sevenEightTempArray);
-            }
-            if ($scope.formData.sizes.nine_ten == true) {
-                randomTesterPushTempArray(nineTenTempArray);
-            }
-
-        }
-        selectTester();
-
-
+        generatingTesters();
 
 
 
@@ -161,6 +106,69 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
         //add sizes to data to send
 
         //http POST
+    };
+
+    function generatingTesters() {
+        var tempTestersArray = [];
+        var volunteerList = $scope.campaignList.selectedOption.volunteers;
+
+        //function that goes through all volunteers and puts them into a tempArray depending on what size they selected on signUp
+        for (var i = 0; i < volunteerList.length; i++) {
+            console.log(volunteerList[i].size);
+            switchSizes(volunteerList[i]);
+            //randomTesterPushTempArray(fourTTempArray);
+
+
+        }
+
+
+        function getRandomVolunteer(min, max) {
+            return Math.round(Math.random() * (max - min) + min);
+        }
+
+        function randomTesterPushTempArray(array) {
+            var randomVolunteer = getRandomVolunteer(0, (array.length - 1));
+            console.log(randomVolunteer);
+            var tester = array[randomVolunteer];
+            console.log("this is the tester selected " + tester);
+            console.log(tester);
+            tempTestersArray.push(tester);
+            console.log('this is the temp testers array');
+            console.log(tempTestersArray);
+
+        }
+
+        function selectTester() {
+            if ($scope.formData.sizes.twoT == true) {
+                randomTesterPushTempArray(twoTTempArray);
+            }
+            if ($scope.formData.sizes.threeT == true) {
+                randomTesterPushTempArray(threeTTempArray);
+            }
+            if ($scope.formData.sizes.fourT == true) {
+                randomTesterPushTempArray(fourTTempArray);
+            }
+            if ($scope.formData.sizes.fiveT == true) {
+                randomTesterPushTempArray(fiveTTempArray);
+            }
+            if ($scope.formData.sizes.six == true) {
+                randomTesterPushTempArray(sixTempArray);
+            }
+            if ($scope.formData.sizes.seven_eight == true) {
+                randomTesterPushTempArray(sevenEightTempArray);
+            }
+            if ($scope.formData.sizes.nine_ten == true) {
+                randomTesterPushTempArray(nineTenTempArray);
+            }
+
+        }
+
+        selectTester();
+
+    }
+
+    $scope.regenerateTesters = function(){
+        generatingTesters();
     };
 
 
