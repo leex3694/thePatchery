@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 
 var testerSchema = new Schema ({
     //SM - Not sure if this will just bring in one volunteer
-    volunteer: [volunteerSchema],
+    volunteer1: [volunteerSchema],
     surveyResults: [surveySchema]
 });
 
