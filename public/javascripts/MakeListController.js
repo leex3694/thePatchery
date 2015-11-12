@@ -126,7 +126,7 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
         }
 
         function randomTesterPushTempArray(array) {
-            var randomVolunteer = getRandomVolunteer(0, (array.length - 1));
+            var randomVolunteer = getRandomVolunteer(0, (array.length));
             console.log(randomVolunteer);
             var tester = array[randomVolunteer];
             console.log("this is the tester selected " + tester);
