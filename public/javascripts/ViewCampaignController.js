@@ -5,28 +5,25 @@ app.controller('ViewCampaignController', ['$scope', '$http', function($scope, $h
     $scope.testNameChosen = "";
     $scope.formData ={};
 
-    $http({
-        method: 'GET',
-        url: '/viewCampaigns/getCampaigns'
-    }).then(function (response){
+    $http({method: 'GET', url: '/viewCampaigns/getCampaigns'}).then(function (response){
 
-    $scope.tempList = response.data;
-    $scope.campaignList.selectedOption = {};
-    $scope.campaignList.availableOptions = [];
+        $scope.tempList = response.data;
+        $scope.campaignList.selectedOption = {};
+        $scope.campaignList.availableOptions = [];
 
-    $scope.tempList.forEach(function(item){
-        $scope.campaignList.availableOptions.push(item);
-    });
+        $scope.tempList.forEach(function(item){
+            $scope.campaignList.availableOptions.push(item);
+        });
 
-    $scope.campaignList.selectedOption = $scope.campaignList.availableOptions[0];
+        $scope.campaignList.selectedOption = $scope.campaignList.availableOptions[0];
 
-        console.log($scope.campaignList);
-        console.log($scope.campaignList.length);
+            console.log($scope.campaignList);
+            console.log($scope.campaignList.length);
 
     });
 
-    $scope.getSwatches = function(){
-        $http({method: "GET", url:"/home/get"}).then(function(response){
+    $scope.getTesters = function(){
+        $http({method: "GET", url:"/viewCampaigns/getTesters"}).then(function(response){
 
             $scope.swatchList = [];
 
@@ -38,6 +35,9 @@ app.controller('ViewCampaignController', ['$scope', '$http', function($scope, $h
         });
     };
 
-    $scope.getSwatches();
+
+
+
+    //$scope.getSwatches();
 
 }]);

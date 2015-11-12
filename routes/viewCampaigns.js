@@ -10,10 +10,19 @@ router.get('/getCampaigns', function(req, res, next){
 
         console.log('This is the volunteer info'+ campaigns);
         res.json(campaigns);
-
     })
+});
 
 
+router.get('/getTesters', function(req, res, next) {
+
+    var tester = req.body;
+
+    User.findOne({_id : userId}, function(err, user){
+        if(err) throw err;
+        res.send(user.fabricStash);
+        //response.sendStatus(200);
+    });
 });
 
 module.exports = router;
