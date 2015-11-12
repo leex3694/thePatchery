@@ -126,8 +126,7 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
         }
 
         function randomTesterPushTempArray(array) {
-            var randomVolunteer = getRandomVolunteer(0, (array.length));
-            console.log(randomVolunteer);
+            var randomVolunteer = getRandomVolunteer(0, (array.length -1));
             var tester = array[randomVolunteer];
             console.log("this is the tester selected " + tester);
             console.log(tester);
@@ -225,7 +224,7 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
 
             case "9/10":
                 if ($scope.formData.sizes.nine_ten == true) {
-                    sevenEightTempArray.push(volunteer);
+                    nineTenTempArray.push(volunteer);
                     console.log('nine/tenTempT');
                     console.log(nineTenTempArray);
                 }
