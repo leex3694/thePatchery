@@ -31,7 +31,8 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
 
 
             $scope.tempList = response.data;
-            console.log(tempList);
+            console.log(response.data);
+            console.log($scope.tempList);
 
             //console.log($scope.campaignList.volunteers[0].length);
 
