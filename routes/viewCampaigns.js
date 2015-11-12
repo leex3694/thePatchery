@@ -16,11 +16,11 @@ router.get('/getCampaigns', function(req, res, next){
 
 router.get('/getTesters', function(req, res, next) {
 
-    var tester = req.body;
+    //var tester = req.body;
 
-    User.findOne({_id : userId}, function(err, user){
+    Campaign.find(function(err, campaign){
         if(err) throw err;
-        res.send(user.fabricStash);
+        res.send(campaign.testers);
         //response.sendStatus(200);
     });
 });
