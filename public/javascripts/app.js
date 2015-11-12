@@ -23,6 +23,8 @@ app.config(function($routeProvider, $locationProvider){
             templateUrl:'/views/listToAccept.html',
             controller: 'ListToAcceptController'
         })
+        .otherwise({redirectTo: '/views/home.html'
+        })
     ;
 
     $locationProvider.html5Mode(true);
