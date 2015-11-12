@@ -26,8 +26,8 @@ var app = express();
 
 
 
-//var mongoURI = "mongodb://localhost:27017/thepatchery";
-var mongoURI = "mongodb://patches:kids_clothes@ds053194.mongolab.com:53194/the_patchery"
+var mongoURI = "mongodb://localhost:27017/thepatchery";
+//var mongoURI = "mongodb://patches:kids_clothes@ds053194.mongolab.com:53194/the_patchery"
 var MongoDB = mongoose.connect(mongoURI).connection;
 
 MongoDB.on('error', function (err) {
@@ -43,8 +43,7 @@ MongoDB.once('open', function () {
 app.set('views', path.join(__dirname, 'public/views'));
 app.set('view engine', 'jade');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
