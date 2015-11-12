@@ -16,14 +16,10 @@ router.put('/sizes', function(req, res, next) {
         console.log(campaign);
 
         Sizes.model.create(createObj, function (err, sizes) {
-            //console.log(swatch);
-            //console.log(request.user);
 
             if(err) throw err;
 
-
             console.log('This is the campaign name: ',campaign);
-
 
             if(!campaign.sizes){
                 campaign.sizes = [];
@@ -47,9 +43,6 @@ router.get('/getVolunteers', function(req,res,next){
 
         console.log('This is the volunteer info'+ volunteers);
         res.json(volunteers);
-
-    })
-    res.sendStatus(200);
-
+    });
 });
 module.exports = router;
