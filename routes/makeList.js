@@ -37,21 +37,22 @@ router.put('/sizes', function(req, res, next) {
 
 router.put('/postTesterArray', function(req, res, next){
     var createTesterObj = req.body.testerArray;
-    console.log(createTesterObj);
-    //Campaign.findOne({campaignName:req.body.selectedCampaign.campaignName}, function(err, campaign) {
-    //    Tester.model.create(createTesterObj, function (err, testers) {
-    //        console.log('at least getting here ');
-    //        if (err) throw err;
-    //        console.log('This is the campaign name: ', campaign.campaignName);
-    //        //campaign.testers.volunteer.push();
-    //        campaign.testers.volunteer1.push(testers);
-    //        campaign.save(function (err) {
-    //            console.log('this should be the testers being saved');
-    //            console.log(campaign.testers);
-    //            if (err) throw err;
-    //        });
-    //    });
-    //});
+    console.log("Should be the tester array server side" + createTesterObj);
+    Campaign.findOne({campaignName:req.body.selectedCampaign.campaignName}, function(err, campaign) {
+        Tester.model.create(createTesterObj, function (err, testers) {
+            console.log('at least getting here ');
+            console.log(testers);
+            if (err) throw err;
+            console.log('This is the campaign name: ', campaign.campaignName);
+            //campaign.testers.volunteer.push();
+            campaign.testers.volunteer1.push(testers);
+            campaign.save(function (err) {
+                console.log('this should be the testers being saved');
+                console.log(campaign.testers);
+                if (err) throw err;
+            });
+        });
+    });
     res.sendStatus(200);
 });
 
