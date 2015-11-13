@@ -36,22 +36,25 @@ router.put('/sizes', function(req, res, next) {
 
 
 router.put('/postTesterArray', function(req, res, next){
-    var createTesterObj = req.body.testerArray;
+    var createTesterObj = req.body;
+    console.log('this is the created teste obj');
     console.log(createTesterObj);
-    //Campaign.findOne({campaignName:req.body.selectedCampaign.campaignName}, function(err, campaign) {
-    //    Tester.model.create(createTesterObj, function (err, testers) {
-    //        console.log('at least getting here ');
-    //        if (err) throw err;
-    //        console.log('This is the campaign name: ', campaign.campaignName);
-    //        //campaign.testers.volunteer.push();
-    //        campaign.testers.volunteer1.push(testers);
-    //        campaign.save(function (err) {
-    //            console.log('this should be the testers being saved');
-    //            console.log(campaign.testers);
-    //            if (err) throw err;
-    //        });
-    //    });
-    //});
+    Campaign.findOne({campaignName:req.body.selectedCampaign.campaignName}, function(err, campaign) {
+        Tester.model.create(createTesterObj, function (err, testers) {
+            console.log('these are testersss');
+            console.log(testers);
+            console.log('at least getting here ');
+            if (err) throw err;
+            console.log('This is the campaign name: ', campaign.campaignName);
+            //campaign.testers.volunteer.push();
+            campaign.testers.push(testers);
+            campaign.save(function (err) {
+                console.log('this should be the testers being saved');
+                console.log(campaign.testers);
+                if (err) throw err;
+            });
+        });
+    });
     res.sendStatus(200);
 });
 
