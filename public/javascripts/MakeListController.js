@@ -17,49 +17,29 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
     var sixTempArray = [];
     var sevenEightTempArray = [];
     var nineTenTempArray = [];
-    var tempTestersArray = [];
-
-        $http({
-            method: 'GET',
-            url: '/makeList/getVolunteers'
-        }).then(function (response){
-            //$scope.volunteer = response.data;
-            //console.log($scope.volunteer);
-            //console.log($scope.volunteer.length);
+    $scope.tempTestersArray = [];
 
 
 
 
-            $scope.tempList = response.data;
-            console.log(response.data);
-            console.log($scope.tempList);
-
-            //console.log($scope.campaignList.volunteers[0].length);
-
-            $scope.campaignList.selectedOption = {};
-            $scope.campaignList.availableOptions = [];
-            $scope.tempList.forEach(function(item){
-               $scope.campaignList.availableOptions.push(item);
-            });
-
-            $scope.campaignList.selectedOption = $scope.campaignList.availableOptions[0];
-
-            //console.log($scope.campaignList);
-            //console.log($scope.campaignList.length);
+    $http({
+        method: 'GET',
+        url: '/makeList/getVolunteers'
+    }).then(function (response){
 
 
 
 
-
+        $scope.tempList = response.data;
+        $scope.campaignList.selectedOption = {};
+        $scope.campaignList.availableOptions = [];
+        $scope.tempList.forEach(function(item){
+           $scope.campaignList.availableOptions.push(item);
         });
 
+        $scope.campaignList.selectedOption = $scope.campaignList.availableOptions[0];
 
-
-
-
-
-
-
+    });
 
 
 
@@ -67,22 +47,15 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
 
         generatingTesters();
 
-
-
-
-
         var dataToSend = {};
 
 
             dataToSend.selectedCampaign = $scope.campaignList.selectedOption;
 
 
-            //console.log($scope.formData);
-            //console.log(dataToSend);
 
             dataToSend.selectedSizes = $scope.formData;
 
-            //console.log("This should be the sizes chosen "+ JSON.stringify(dataToSend.selectedSizes));
 
 
             $http({
@@ -90,12 +63,11 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
                 url: '/makeList/sizes',
                 data: dataToSend
             }).then(function(response){
-                console.log("Sizes sent");
             });
 
 
 
-
+        acceptNewList();
 
 
 
@@ -108,14 +80,14 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
     };
 
     function generatingTesters() {
-        var tempTestersArray = [];
+        $scope.tempTestersArray = [];
         var volunteerList = $scope.campaignList.selectedOption.volunteers;
 
         //function that goes through all volunteers and puts them into a tempArray depending on what size they selected on signUp
         for (var i = 0; i < volunteerList.length; i++) {
-            console.log(volunteerList[i].size);
+
             switchSizes(volunteerList[i]);
-            //randomTesterPushTempArray(fourTTempArray);
+
 
 
         }
@@ -128,12 +100,9 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
         function randomTesterPushTempArray(array) {
             var randomVolunteer = getRandomVolunteer(0, (array.length -1));
             var tester = array[randomVolunteer];
-            console.log("this is the tester selected " + tester);
-            console.log(tester);
-            tempTestersArray.push(tester);
+            $scope.tempTestersArray.push(tester);
             console.log('this is the temp testers array');
-            console.log(tempTestersArray);
-
+            console.log($scope.tempTestersArray);
         }
 
         function selectTester() {
@@ -169,7 +138,24 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
         generatingTesters();
     };
 
+    function acceptNewList(){
+        $scope.acceptListandPost = function(){
+            var sendTesterArrayData = {};
+            sendTesterArrayData.selectedCampaign = $scope.campaignList.selectedOption;
+            console.log($scope.campaignList.selectedOption);
+            sendTesterArrayData.volunteer1 = $scope.tempTestersArray;
+            console.log('this is tester array we are trying to send ');
+            console.log($scope.tempTestersArray);
 
+
+            $http({
+                method:'PUT',
+                url:'makeList/postTesterArray',
+                data: sendTesterArrayData
+            });
+
+        };
+    }
 
 //switch function for putting volunteers into tempArrays, depending on what sizes are selected in the makeList
     function switchSizes(volunteer) {
@@ -177,63 +163,47 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
             case "2T":
                 if ($scope.formData.sizes.twoT == true) {
                     twoTTempArray.push(volunteer);
-                    console.log('twoTemp: ');
-                    console.log(twoTTempArray);
                 }
                 break;
 
             case "3T":
                 if ($scope.formData.sizes.threeT == true) {
                     threeTTempArray.push(volunteer);
-                    console.log('threeTempT');
-                    console.log(threeTTempArray);
                 }
                 break;
 
             case "4T":
                 if ($scope.formData.sizes.fourT == true) {
                     fourTTempArray.push(volunteer);
-                    console.log('fourTempT');
-                    console.log(fourTTempArray);
                 }
                 break;
 
             case "5T":
                 if ($scope.formData.sizes.fiveT == true) {
                     fiveTTempArray.push(volunteer);
-                    console.log('fiveTempT');
-                    console.log(fiveTTempArray);
                 }
                 break;
 
             case "6":
                 if ($scope.formData.sizes.six == true) {
                     sixTempArray.push(volunteer);
-                    console.log('sixTempT');
-                    console.log(sixTempArray);
                 }
                 break;
 
             case "7/8":
                 if ($scope.formData.sizes.seven_eight == true) {
                     sevenEightTempArray.push(volunteer);
-                    console.log('seven/eightTempT');
-                    console.log(sevenEightTempArray);
                 }
                 break;
 
             case "9/10":
                 if ($scope.formData.sizes.nine_ten == true) {
                     nineTenTempArray.push(volunteer);
-                    console.log('nine/tenTempT');
-                    console.log(nineTenTempArray);
                 }
                 break;
         }
 
     }
-
-
 
 
 
