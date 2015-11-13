@@ -8,7 +8,7 @@ var router = express.Router();
 router.get('/getCampaigns', function(req, res, next){
     Campaign.find(function(err, campaigns){
 
-        console.log('This is the volunteer info'+ campaigns);
+        //console.log('This is the volunteer info'+ campaigns);
         res.json(campaigns);
     })
 });
@@ -16,11 +16,12 @@ router.get('/getCampaigns', function(req, res, next){
 
 router.get('/getTesters', function(req, res, next) {
 
-    var tester = req.body;
+    //var tester = req.body;
 
-    User.findOne({_id : userId}, function(err, user){
+    Campaign.find(function(err, campaigns){
+        console.log('campaign from the view campaign js ', campaigns);
         if(err) throw err;
-        res.send(user.fabricStash);
+        res.json(campaigns.testers);
         //response.sendStatus(200);
     });
 });

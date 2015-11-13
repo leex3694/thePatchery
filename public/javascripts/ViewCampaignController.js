@@ -25,19 +25,15 @@ app.controller('ViewCampaignController', ['$scope', '$http', function($scope, $h
     $scope.getTesters = function(){
         $http({method: "GET", url:"/viewCampaigns/getTesters"}).then(function(response){
 
-            $scope.swatchList = [];
+            $scope.testerList = [];
 
             for (var i = 0; i < response.data.length; i++){
                 console.log(response.data[i]);
-                $scope.swatchList.push(response.data[i]);
+                $scope.testerList.push(response.data[i]);
             }
 
         });
     };
 
-
-
-
-    //$scope.getSwatches();
 
 }]);
