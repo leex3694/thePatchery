@@ -21,7 +21,7 @@ router.get('/getTesters', function(req, res, next) {
     Campaign.find(function(err, campaigns){
         console.log('campaign from the view campaign js ', campaigns);
         if(err) throw err;
-        res.json(campaigns.testers);
+        res.json(campaigns);
         //response.sendStatus(200);
     });
 });
