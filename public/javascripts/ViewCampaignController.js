@@ -16,8 +16,15 @@ app.controller('ViewCampaignController', ['$scope', '$http', function($scope, $h
         });
 
         $scope.campaignList.selectedOption = $scope.campaignList.availableOptions[0];
-
-
+        $scope.testerList = [];
+        var testers = ($scope.campaignList.selectedOption.testers[0].volunteer1);
+        console.log('these are the testers now');
+        console.log(testers);
+        for(var i = 0; i < testers.length; i++){
+            $scope.testerList.push(testers[i]);
+            console.log('testerList');
+            console.log($scope.testerList);
+        }
 
 
             $scope.hasChanged = function(){
