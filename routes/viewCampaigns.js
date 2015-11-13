@@ -20,7 +20,7 @@ router.get('/getTesters', function(req, res, next) {
 
     Campaign.find(function(err, campaign){
         if(err) throw err;
-        res.send(campaign.testers);
+        res.json(campaign.testers);
         //response.sendStatus(200);
     });
 });

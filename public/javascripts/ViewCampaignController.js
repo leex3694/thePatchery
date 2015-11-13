@@ -36,8 +36,4 @@ app.controller('ViewCampaignController', ['$scope', '$http', function($scope, $h
     };
 
 
-
-
-    //$scope.getSwatches();
-
 }]);
