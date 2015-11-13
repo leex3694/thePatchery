@@ -146,7 +146,7 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
             sendTesterArrayData.volunteer1 = $scope.tempTestersArray;
             console.log('this is tester array we are trying to send ');
             console.log($scope.tempTestersArray);
-
+            console.log($scope.tempTestersArray[0].email);
 
             $http({
                 method:'PUT',
