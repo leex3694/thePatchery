@@ -18,10 +18,10 @@ router.get('/getTesters', function(req, res, next) {
 
     //var tester = req.body;
 
-    Campaign.find(function(err, campaigns){
+    Campaign.findOne({campaignName:req.campaign.campaignName},function(err, campaigns){
         console.log('campaign from the view campaign js ', campaigns);
         if(err) throw err;
-        res.json(campaigns.testers);
+        res.json(campaigns);
         //response.sendStatus(200);
     });
 });
