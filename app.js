@@ -27,7 +27,7 @@ var app = express();
 
 
 //var mongoURI = "mongodb://localhost:27017/thepatchery";
-var mongoURI = "mongodb://patches:kids_clothes@ds053194.mongolab.com:53194/the_patchery"
+var mongoURI = "mongodb://patches:kids_clothes@ds053194.mongolab.com:53194/the_patchery";
 var MongoDB = mongoose.connect(mongoURI).connection;
 
 MongoDB.on('error', function (err) {
@@ -82,7 +82,7 @@ passport.use('local', new localStrategy({passReqToCallback : true, usernameField
 passport.use(new FacebookStrategy({
       clientID: 711298905667165,
       clientSecret: 'fbf9bc40358b4b2a03ca8c07934a7b63',
-      callbackURL: "http://localhost:3000/signUp/facebook/callback",
+      callbackURL: "https://limitless-cove-3511.herokuapp.com/signUp/facebook/callback",
       profileFields: ["emails", "displayName", "name"]
     },
 
