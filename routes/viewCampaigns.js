@@ -18,7 +18,7 @@ router.get('/getTesters', function(req, res, next) {
 
     //var tester = req.body;
 
-    Campaign.findOne({campaignName:req.campaign.campaignName},function(err, campaigns){
+    Campaign.find(function(err, campaigns){
         console.log('campaign from the view campaign js ', campaigns);
         if(err) throw err;
         res.json(campaigns);
