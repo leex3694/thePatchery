@@ -4,7 +4,7 @@
 <div class = "makeListBody">
     <form name="myForm">
         <label for="mySelect">Select a Campaign:</label>
-        <select name="mySelect" id="mySelect">
+        <select name="mySelect" id="mySelect"
                 ng-options="option.campaignName for option in campaignList.availableOptions"
                 ng-model="campaignList.selectedOption" ng-change="hasChanged()"></select>
     </form>
