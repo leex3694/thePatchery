@@ -31,6 +31,8 @@ router.put('/postTesterArray', function(req, res, next){
         Tester.model.create(createTesterObj, function (err, testers) {
             if (err) throw err;
             campaign.testers.push(testers);
+
+            console.log(testers);
             campaign.save(function (err) {
                 if (err) throw err;
             });
