@@ -34,12 +34,16 @@ router.put('/postTesterArray', function(req, res, next){
 
     var createTesterObj = req.body;
 
+    console.log(createTesterObj);
+
     Campaign.findOne({campaignName:req.body.selectedCampaign.campaignName}, function(err, campaign) {
         Tester.model.create(createTesterObj, function (err, testers) {
 
             if (err) throw err;
 
             campaign.testers.push(testers);
+
+            console.log(testers);
 
             campaign.save(function (err) {
                 if (err) throw err;
