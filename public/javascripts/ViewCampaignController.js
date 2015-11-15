@@ -1,5 +1,7 @@
 app.controller('ViewCampaignController', ['$scope', '$http', function($scope, $http){
 
+////////////Start GET to generate the campaign names for the drop-down menus///////////////
+
     $scope.tempList = [];
     $scope.campaignList = [];
     $scope.testNameChosen = "";
@@ -16,6 +18,7 @@ app.controller('ViewCampaignController', ['$scope', '$http', function($scope, $h
         });
 
         $scope.campaignList.selectedOption = $scope.campaignList.availableOptions[0];
+
         $scope.testerList = [];
         var testers = ($scope.campaignList.selectedOption.testers[0].volunteer1);
         console.log('these are the testers now');
@@ -26,6 +29,9 @@ app.controller('ViewCampaignController', ['$scope', '$http', function($scope, $h
             console.log($scope.testerList);
         }
 
+////////////End GET to generate the campaign names for the drop-down menus///////////////
+
+////////////Function to change generated data for View Campaigns, listed testers correspond with the campaign selected///////////////
 
             $scope.hasChanged = function(){
                 $scope.testerList = [];
