@@ -5,6 +5,14 @@ app.controller('ViewCampaignController', ['$scope', '$http', function($scope, $h
     $scope.testNameChosen = "";
     $scope.formData ={};
 
+
+
+    $scope.accordion = {
+        current: null
+    };
+
+
+
     $http({method: 'GET', url: '/viewCampaigns/getCampaigns'}).then(function (response){
 
         $scope.tempList = response.data;
