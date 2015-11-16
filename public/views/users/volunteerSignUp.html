@@ -40,21 +40,15 @@
 </header>
 
 <body ng-controller="SignUpController">
-
-    <a  href="/signUp/facebook" class="btn btn-block btn-social btn-facebook">
+<div ng-show="faceButtonShow">
+    <a ng-click="goFacebook" href="/signUp/facebook" class="btn btn-block btn-social btn-facebook">
         <span class="fa fa-facebook"></span> Sign in with Facebook
     </a>
+</div>
 
-
-
+<!--<div ng-show="signUpForm">-->
     <h1>Volunteer Sign Up</h1>
-    <!--</form>-->
-
-<!--<a href="/signUp/facebook">Sign in with Facebook</a>-->
-
     <h1 class="pageTitle">Volunteer Sign Up</h1>
-
-
     <div class="form-group formDiv">
         <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate class="css-form">
             <div class="form-group">
@@ -95,12 +89,9 @@
             </div>
             <button class="buttonClass" ng-click="sendSignUpForm()" ng-class="{filledOutCorrectly: userForm.$valid}"  >Submit</button>
         </form>
-
     </div>
-
     <button ng-click="sendSignUpForm()">Submit</button>
-
-
+<!--</div>-->
 
 
 

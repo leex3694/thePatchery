@@ -22,6 +22,7 @@ var something = require ('./routes/auth');
 var makeList = require('./routes/makeList');
 var viewCampaigns = require('./routes/viewCampaigns');
 var userSurvey = require('./routes/userSurvey');
+var facebookButton = require('./routes/facebookButton');
 
 var app = express();
 
@@ -85,7 +86,7 @@ passport.use('local', new localStrategy({passReqToCallback : true, usernameField
 passport.use(new FacebookStrategy({
       clientID: 711298905667165,
       clientSecret: 'fbf9bc40358b4b2a03ca8c07934a7b63',
-      callbackURL: "https://limitless-cove-3511.herokuapp.com/signUp/facebook/callback",
+      callbackURL: "http://localhost:3000/facebookButton/facebook/callback",
       profileFields: ["emails", "displayName", "name"]
     },
 
@@ -164,6 +165,7 @@ app.use('/createCampaign', createCampaign);
 app.use('/viewCampaigns', viewCampaigns);
 app.use('/makeList',makeList);
 app.use('/userSurvey', userSurvey);
+app.use('/facebookButton', facebookButton);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

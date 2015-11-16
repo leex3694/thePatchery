@@ -6,7 +6,8 @@ sign.controller('SignUpController', ['$scope','$http', function($scope, $http){
     $scope.campaignList = [];
 
     $scope.testNameChosen = "";
-
+    $scope.faceButtonShow = true;
+    $scope.signUpForm = false;
 
     $scope.submitForm = function(isValid) {
 
@@ -42,7 +43,10 @@ sign.controller('SignUpController', ['$scope','$http', function($scope, $http){
         console.log($scope.campaignList.length);
     });
 
-
+    //$scope.goFacebook = function (){
+    //    $scope.signUpForm = true;
+    //    $scope.faceButtonShow = false;
+    //};
 
 
     $scope.formData ={};
