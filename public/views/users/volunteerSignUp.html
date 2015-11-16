@@ -32,48 +32,51 @@
 
 
     <div class="form-group">
-        <label>Full Name: </label><input type="text" ng-model="name"><br/>
-        <label>street: </label><input type="text" ng-model="street"><br/>
-        <label>city: </label><input type="text" ng-model="city"><br/>
-        <label>state: </label><input type="text" ng-model="state"><br/>
-        <label>zip: </label><input type="number" ng-model="zip"><br/>
-        <label>email: </label><input type="text" ng-model="email"><br/>
-        <label>gender: </label>
-        <select ng-model="gender">
-            <option>select</option>
-            <option>Male</option>
-            <option>Female</option>
-        </select><br/>
-        <label>size: </label>
-        <select ng-model="size">
-            <option>select size</option>
-            <option>2T</option>
-            <option>3T</option>
-            <option>4T</option>
-            <option>5T</option>
-            <option>6</option>
-            <option>7/8</option>
-            <option>9/10</option>
-        </select><br/>
-        <label>How does it fit? </label>
-        <select ng-model="sizeQualifying">
-            <option>select option</option>
-            <option>Typically fits just right</option>
-            <option>Typically fits small</option>
-            <option>Typically fits big</option>
-        </select>
-        <div class = "makeListBody">
-            <form name="myForm">
-                <label for="mySelect">Select Campaign:</label>
-                <select name="mySelect" id="mySelect"
-                        ng-options="option.campaignName for option in campaignList.availableOptions"
-                        ng-model="campaignSelect"></select>
-            </form>
-            <hr>
-        </div>
+        <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate class="css-form">
+            <div class="form-group">
+                <label>Full Name: </label><input type="text" ng-model="name"  required><br/>
+                <label>street: </label><input type="text" ng-model="street" required><br/>
+                <label>city: </label><input type="text" ng-model="city" required><br/>
+                <label>state: </label><input type="text" ng-model="state" required><br/>
+                <label>zip: </label><input type="number" ng-model="zip" required><br/>
+                <label>email: </label><input type="email" ng-model="email" required><br/>
+                <label>gender: </label>
+            </div>
+            <select ng-model="gender">
+                <option>select</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select><br/>
+            <label>size: </label>
+            <select ng-model="size" required>
+                <option>select size</option>
+                <option>2T</option>
+                <option>3T</option>
+                <option>4T</option>
+                <option>5T</option>
+                <option>6</option>
+                <option>7/8</option>
+                <option>9/10</option>
+            </select><br/>
+            <label>How does it fit? </label>
+            <select ng-model="sizeQualifying" required>
+                <option>select option</option>
+                <option>Typically fits just right</option>
+                <option>Typically fits small</option>
+                <option>Typically fits big</option>
+            </select>
+            <div class = "makeListBody">
+                <!--<form name="myForm">-->
+                    <label for="mySelect">Select Campaign:</label>
+                    <select name="mySelect" id="mySelect"
+                            ng-options="option.campaignName for option in campaignList.availableOptions"
+                            ng-model="campaignSelect"></select>
+             </div>
+            <button ng-click="sendSignUpForm()" ng-submit="submitForm(userForm.$valid)"  ng-disabled="userForm.$invalid">Submit</button>
+        </form>
 
     </div>
-    <button ng-click="sendSignUpForm()">Submit</button>
+
 
 
 

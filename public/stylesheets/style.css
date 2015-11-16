@@ -114,7 +114,6 @@ a.navbar-brand {
 
 /* ***************************** START VIEW CAMPAIGNS CSS ******************************/
 .listItemSection{
-  list-style: none;
   background-color: #EFEFEF;;
   padding: 5px;
   margin: 10px;
@@ -123,12 +122,39 @@ a.navbar-brand {
 }
 
 .accordianNameTitle{
-  background-color: #E2E0E0;
+  list-style: none;
+}
+
+.accordianNameTitle:hover{
+    cursor: pointer;
 }
 
 .ulAccordian{
   background-color: #F9F9F9;
+  list-style: none;
+}
 
+.surveyResultList{
+  list-style: none;
+  background-color: white;
 }
 
 /* ***************************** END VIEW CAMPAIGN CSS *******************************/
+
+
+
+
+
+
+/* ***************************** START SURVEY FOR USER ********************************/
+
+.css-form input.ng-invalid.ng-touched {
+    background-color: #FA787E;
+}
+
+.css-form input.ng-valid.ng-touched {
+    background-color: #78FA89;
+}
+
+
+/* ***************************** END SURVEY FOR USER ********************************/
