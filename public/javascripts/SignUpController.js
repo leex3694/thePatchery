@@ -13,9 +13,9 @@ sign.controller('SignUpController', ['$scope','$http', function($scope, $http){
 
         // check to make sure the form is completely valid
         if (isValid) {
-            alert('our form is amazing');
+            alert('Congrats! You\'ve successfully submitted the survey.');
         }
-    }
+    };
 
     $http({
         method: 'GET',
@@ -53,10 +53,8 @@ sign.controller('SignUpController', ['$scope','$http', function($scope, $http){
 
 
     $scope.sendSignUpForm = function (isValid){
-        if (isValid) {
-            alert('our form is amazing');
-        }
-        console.log("somehting");
+
+
         var sendSignUpData = {
             name: $scope.name,
             street: $scope.street,

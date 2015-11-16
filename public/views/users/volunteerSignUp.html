@@ -58,21 +58,21 @@
     <div class="form-group formDiv">
         <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate class="css-form">
             <div class="form-group">
-                <label class="formSectionTitle">Full Name: </label><input type="text" ng-model="name"  required><br/>
-                <label class="formSectionTitle">Street: </label><input type="text" ng-model="street" required><br/>
-                <label class="formSectionTitle">City: </label><input type="text" ng-model="city" required><br/>
-                <label class="formSectionTitle">State: </label><input type="text" ng-model="state" required><br/>
-                <label class="formSectionTitle">Zip: </label><input type="number" ng-model="zip" required><br/>
-                <label class="formSectionTitle">Email: </label><input type="email" ng-model="email" required><br/>
+                <label class="formSectionTitle">Full Name: </label><input type="text" ng-model="name"  required><span class="redStar">*</span><br/>
+                <label class="formSectionTitle">Street: </label><input type="text" ng-model="street" required><span class="redStar">*</span><br/>
+                <label class="formSectionTitle">City: </label><input type="text" ng-model="city" required><span class="redStar">*</span><br/>
+                <label class="formSectionTitle">State: </label><input type="text" ng-model="state" required><span class="redStar">*</span><br/>
+                <label class="formSectionTitle">Zip: </label><input type="number" ng-model="zip" required><span class="redStar">*</span><br/>
+                <label class="formSectionTitle">Email: </label><input type="email" ng-model="email" required><span class="redStar">*</span><br/>
                 <label class="formSectionTitle">Gender: </label>
                     <span class="enclosingForSelects"><select ng-model="gender">
-                    <option>select</option>
+                    <!--<option>select</option>-->
                     <option>Male</option>
                     <option>Female</option>
-                    </select></span><br/>
+                    </select></span><span>&nbsp;</span><br/>
                 <label class="formSectionTitle">Size: </label>
                     <span class="enclosingForSelects"><select ng-model="size" required>
-                        <option>Select size</option>
+                        <!--<option>Select size</option>-->
                         <option>2T</option>
                         <option>3T</option>
                         <option>4T</option>
@@ -80,20 +80,20 @@
                         <option>6</option>
                         <option>7/8</option>
                         <option>9/10</option>
-                </select></span><br/>
+                </select></span><span class="redStar">*</span><br/>
                 <label class="formSectionTitle">How does it fit? </label>
                     <span class="enclosingForSelects"><select ng-model="sizeQualifying" required>
-                        <option>Select option</option>
+                        <!--<option>Select option</option>-->
                         <option>Typically fits just right</option>
                         <option>Typically fits small</option>
                         <option>Typically fits big</option>
-                    </select></span><br>
+                    </select></span><span class="redStar">*</span><br>
                 <label for="mySelect" class="formSectionTitle">Select Campaign:</label>
                 <select name="mySelect" id="mySelect"
                         ng-options="option.campaignName for option in campaignList.availableOptions"
-                        ng-model="campaignSelect"></select>
+                        ng-model="campaignSelect" required></select><span class="redStar">*</span>
             </div>
-            <button ng-click="sendSignUpForm()" ng-submit="submitForm(userForm.$valid)"  ng-disabled="userForm.$invalid">Submit</button>
+            <button class="buttonClass" ng-click="sendSignUpForm()" ng-class="{filledOutCorrectly: userForm.$valid}"  >Submit</button>
         </form>
 
     </div>

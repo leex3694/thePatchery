@@ -180,22 +180,42 @@ a.navbar-brand {
     width:50%;
     margin-left: auto;
     margin-right: auto;
+    padding:20px 0;
+}
+
+.ng-invalid{
+
 }
 
 .css-form input.ng-invalid.ng-touched {
     background-color: #FA787E;
+    color:white;
 }
+
+.css-form button.ng-invalid {
+    background-color: #FA787E;
+}
+
 
 .css-form input.ng-valid.ng-touched {
     background-color: #78FA89;
+    transition:0.5s linear all
+}
+
+.buttonClass{
+    color: #C7C7C7;
+}
+
+.filledOutCorrectly {
+    color:black;
 }
 
 input {
-    width: 10%;
+    width: 20%;
 }
 
 select{
-    width:10%
+    width:20%
 }
 
 .formSectionTitle{
@@ -206,8 +226,10 @@ select{
     right: 30px;
 }
 
-/*.enclosingForSelects{*/
-    /*width:10%*/
-/*}*/
+.redStar{
+    color:red;
+    position: relative;
+    top:2px;
+}
 
 /* ***************************** END SURVEY FOR USER ********************************/
