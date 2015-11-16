@@ -4,7 +4,8 @@ var multer = require('multer');
 var upload = multer({dest: 'uploads/'});
 
 var SurveyResults = require('../models/surveyResults');
-var Tester = require('../models/tester.js').model;
+var Tester = require('../models/tester.js').schema;
+var User = require('../models/user.js').schema;
 
 var router = express.Router();
 
