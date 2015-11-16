@@ -11,8 +11,8 @@ router.post('/sentEmail', function(req,res, next){
 sendgrid.send({
     to:       'briandaves@earthlink.net',
     from:     'briandmpls@gmail.com',
-    subject:  'Hello World',
-    text:     'My first email through SendGrid.'
+    subject:  'This is a test from our group project',
+    text:     'Congratulations! You have been chosen to test childrens clothes.'
 }, function(err, json) {
     if (err) { return res.send("email error"); }
     res.send(" email success");

@@ -6,61 +6,86 @@
         <label for="mySelect">Select a Campaign:</label>
         <select name="mySelect" id="mySelect"
                 ng-options="option.campaignName for option in campaignList.availableOptions"
-                ng-model="campaignList.selectedOption"></select>
+                ng-model="campaignList.selectedOption" ng-change="hasChanged()"></select>
     </form>
-    <!--<hr>-->
-    <!--<p>option = {{campaignList.selectedOption.campaignName}}</p><br/>-->
-    <!--<p>option = {{campaignList.selectedOption.signupStart}}</p><br/>-->
 </div>
 
-
-
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    <div ng-repeat="tester in testerList">
+    <div ng-repeat="tester in testerList track by $index">
         <div class="panel panel-default" >
             <div class="panel-heading" role="tab" id="headingOne">
                 <h4 class="panel-title">
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        {{tester.selectedCampaign.testers.volunteer.name}}
+                        {{tester.name}}
+                        <!--{{tester.campaignList.selectedOption.testers[0].volunteer1}}-->
                     </a>
                 </h4>
             </div>
             <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                   {{tester.city}}
                 </div>
             </div>
         </div>
     </div>
-
-
-
-    <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id="headingTwo">
-            <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Tester #2
-                </a>
-            </h4>
-        </div>
-        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-            <div class="panel-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-            </div>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id="headingThree">
-            <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Tester #3
-                </a>
-            </h4>
-        </div>
-        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-            <div class="panel-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-            </div>
-        </div>
-    </div>
 </div>
+
+
+
+<!-- Old accordian made by Sarah. The accordian function doesn't work in this-->
+<!--<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">-->
+    <!--<div ng-repeat="tester in testerList track by $index">-->
+        <!--<div class="panel panel-default" >-->
+            <!--<div class="panel-heading" role="tab" id="headingOne">-->
+                <!--<h4 class="panel-title">-->
+                    <!--<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">-->
+                        <!--{{tester.name}}-->
+                        <!--&lt;!&ndash;{{tester.campaignList.selectedOption.testers[0].volunteer1}}&ndash;&gt;-->
+                    <!--</a>-->
+                <!--</h4>-->
+            <!--</div>-->
+            <!--<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">-->
+                <!--<div class="panel-body">-->
+                   <!--{{tester.city}}-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--*******************************************************************-->
+
+
+<!--<accordion>-->
+    <!--<accordion-group heading="Hello" ng-repeat="tester in testerList track by $index">-->
+        <!--<ul>-->
+            <!--<li ng-repeat="tester in testerList">{{tester]}}</li>-->
+        <!--</ul>-->
+    <!--</accordion-group>-->
+<!--</accordion>-->
+
+
+
+
+<!--For now this is an example of how the accordian should work. Haven't been able to do it right yet-->
+        <!--<ul>-->
+            <!--<li ng-repeat="item in items" ng-click="accordion.current = item.name">-->
+                <!--{{item.name}}-->
+                <!--<ul ng-show="accordion.current == item.name">-->
+                    <!--<li ng-repeat="sub in item.sub">{{sub.name}}</li>-->
+                <!--</ul>-->
+            <!--</li>-->
+        <!--</ul>-->
+
+    <ul class="ulAccordian">
+        <li class="listItemSection" ng-repeat="tester in testerList" ng-click="accordion.current = tester.name">
+            <span class="accordianNameTitle">{{tester.name}}</span>
+            <!--<ul ng-show="accordion.current == tester.name">-->
+            <ul ng-show="accordion.current == tester.name">
+                <li>{{tester.city}}</li>
+                <li>{{tester.email}}</li>
+            </ul>
+        </li>
+    </ul>
+<!--****************************************************-->
+
+
+
