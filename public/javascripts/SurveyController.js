@@ -1,5 +1,5 @@
 //var app = angular.module('UserSurveyApp', []);
-var app = angular.module('patcheryapp', 'fileUpload', ['ngFileUpload']);
+var app = angular.module('UserSurveyApp', ['ngFileUpload']);
 
 app.controller('SurveyController', ['$scope', '$http', '$location', 'Upload', function($scope, $http, $location, Upload){
     $scope.formData = {};
@@ -15,7 +15,7 @@ app.controller('SurveyController', ['$scope', '$http', '$location', 'Upload', fu
 
     $scope.upload = function (file){
         var data = {file: file, formData: $scope.formData};
-
+        console.log(data);
         Upload.upload({
             url: '/userSurvey/add',
             data: data

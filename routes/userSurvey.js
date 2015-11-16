@@ -4,7 +4,7 @@ var multer = require('multer');
 var upload = multer({dest: 'uploads/'});
 
 var SurveyResults = require('../models/surveyResults');
-var Tester = require('../models/tester.js');
+var Tester = require('../models/tester.js').model;
 
 var router = express.Router();
 
@@ -15,26 +15,36 @@ router.get('/', function(req, res, next) {
 //('/add', upload.single('file'), function(req, res, next) {
 //upload.array('photos', 3)
 
-router.post('/add', upload.single('photos'), function (req, res, next) {
-    //console.log('Body', request.body);
-    //console.log('File', request.file);
-
+router.post('/add', upload.single('file'), function (req, res, next) {
+    console.log('Body', req.body);
+    //console.log('ID', req.tester.volunteer1.user.facebook.id);
+    var id = 0;
     var createObj = req.body.formData;
 
     createObj.img = req.file;
+
+    //HACK! Remove before deploy
+console.log('this is the User ', req.user);
+    if(req.user){
+        console.log('user in if statement ', user);
+        id = req.volunteer1.user.facebook.id;
+    } else {
+        id = 10156278342525055;
+    }
 
     SurveyResults.model.create(createObj, function (err, survey) {
 
         if (err) throw err;
 
-        Tester.findOne({_id: req.volunteer._id}, function (err, tester) {
+        Tester.findOne({_id: id}, function (err, tester) {
 
             console.log('this is the tester', tester);
+            console.log('this is the id ', id)
             console.log('this is the survey', survey);
 
-            if (!tester.surveyResults) {
-                tester.surveyResults = [];
-            }
+            //if (!tester.surveyResults) {
+            //    tester.surveyResults = [];
+            //}
 
             tester.surveyResults.push(survey);
 
@@ -43,7 +53,7 @@ router.post('/add', upload.single('photos'), function (req, res, next) {
             })
 
         });
-        response.sendStatus(200);
+        res.sendStatus(200);
     });
 });
 
