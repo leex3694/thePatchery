@@ -9,6 +9,14 @@ sign.controller('SignUpController', ['$scope','$http', function($scope, $http){
     $scope.faceButtonShow = true;
     $scope.signUpForm = false;
 
+    $scope.submitForm = function(isValid) {
+
+        // check to make sure the form is completely valid
+        if (isValid) {
+            alert('our form is amazing');
+        }
+    }
+
     $http({
         method: 'GET',
         url: '/makeList/getVolunteers'
@@ -44,7 +52,10 @@ sign.controller('SignUpController', ['$scope','$http', function($scope, $http){
     $scope.formData ={};
 
 
-    $scope.sendSignUpForm = function (){
+    $scope.sendSignUpForm = function (isValid){
+        if (isValid) {
+            alert('our form is amazing');
+        }
         console.log("somehting");
         var sendSignUpData = {
             name: $scope.name,

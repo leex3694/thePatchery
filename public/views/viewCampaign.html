@@ -65,27 +65,17 @@
 
 
 
-<!--For now this is an example of how the accordian should work. Haven't been able to do it right yet-->
-        <!--<ul>-->
-            <!--<li ng-repeat="item in items" ng-click="accordion.current = item.name">-->
-                <!--{{item.name}}-->
-                <!--<ul ng-show="accordion.current == item.name">-->
-                    <!--<li ng-repeat="sub in item.sub">{{sub.name}}</li>-->
-                <!--</ul>-->
-            <!--</li>-->
-        <!--</ul>-->
-
     <ul class="ulAccordian">
         <li class="listItemSection" ng-repeat="tester in testerList" ng-click="accordion.current = tester.name">
             <span class="accordianNameTitle">{{tester.name}}</span>
             <!--<ul ng-show="accordion.current == tester.name">-->
-            <ul ng-show="accordion.current == tester.name">
+            <ul class="surveyResultList" ng-show="accordion.current == tester.name">
                 <li>{{tester.city}}</li>
                 <li>{{tester.email}}</li>
             </ul>
         </li>
     </ul>
-<!--****************************************************-->
+
 
 
 

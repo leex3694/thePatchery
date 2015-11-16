@@ -17,6 +17,6 @@ var surveySchema = new Schema ({
 
 var Survey = mongoose.model('Survey', surveySchema);
 
-//exports.schema = surveySchema;
-//exports.model = Survey;
-module.exports = Survey;
+exports.schema = surveySchema;
+exports.model = Survey;
+//module.exports = Survey;

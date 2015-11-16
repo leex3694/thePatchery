@@ -1,5 +1,5 @@
 
-var app = angular.module('patcheryapp', ['ngRoute', 'ui.bootstrap']);
+var app = angular.module('patcheryapp', ['ngRoute']);
 
 app.config(function($routeProvider, $locationProvider){
     $routeProvider
@@ -22,6 +22,10 @@ app.config(function($routeProvider, $locationProvider){
         .when('/listToAccept',{
             templateUrl:'/views/listToAccept.html',
             controller: 'ListToAcceptController'
+        })
+        .when('/userSurvey',{
+            templateUrl:'/views/users/volunteerSurvey.html',
+            controller: 'SurveyController'
         })
         .otherwise({redirectTo: '/views/home.html'
         })
