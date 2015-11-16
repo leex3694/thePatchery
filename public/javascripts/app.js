@@ -1,5 +1,5 @@
 
-var app = angular.module('patcheryapp', ['ngRoute']);
+var app = angular.module('patcheryapp', ['ngRoute', 'ui.bootstrap']);
 
 app.config(function($routeProvider, $locationProvider){
     $routeProvider
