@@ -71,6 +71,24 @@ sign.controller('SignUpController', ['$scope','$http', function($scope, $http){
 
         };
         console.log(sendSignUpData);
+
+
+
+
+        // This clears out the form on submission
+        $scope.name = "";
+        $scope.street = "";
+        $scope.city = "";
+        $scope.state = "";
+        $scope.zip = "";
+        $scope.email = "";
+        $scope.gender = "";
+        $scope.size = "";
+        $scope.sizeQualifying = "";
+        $scope.campaignSelect = "";
+
+
+
         $http.post('/signUp/volunteersData', sendSignUpData).then(function(response){
 
         });

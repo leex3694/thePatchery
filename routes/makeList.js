@@ -43,17 +43,17 @@ router.put('/postTesterArray', function(req, res, next){
                 console.log('this is the address of' ,to_address);
 
                 //This is the start of the email functionality
-                sendgrid.send({
-                    to:       to_address,
-                    from:     'briandmpls@gmail.com',
-                    subject:  'This is a test from our group project',
-                    text:     'Please reply if it makes it to you.'
-                }, function(err, json) {
-                    if (err) { return res.send("email error"); }
-                    //res.send("email success");
-                    console.log("email sent");
-                });
-            };
+                    sendgrid.send({
+                        to:       to_address,
+                        from:     'briandmpls@gmail.com',
+                        subject:  'This is a test from our group project',
+                        text:     'Please reply if it makes it to you.'
+                    }, function(err, json) {
+                        if (err) { return res.send("email error"); }
+                        //res.send("email success");
+                        console.log("email sent");
+                    });
+            }
 
 
 
