@@ -10,7 +10,7 @@ var localStrategy = require('passport-local').Strategy;
 var mongoose = require('mongoose');
 var FacebookStrategy = require('passport-facebook').Strategy;
 
-var User = require('./models/user');
+var User = require('./models/user').model;
 
 var routes = require('./routes/index');
 var signUp = require('./routes/signUp');
