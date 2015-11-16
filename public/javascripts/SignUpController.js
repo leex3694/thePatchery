@@ -43,10 +43,10 @@ sign.controller('SignUpController', ['$scope','$http', function($scope, $http){
         console.log($scope.campaignList.length);
     });
 
-    $scope.goFacebook = function (){
-        $scope.signUpForm = true;
-        $scope.faceButtonShow = false;
-    };
+    //$scope.goFacebook = function (){
+    //    $scope.signUpForm = true;
+    //    $scope.faceButtonShow = false;
+    //};
 
 
     $scope.formData ={};

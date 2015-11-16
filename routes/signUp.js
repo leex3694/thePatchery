@@ -15,23 +15,21 @@ router.get('/', function(req,res,next){
   res.sendFile(path.resolve(__dirname, '../public/views/users/volunteerSignUp.html'));
 });
 
-router.post('/',
-    passport.authenticate('local', {
-      successRedirect: '/views/users/signUpForm.html',
-      failureRedirect: '/'
-    })
-);
+//router.post('/',
+//    passport.authenticate('local', {
+//      successRedirect: '/views/users/signUpForm.html',
+//      failureRedirect: '/'
+//    })
+//);
 
-
-
-router.get('/facebook', passport.authenticate('facebook', { scope : 'email' }));
+//router.get('/facebook', passport.authenticate('facebook', { scope : 'email' }));
 
 // handle the callback after facebook has authenticated the user
-router.get('/facebook/callback',
-    passport.authenticate('facebook', {
-        successRedirect : '/signUp',
-        failureRedirect : '/'
-    }));
+//router.get('/facebook/callback',
+//    passport.authenticate('facebook', {
+//        successRedirect : '/signUp',
+//        failureRedirect : '/'
+//    }));
 
 router.post('/volunteersData', function (req, res, next){
     Campaign.findOne({campaignName: req.body.campaignSelect.campaignName} ,function(err, campaign){

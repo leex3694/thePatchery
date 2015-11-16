@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
-var UserSchema = require('./user').schema;
+var userSchema = require('./user').schema;
 
 var Schema = mongoose.Schema;
 
 var volunteerSchema = new Schema ({
-    user: [UserSchema],
+    user: [userSchema],
     name: String,
     street: String,
     city: String,
