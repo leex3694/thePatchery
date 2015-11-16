@@ -23,10 +23,6 @@ app.config(function($routeProvider, $locationProvider){
             templateUrl:'/views/listToAccept.html',
             controller: 'ListToAcceptController'
         })
-        .when('/userSurvey',{
-            templateUrl:'/views/users/volunteerSurvey.html',
-            controller: 'SurveyController'
-        })
         .otherwise({redirectTo: '/views/home.html'
         })
     ;
