@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
     SALT_WORK_FACTOR = 10;
 
 var UserSchema = new Schema({
-    username: { type: String, index: { unique: true } },
+    username: { type: String, index: { sparse: true } },
     password: { type: String },
     //facebook
     facebook         : {
