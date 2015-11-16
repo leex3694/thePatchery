@@ -10,7 +10,8 @@
     <script src="../../javascripts/SignUpController.js"></script>
     <link rel="stylesheet" href="../../stylesheets/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <!--<link rel="stylesheet" href="stylesheets/style.css">-->
+    <link rel="stylesheet" href="stylesheets/volunteerSignUp.css">
 </head>
 <header>
     <nav class="navbar navbar-default">
@@ -31,7 +32,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/">Home</a></li>
+                    <!--<li><a href="/">Home</a></li>     Can't use this for now because of static links and no user home-->
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -50,7 +51,7 @@
     <h1>Volunteer Sign Up</h1>
     <h1 class="pageTitle">Volunteer Sign Up</h1>
     <div class="form-group formDiv">
-        <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate class="css-form">
+        <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate class="css-form formClass">
             <div class="form-group">
                 <label class="formSectionTitle">Full Name: </label><input type="text" ng-model="name"  required><span class="redStar">*</span><br/>
                 <label class="formSectionTitle">Street: </label><input type="text" ng-model="street" required><span class="redStar">*</span><br/>
@@ -90,8 +91,8 @@
             <button class="buttonClass" ng-click="sendSignUpForm()" ng-class="{filledOutCorrectly: userForm.$valid}"  >Submit</button>
         </form>
     </div>
-    <button ng-click="sendSignUpForm()">Submit</button>
-<!--</div>-->
+
+</div>
 
 
 

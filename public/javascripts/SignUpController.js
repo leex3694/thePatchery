@@ -7,7 +7,7 @@ sign.controller('SignUpController', ['$scope','$http', function($scope, $http){
 
     $scope.testNameChosen = "";
     $scope.faceButtonShow = true;
-    $scope.signUpForm = false;
+    $scope.signUpForm = true;
 
     $scope.submitForm = function(isValid) {
 
