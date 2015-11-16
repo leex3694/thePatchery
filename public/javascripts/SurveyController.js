@@ -1,18 +1,19 @@
-//SM - need to refactor the name of this file to SurveyController
+//var app = angular.module('UserSurveyApp', []);
+//var app = angular.module('patcheryapp', []);
 
-var app = angular.module('UserSurveyApp', []);
-
-app.controller('SurveyController', ['$scope', '$http', 'Upload', function($scope, $http, Upload) {
+app.controller('SurveyController', ['$scope', '$http', '$location', 'Upload', function($scope, $http, $location, Upload){
     $scope.formData = {};
 
-    $scope.submitSurveyForm = function(event) {
+    $scope.submitSurveyForm = function(event){
 
         console.log($scope.formData);
 
         $scope.upload($scope.file);
+
+        $location.path('/');
     };
 
-    $scope.upload = function (file) {
+    $scope.upload = function (file){
         var data = {file: file, formData: $scope.formData};
 
         Upload.upload({

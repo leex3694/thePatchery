@@ -13,20 +13,21 @@ router.get('/', function(req, res, next) {
 });
 
 //('/add', upload.single('file'), function(req, res, next) {
+//upload.array('photos', 3)
 
-router.post('/photos/upload', upload.array('photos', 3), function (req, res, next) {
+router.post('/add', upload.single('photos'), function (req, res, next) {
     //console.log('Body', request.body);
     //console.log('File', request.file);
 
-    var createObj = request.body.formData;
+    var createObj = req.body.formData;
 
-    createObj.img = request.file;
+    createObj.img = req.file;
 
     SurveyResults.model.create(createObj, function (err, survey) {
 
         if (err) throw err;
 
-        Tester.findOne({_id: request.tester._id}, function (err, tester) {
+        Tester.findOne({_id: req.volunteer._id}, function (err, tester) {
 
             console.log('this is the tester', tester);
             console.log('this is the survey', survey);

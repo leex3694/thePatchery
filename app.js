@@ -11,6 +11,7 @@ var mongoose = require('mongoose');
 var FacebookStrategy = require('passport-facebook').Strategy;
 
 var User = require('./models/user');
+
 var routes = require('./routes/index');
 var signUp = require('./routes/signUp');
 var register = require('./routes/register');
@@ -49,6 +50,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, './public')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 app.use(session({
   secret: 'secret',
   key: 'user',

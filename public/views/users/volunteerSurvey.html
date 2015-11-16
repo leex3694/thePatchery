@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="UserSurveyApp">
+<html lang="en" ng-app="patcheryapp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,17 +8,18 @@
 
     <script src="/vendors/angular/angular.min.js"></script>
     <script src="/vendors/angular-route/angular-route.min.js"></script>
+    <script src="/vendors/ng-file-upload/dist/ng-file-upload.min.js"></script>
     <script src="/vendors/jquery/dist/jquery.min.js"></script>
     <script src="/stylesheets/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <link href="/vendors/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="../../stylesheets/volunteerStyle.css" rel="stylesheet">
     <!--<script src="../models/surveyResults.js"></script>-->
-    <script src="javascripts/user/survey.js"></script>
+    <script src="../../javascripts/SurveyController.js"></script>
 </head>
 <body>
 
-    <div ng-controller="userSurvey">
+    <div ng-controller="SurveyController">
         <header>
             <!--<img src="LOGO_SOURCE" alt="The Patchery logo" />-->
             <p>The Patchery Product Test Survey</p>
@@ -72,11 +73,11 @@
             <label>Front Image:</label>
             <input type="file" ng-model="photos" ngf-select="" ng-model="picFile" name="photos" accept="image/*" required="" class="ng-pristine ng-invalid ng-invalid-required">
 
-            <label>Back Image:</label>
-            <input type="file" ng-model="photos" ngf-select="" ng-model="picFile" name="photos" accept="image/*" required="" class="ng-pristine ng-invalid ng-invalid-required">
+            <!--<label>Back Image:</label>-->
+            <!--<input type="file" ng-model="photos" ngf-select="" ng-model="picFile" name="photos" accept="image/*" required="" class="ng-pristine ng-invalid ng-invalid-required">-->
 
-            <label>Side Image:</label>
-            <input type="file" ng-model="photos" ngf-select="" ng-model="picFile" name="photos" accept="image/*" required="" class="ng-pristine ng-invalid ng-invalid-required">
+            <!--<label>Side Image:</label>-->
+            <!--<input type="file" ng-model="photos" ngf-select="" ng-model="picFile" name="photos" accept="image/*" required="" class="ng-pristine ng-invalid ng-invalid-required">-->
 
             <button ng-click="submitSurveyForm()"> Submit </button>
 
