@@ -39,28 +39,14 @@
 
 </header>
 
-<a href="/signUp/facebook" class="btn btn-block btn-social btn-facebook">
-    <span class="fa fa-facebook"></span> Sign in with Facebook
-</a>
 <body ng-controller="SignUpController">
-    <!--<form action="/signUp" method="post">-->
-        <!--<div>-->
-            <!--<label for="username">Username:</label>-->
-            <!--<input type="text" name="username" id="username"/>-->
-        <!--</div>-->
-        <!--<div>-->
-            <!--<label for="password">Password:</label>-->
-            <!--<input type="password" name="password" id="password"/>-->
-        <!--</div>-->
-        <!--<div>-->
-            <!--<input type="submit" value="Log In"/>-->
-            <!--<a href="/register">Register</a>-->
-        <!--</div>-->
+<div ng-show="faceButtonShow">
+    <a ng-click="goFacebook" href="/signUp/facebook" class="btn btn-block btn-social btn-facebook">
+        <span class="fa fa-facebook"></span> Sign in with Facebook
+    </a>
+</div>
 
-    <!--</form>-->
-
-<!--<a href="/signUp/facebook">Sign in with Facebook</a>-->
-
+<div ng-show="signUpForm">
     <h1>Volunteer Sign Up</h1>
 
 
@@ -107,6 +93,8 @@
 
     </div>
     <button ng-click="sendSignUpForm()">Submit</button>
+
+</div>
 
 
 

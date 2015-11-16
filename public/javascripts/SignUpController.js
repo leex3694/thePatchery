@@ -6,6 +6,8 @@ sign.controller('SignUpController', ['$scope','$http', function($scope, $http){
     $scope.campaignList = [];
 
     $scope.testNameChosen = "";
+    $scope.faceButtonShow = true;
+    $scope.signUpForm = false;
 
     $http({
         method: 'GET',
@@ -14,7 +16,6 @@ sign.controller('SignUpController', ['$scope','$http', function($scope, $http){
         //$scope.volunteer = response.data;
         //console.log($scope.volunteer);
         //console.log($scope.volunteer.length);
-
 
 
 
@@ -34,14 +35,13 @@ sign.controller('SignUpController', ['$scope','$http', function($scope, $http){
         console.log($scope.campaignList.length);
     });
 
+    $scope.goFacebook = function (){
+        $scope.signUpForm = true;
+        $scope.faceButtonShow = false;
+    };
+
 
     $scope.formData ={};
-
-
-
-
-
-
 
 
     $scope.sendSignUpForm = function (){
