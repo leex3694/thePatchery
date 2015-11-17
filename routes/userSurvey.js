@@ -39,7 +39,7 @@ console.log('this is the User ', req.user);
         Tester.findOne({_id: id}, function (err, tester) {
 
             console.log('this is the tester', tester);
-            console.log('this is the id ', id)
+            console.log('this is the id ', id);
             console.log('this is the survey', survey);
 
             //if (!tester.surveyResults) {

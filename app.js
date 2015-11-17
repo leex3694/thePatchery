@@ -23,6 +23,7 @@ var makeList = require('./routes/makeList');
 var viewCampaigns = require('./routes/viewCampaigns');
 var userSurvey = require('./routes/userSurvey');
 var facebookButton = require('./routes/facebookButton');
+var surveyLogin = require('./routes/surveyLogin');
 
 var app = express();
 
@@ -86,8 +87,58 @@ passport.use('local', new localStrategy({passReqToCallback : true, usernameField
 passport.use(new FacebookStrategy({
       clientID: 711298905667165,
       clientSecret: 'fbf9bc40358b4b2a03ca8c07934a7b63',
-      callbackURL: "https://limitless-cove-3511.herokuapp.com/facebookButton/facebook/callback",
-      //callbackURL: "http://localhost:3000/facebookButton/facebook/callback",
+      //callbackURL: "https://limitless-cove-3511.herokuapp.com/facebookButton/facebook/callback",
+      callbackURL: "http://localhost:3000/facebookButton/facebook/callback",
+      profileFields: ["emails", "displayName", "name"]
+    },
+
+    // facebook will send back the token and profile
+    function(token, refreshToken, profile, done) {
+
+      // asynchronous
+      process.nextTick(function() {
+
+        // find the user in the database based on their facebook id
+        User.findOne({ 'facebook.id' : profile.id }, function(err, user) {
+
+          // if there is an error, stop everything and return that
+          // ie an error connecting to the database
+          if (err)
+            return done(err);
+
+          // if the user is found, then log them in
+          if (user) {
+            return done(null, user); // user found, return that user
+          } else {
+            // if there is no user found with that facebook id, create them
+            var newUser = new User();
+
+            // set all of the facebook information in our user model
+            newUser.facebook.id    = profile.id; // set the users facebook id
+            newUser.facebook.token = token; // we will save the token that facebook provides to the user
+            newUser.facebook.name  = profile.name.displayName; // look at the passport user profile to see how names are returned
+            newUser.facebook.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
+
+            // save our user to the database
+            newUser.save(function(err) {
+              if (err)
+                throw err;
+
+              // if successful, return the new user
+              return done(null, newUser);
+            });
+          }
+
+        });
+      });
+
+    }));
+
+passport.use('surveyLogin',new FacebookStrategy({
+      clientID: 711298905667165,
+      clientSecret: 'fbf9bc40358b4b2a03ca8c07934a7b63',
+      //callbackURL: "https://limitless-cove-3511.herokuapp.com/facebookButton/facebook/callback",
+      callbackURL: "http://localhost:3000/surveyLogin/facebook/callback",
       profileFields: ["emails", "displayName", "name"]
     },
 
@@ -134,16 +185,6 @@ passport.use(new FacebookStrategy({
     }));
 
 
-
-
-
-
-
-
-
-
-
-
 //PASSPORT
 
 passport.serializeUser(function(user, done) {
@@ -167,6 +208,7 @@ app.use('/viewCampaigns', viewCampaigns);
 app.use('/makeList',makeList);
 app.use('/userSurvey', userSurvey);
 app.use('/facebookButton', facebookButton);
+app.use('/surveyLogin', surveyLogin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
