@@ -35,43 +35,43 @@
                 The Patchery makers
             </p>
 
-        <form method="POST" enctype="multipart/form-data" class="surveyForm">
-            <label>1. What was your initial impression of the clothes?</label>
-            <input type="text" ng-model="formData.volunteerSurveyQ1">
+        <form method="POST" enctype="multipart/form-data" class="surveyForm" name="userForm" ng-submit="submitSurvey(userForm.$valid)">
+            <label>1. What was your initial impression of the clothes?</label><br>
+            <input type="text" ng-model="formData.volunteerSurveyQ1" required><br>
 
-            <label>2. What did you think of the quality of the fabric and sewing?</label>
-            <input type="text" ng-model="formData.volunteerSurveyQ2">
+            <label>2. What did you think of the quality of the fabric and sewing?</label><br>
+            <input type="text" ng-model="formData.volunteerSurveyQ2" required><br>
 
-            <label>3. How did the product fit? Was it too loose or too tight? Was it too long or too short? Are the arm, neck and leg openings big enough?*</label>
-            <input type="text" ng-model="formData.volunteerSurveyQ3">
+            <label>3. How did the product fit? Was it too loose or too tight? Was it too long or too short? Are the arm, neck and leg openings big enough?</label><br>
+            <input type="text" ng-model="formData.volunteerSurveyQ3" required><br>
 
-            <label>4. Based on your overall experience, how likely would you be to:</label>
-                <fieldset id="purchaseFrom">
+            <label>4. Based on your overall experience, how likely would you be to:</label><br>
+                <fieldset id="purchaseFrom" required>
                     <input type="radio" value="Definitely will" name="purchaseFrom" ng-model="formData.purchaseForm">Definitely will
                     <input type="radio" value="Very likely" name="purchaseFrom" ng-model="formData.purchaseForm">Very likely
                     <input type="radio" value="Maybe, but not sure" name="purchaseFrom" ng-model="formData.purchaseForm">Maybe, but not sure
                     <input type="radio" value="Probably not" name="purchaseFrom" ng-model="formData.purchaseForm" >Probably not
                     <input type="radio" value="Definitely not" name="purchaseFrom" ng-model="formData.purchaseForm">Definitely Not
-                </fieldset>
+                </fieldset><br>
 
-                <fieldset id="recommend">
+                <fieldset id="recommend" required>
                     <input type="radio" value="Definitely will" name="recommend" ng-model="formData.recommended">Definitely will
                     <input type="radio" value="Very likely" name="recommend" ng-model="formData.recommended">Very likely
                     <input type="radio" value="Maybe, but not sure" name="recommend" ng-model="formData.recommended">Maybe, but not sure
                     <input type="radio" value="Probably not" name="recommend" ng-model="formData.recommended">Probably not
                     <input type="radio" value="Definitely not" name="recommend" ng-model="formData.recommended">Definitely not
-                </fieldset>
+                </fieldset><br>
 
-            <label>5. If "maybe," "probably not" or "definitely not" for either of the above, why?</label>
-            <input type="text" ng-model="formData.volunteerSurveyQ5">
+            <label>5. If "maybe," "probably not" or "definitely not" for either of the above, why?</label><br>
+            <input type="text" ng-model="formData.volunteerSurveyQ5"><br>
 
-            <label>6. Anything on your mind that we didn't ask about?  Here's your chance to say anything!</label>
-            <input type="text" ng-model="formData.volunteerSurveyQ6">
+            <label>6. Anything on your mind that we didn't ask about?  Here's your chance to say anything!</label><br>
+            <input type="text" ng-model="formData.volunteerSurveyQ6"><br>
 
-            <p>Please upload three photos of your child wearing the outfit. Photos should be taken from the front, back, and side.</p>
+            <p>Please upload three photos of your child wearing the outfit. Photos should be taken from the front, back, and side.</p><br>
 
             <label>Front Image:</label>
-            <input type="file" ng-model="file" ngf-select="" name="file" accept="image/*" required="" class="ng-pristine ng-invalid ng-invalid-required">
+            <input type="file" ng-model="file" ngf-select="" name="file" accept="image/*" class="ng-pristine ng-invalid ng-invalid-required" required>
 
             <!--<label>Back Image:</label>-->
             <!--<input type="file" ng-model="photos" ngf-select="" ng-model="picFile" name="photos" accept="image/*" required="" class="ng-pristine ng-invalid ng-invalid-required">-->
@@ -79,7 +79,7 @@
             <!--<label>Side Image:</label>-->
             <!--<input type="file" ng-model="photos" ngf-select="" ng-model="picFile" name="photos" accept="image/*" required="" class="ng-pristine ng-invalid ng-invalid-required">-->
 
-            <button ng-click="submitSurveyForm()"> Submit </button>
+            <button class="buttonClass" ng-click="submitSurveyForm()" ng-class="{filledOutCorrectly: userForm.$valid}" ng-disabled="userForm.$invalid"> Submit </button>
 
         </form>
 <!--<p>{{formData}}</p>-->

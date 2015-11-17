@@ -134,25 +134,57 @@ a.navbar-brand {
 .btn-facebook .badge{color:#3b5998;background-color:#fff}
 
 .signInDiv{
-    width: 31%;
-    height: 80px;
-    background-color: #FFF6EB;
+
     text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
 
 .facebookImg{
-text-align: center;
-margin-left: auto;
-margin-right: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 20px;
 }
 
 .titleAndButton{
-    position: relative;
-    top: 24px;
+    position:relative;
+    top:30px;
 }
 
+.backgroundDiv{
+    height: 382px;
+    background-color: rgba(240, 240, 240, 0.85);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 750px) {
+    .backgroundDiv{
+        height: 450px;
+    }
+}
+
+@media screen and (min-width: 950px) {
+    .backgroundDiv{
+        height: 600px;
+    }
+}
+
+@media screen and (min-width: 950px) {
+    .backgroundDiv{
+        height: 700px;
+    }
+}
+
+
+@media screen and (min-width: 1750px) {
+    .backgroundDiv{
+        height: 850px;
+    }
+}
 
 /* ***************************** START VIEW CAMPAIGNS CSS ******************************/
 .listItemSection{
@@ -253,3 +285,4 @@ margin-right: auto;
 
 
 /* ***************************** END SignUp FOR USER ********************************/
+

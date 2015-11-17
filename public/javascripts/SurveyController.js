@@ -4,13 +4,24 @@ var app = angular.module('UserSurveyApp', ['ngFileUpload']);
 app.controller('SurveyController', ['$scope', '$http', '$location', 'Upload', function($scope, $http, $location, Upload){
     $scope.formData = {};
 
+
+    $scope.submitSurvey = function(isValid) {
+
+        //check to make sure the form is completely valid
+        if (isValid) {
+            alert('Congrats! You\'ve successfully submitted the survey.');
+        }
+    };
+
     $scope.submitSurveyForm = function(event){
 
-        console.log($scope.formData);
 
-        $scope.upload($scope.file);
 
-        $location.path('/');
+            console.log($scope.formData);
+
+            $scope.upload($scope.file);
+
+            $location.path('/');
     };
 
     $scope.upload = function (file){
