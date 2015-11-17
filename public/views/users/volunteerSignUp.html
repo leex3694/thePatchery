@@ -88,7 +88,7 @@
                         ng-options="option.campaignName for option in campaignList.availableOptions"
                         ng-model="campaignSelect" required></select><span class="redStar">*</span>
             </div>
-            <button class="buttonClass" ng-click="sendSignUpForm()" ng-class="{filledOutCorrectly: userForm.$valid}"  >Submit</button>
+            <button class="buttonClass" ng-click="sendSignUpForm()" ng-class="{filledOutCorrectly: userForm.$valid}" ng-disabled="userForm.$invalid" >Submit</button>
         </form>
     </div>
 
