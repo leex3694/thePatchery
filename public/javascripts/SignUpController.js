@@ -70,7 +70,7 @@ sign.controller('SignUpController', ['$scope','$http', function($scope, $http){
         };
         console.log(sendSignUpData);
 
-
+        alert('Thank you for signing up!');
 
 
         // This clears out the form on submission
