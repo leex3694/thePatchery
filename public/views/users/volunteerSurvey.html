@@ -35,7 +35,7 @@
                 The Patchery makers
             </p>
 
-<<<<<<< HEAD
+
         <div class = "makeListBody">
             <form name="myForm">
                 <label for="mySelect">Make a choice:</label>
@@ -46,18 +46,12 @@
             <hr>
         </div>
 
-        <form method="POST" enctype="multipart/form-data" class="surveyForm">
-            <label>1. What was your initial impression of the clothes?</label>
-            <input type="text" ng-model="formData.volunteerSurveyQ1">
-=======
         <form method="POST" enctype="multipart/form-data" class="surveyForm" name="userForm" ng-submit="submitSurvey(userForm.$valid)">
             <div class="questionSurvey">
                 <label>1. What was your initial impression of the clothes?</label><br>
                 <textarea type="text" ng-model="formData.volunteerSurveyQ1" required></textarea><br>
             </div>
-            <label>1. What was your initial impression of the clothes?</label><br>
-            <input type="text" ng-model="formData.volunteerSurveyQ1" required><br>
->>>>>>> 9f7ca8978f53566105210a054c975bfbb8194262
+
 
             <div class="questionSurvey">
                 <label>2. What did you think of the quality of the fabric and sewing?</label><br>
