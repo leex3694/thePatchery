@@ -19,16 +19,10 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
     var nineTenTempArray = [];
     $scope.tempTestersArray = [];
 
-
-
-
     $http({
         method: 'GET',
         url: '/makeList/getVolunteers'
     }).then(function (response){
-
-
-
 
         $scope.tempList = response.data;
         $scope.campaignList.selectedOption = {};
@@ -41,22 +35,15 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
 
     });
 
-
-
     $scope.sendData = function(){
 
         generatingTesters();
 
         var dataToSend = {};
 
-
             dataToSend.selectedCampaign = $scope.campaignList.selectedOption;
 
-
-
             dataToSend.selectedSizes = $scope.formData;
-
-
 
             $http({
                 method: 'PUT',
@@ -65,18 +52,7 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
             }).then(function(response){
             });
 
-
-
         acceptNewList();
-
-
-
-
-
-
-        //add sizes to data to send
-
-        //http POST
     };
 
     function generatingTesters() {
@@ -87,11 +63,7 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
         for (var i = 0; i < volunteerList.length; i++) {
 
             switchSizes(volunteerList[i]);
-
-
-
         }
-
 
         function getRandomVolunteer(min, max) {
             return Math.round(Math.random() * (max - min) + min);
@@ -131,7 +103,6 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
         }
 
         selectTester();
-
     }
 
     $scope.regenerateTesters = function(){
@@ -204,8 +175,5 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
         }
 
     }
-
-
-
 
 }]);

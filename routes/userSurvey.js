@@ -4,8 +4,9 @@ var multer = require('multer');
 var upload = multer({dest: 'uploads/'});
 
 var SurveyResults = require('../models/surveyResults');
-var Tester = require('../models/tester.js').schema;
-var User = require('../models/user.js').schema;
+var Campaign = require('../models/campaign');
+var Tester = require('../models/tester');
+var User = require('../models/user');
 
 var router = express.Router();
 
@@ -18,42 +19,52 @@ router.get('/', function(req, res, next) {
 
 router.post('/add', upload.single('file'), function (req, res, next) {
     console.log('Body', req.body);
-    //console.log('ID', req.tester.volunteer1.user.facebook.id);
-    var id = 0;
     var createObj = req.body.formData;
 
     createObj.img = req.file;
+    console.log('Body with image ', createObj);
 
-    //HACK! Remove before deploy
-console.log('this is the User ', req.user);
-    if(req.user){
-        console.log('user in if statement ', user);
-        id = req.volunteer1.user.facebook.id;
-    } else {
-        id = 10156278342525055;
-    }
+   ////////////////Campaign FindOne - campaignName undefined////////////////////
+
 
     SurveyResults.model.create(createObj, function (err, survey) {
+        console.log('something in model create');
 
-        if (err) throw err;
+        Campaign.findOne({campaignName:req.body.selectedCampaign.campaignName} ,function(err, campaign){
 
-        Tester.findOne({_id: id}, function (err, tester) {
+            console.log('this is the campaign name: ', campaign);
+            if (err) throw err;
 
-            console.log('this is the tester', tester);
-            console.log('this is the id ', id);
-            console.log('this is the survey', survey);
+            var foundTester = {};
 
-            //if (!tester.surveyResults) {
-            //    tester.surveyResults = [];
-            //}
-
-            tester.surveyResults.push(survey);
-
-            tester.save(function (err) {
-                if (err) throw err;
-            })
-
+            for(var i = 0; i < campaign.testers.length; i++){
+                if (campaign.testers[i].id == req.user.facebook.id){
+                    foundTester = campaign.testers[i];
+                    console.log('found Tester ', foundTester);
+                }
+                console.log('does not match ', req.user.facebook.id, campaign.testers[i].id);
+            }
         });
+
+    ///////////////////End of Campaign FindOne Issue/////////////////////////////////
+
+        //Tester.findOne({_id: id}, function (err, tester) {
+        //
+        //    console.log('this is the tester', tester);
+        //    console.log('this is the id ', id);
+        //    console.log('this is the survey', survey);
+        //
+        //    //if (!tester.surveyResults) {
+        //    //    tester.surveyResults = [];
+        //    //}
+        //
+        //    tester.surveyResults.push(survey);
+        //
+        //    tester.save(function (err) {
+        //        if (err) throw err;
+        //    })
+        //
+        //});
         res.sendStatus(200);
     });
 });

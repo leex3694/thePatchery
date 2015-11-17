@@ -30,6 +30,45 @@ app.controller('SurveyController', ['$scope', '$http', '$location', 'Upload', fu
 
     };
 
+    $scope.tempList = [];
+    $scope.campaignList = [];
+    $scope.testNameChosen = "";
+    $scope.formData ={};
+
+    $scope.accordion = {
+        current: null
+    };
+
+    $http({method: 'GET', url: '/viewCampaigns/getCampaigns'}).then(function (response) {
+
+        $scope.tempList = response.data;
+        $scope.campaignList.selectedOption = {};
+        $scope.campaignList.availableOptions = [];
+        console.log($scope.tempList);
+        $scope.tempList.forEach(function (item) {
+            $scope.campaignList.availableOptions.push(item);
+        });
+
+        //Set to first available option
+        $scope.campaignList.selectedOption = $scope.campaignList.availableOptions[$scope.campaignList.availableOptions.length - 1];
+
+        $scope.testerList = [];
+
+        if ($scope.campaignList.selectedOption.testers.length > 1) {
+            //Possibly re-work model to be Mixed (Object) vs ArrayList
+            var testers = $scope.campaignList.selectedOption.testers[0].volunteer1;
+
+            console.log(testers);
+
+            console.log('these are the testers now');
+            console.log(testers);
+            for (var i = 0; i < testers.length; i++) {
+                $scope.testerList.push(testers[i]);
+                console.log('testerList');
+                console.log($scope.testerList);
+            }
+        }
+    });
 
 }]);
 
