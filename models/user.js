@@ -4,10 +4,6 @@ var mongoose = require('mongoose'),
     SALT_WORK_FACTOR = 10;
 
 var UserSchema = new Schema({
-
-    //username: { type: String, index: { unique: true } },
-    //password: { type: String },
-    //facebook
     facebook         : {
         id           : String,
         token        : String,
