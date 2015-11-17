@@ -14,3 +14,4 @@ var Tester = mongoose.model('Tester', testerSchema);
 
 exports.schema = testerSchema;
 exports.model = Tester;
+//module.exports = Tester;
