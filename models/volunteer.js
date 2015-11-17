@@ -21,4 +21,3 @@ var Volunteer = mongoose.model('Volunteer', volunteerSchema);
 
 exports.schema = volunteerSchema;
 exports.model = Volunteer;
-//module.exports = Volunteer;
