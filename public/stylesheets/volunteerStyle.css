@@ -10,3 +10,24 @@
 .filledOutCorrectly {
     color:black;
 }
+
+.surveyForm{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px 20px;
+    background-color: rgba(228, 226, 230, 0.51);
+}
+
+.questionSurvey{
+    margin: 11px 0;
+}
+
+.questionSurvey fieldset, textarea{
+    position: relative;
+    left: 17px;
+}
+
+input[type="radio"] {
+    margin: 4px 10px 5px;
+}

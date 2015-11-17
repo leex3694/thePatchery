@@ -36,16 +36,23 @@
             </p>
 
         <form method="POST" enctype="multipart/form-data" class="surveyForm" name="userForm" ng-submit="submitSurvey(userForm.$valid)">
-            <label>1. What was your initial impression of the clothes?</label><br>
-            <input type="text" ng-model="formData.volunteerSurveyQ1" required><br>
+            <div class="questionSurvey">
+                <label>1. What was your initial impression of the clothes?</label><br>
+                <textarea type="text" ng-model="formData.volunteerSurveyQ1" required></textarea><br>
+            </div>
 
-            <label>2. What did you think of the quality of the fabric and sewing?</label><br>
-            <input type="text" ng-model="formData.volunteerSurveyQ2" required><br>
+            <div class="questionSurvey">
+                <label>2. What did you think of the quality of the fabric and sewing?</label><br>
+                <textarea type="text" ng-model="formData.volunteerSurveyQ2" required></textarea><br>
+            </div>
 
-            <label>3. How did the product fit? Was it too loose or too tight? Was it too long or too short? Are the arm, neck and leg openings big enough?</label><br>
-            <input type="text" ng-model="formData.volunteerSurveyQ3" required><br>
+            <div class="questionSurvey">
+                <label>3. How did the product fit? Was it too loose or too tight? Was it too long or too short? Are the arm, neck and leg openings big enough?</label><br>
+                <textarea type="text" ng-model="formData.volunteerSurveyQ3" required></textarea><br>
+            </div>
 
-            <label>4. Based on your overall experience, how likely would you be to:</label><br>
+            <div class="questionSurvey">
+                <label>4. Based on your overall experience, how likely would you be to:</label><br>
                 <fieldset id="purchaseFrom" required>
                     <input type="radio" value="Definitely will" name="purchaseFrom" ng-model="formData.purchaseForm">Definitely will
                     <input type="radio" value="Very likely" name="purchaseFrom" ng-model="formData.purchaseForm">Very likely
@@ -61,24 +68,30 @@
                     <input type="radio" value="Probably not" name="recommend" ng-model="formData.recommended">Probably not
                     <input type="radio" value="Definitely not" name="recommend" ng-model="formData.recommended">Definitely not
                 </fieldset><br>
+            </div>
 
+            <div class="questionSurvey">
             <label>5. If "maybe," "probably not" or "definitely not" for either of the above, why?</label><br>
-            <input type="text" ng-model="formData.volunteerSurveyQ5"><br>
+            <textarea type="text" ng-model="formData.volunteerSurveyQ5"></textarea><br>
+            </div>
 
-            <label>6. Anything on your mind that we didn't ask about?  Here's your chance to say anything!</label><br>
-            <input type="text" ng-model="formData.volunteerSurveyQ6"><br>
+            <div class="questionSurvey">
+                <label>6. Anything on your mind that we didn't ask about?  Here's your chance to say anything!</label><br>
+                <textarea type="text" ng-model="formData.volunteerSurveyQ6"></textarea><br>
+            </div>
 
-            <p>Please upload three photos of your child wearing the outfit. Photos should be taken from the front, back, and side.</p><br>
+            <div class="questionSurvey">
+                <p>Please upload three photos of your child wearing the outfit. Photos should be taken from the front, back, and side.</p><br>
 
-            <label>Front Image:</label>
-            <input type="file" ng-model="file" ngf-select="" name="file" accept="image/*" class="ng-pristine ng-invalid ng-invalid-required" required>
+                <label>Front Image:</label>
+                <input type="file" ng-model="file" ngf-select="" name="file" accept="image/*" class="ng-pristine ng-invalid ng-invalid-required" required><br>
 
-            <!--<label>Back Image:</label>-->
-            <!--<input type="file" ng-model="photos" ngf-select="" ng-model="picFile" name="photos" accept="image/*" required="" class="ng-pristine ng-invalid ng-invalid-required">-->
+                <!--<label>Back Image:</label>-->
+                <!--<input type="file" ng-model="photos" ngf-select="" ng-model="picFile" name="photos" accept="image/*" required="" class="ng-pristine ng-invalid ng-invalid-required">-->
 
-            <!--<label>Side Image:</label>-->
-            <!--<input type="file" ng-model="photos" ngf-select="" ng-model="picFile" name="photos" accept="image/*" required="" class="ng-pristine ng-invalid ng-invalid-required">-->
-
+                <!--<label>Side Image:</label>-->
+                <!--<input type="file" ng-model="photos" ngf-select="" ng-model="picFile" name="photos" accept="image/*" required="" class="ng-pristine ng-invalid ng-invalid-required">-->
+            </div>
             <button class="buttonClass" ng-click="submitSurveyForm()" ng-class="{filledOutCorrectly: userForm.$valid}" ng-disabled="userForm.$invalid"> Submit </button>
 
         </form>
