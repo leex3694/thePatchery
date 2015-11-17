@@ -170,66 +170,68 @@ a.navbar-brand {
 
 
 
-/* ***************************** START SURVEY FOR USER ********************************/
+/* ***************************** START SignUP FOR USER ********************************/
 
-.formDiv{
-    margin-top: 10px;
-    background-color: rgba(242, 243, 245, 0.52);
-    display:block;
-    text-align: center;
-    width:50%;
-    margin-left: auto;
-    margin-right: auto;
-    padding:20px 0;
-}
+/*.formDiv{*/
+    /*margin-top: 10px;*/
+    /*background-color: rgba(242, 243, 245, 0.52);*/
+    /*display:block;*/
+    /*text-align: center;*/
+    /*width:50%;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*padding:20px 0;*/
+/*}*/
 
-.ng-invalid{
-
-}
-
-.css-form input.ng-invalid.ng-touched {
-    background-color: #FA787E;
-    color:white;
-}
-
-.css-form button.ng-invalid {
-    background-color: #FA787E;
-}
+/*.css-form input.ng-invalid.ng-touched {*/
+    /*background-color: #FA787E;*/
+    /*color:white;*/
+/*}*/
 
 
-.css-form input.ng-valid.ng-touched {
-    background-color: #78FA89;
-    transition:0.5s linear all
-}
+/*.css-form input.ng-valid.ng-touched {*/
+    /*background-color: #78FA89;*/
+    /*transition:0.5s linear all*/
+/*}*/
 
-.buttonClass{
-    color: #C7C7C7;
-}
+/*.buttonClass{*/
+    /*color: #C7C7C7;*/
+/*}*/
 
-.filledOutCorrectly {
-    color:black;
-}
+/*.filledOutCorrectly {*/
+    /*color:black;*/
+/*}*/
 
-input {
-    width: 20%;
-}
+/*input {*/
+    /*width: 20%;*/
+/*}*/
 
-select{
-    width:20%
-}
+/*select{*/
+    /*width:20%*/
+/*}*/
 
-.formSectionTitle{
-    width: 20%;
-    font-size: 19px;
-    text-align: right;
-    position: relative;
-    right: 30px;
-}
+/*.formSectionTitle{*/
+    /*width: 20%;*/
+    /*font-size: 19px;*/
+    /*text-align: right;*/
+    /*position: relative;*/
+    /*right: 30px;*/
+/*}*/
 
-.redStar{
-    color:red;
-    position: relative;
-    top:2px;
-}
+/*.redStar{*/
+    /*color:red;*/
+    /*position: relative;*/
+    /*top:2px;*/
+/*}*/
 
-/* ***************************** END SURVEY FOR USER ********************************/
+
+
+
+/*@media screen and (min-width: 480px) {*/
+    /*body {*/
+        /*background-color: lightgreen;*/
+    /*}*/
+/*}*/
+
+
+/* ***************************** END SignUp FOR USER ********************************/

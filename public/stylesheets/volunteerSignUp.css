@@ -1,0 +1,141 @@
+
+.pageTitle,.test-title{
+    text-align: center;
+}
+
+.navbar-brand img {
+    height: 30px;
+}
+
+a.navbar-brand {
+    padding: 10px;
+}
+
+/*.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }*/
+
+/*.headerLogo {*/
+    /*height: 200px;*/
+/*}*/
+
+/*.landingButtons {*/
+    /*margin: 15px 40px 15px 40px;*/
+/*}*/
+
+.btn-social {
+    width: 230px;
+}
+
+.btn-social{position:relative;padding-left:44px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.btn-social>:first-child{position:absolute;left:0;top:0;bottom:0;width:32px;line-height:34px;font-size:1.6em;text-align:center;border-right:1px solid rgba(0,0,0,0.2)}
+/*.btn-social.btn-lg{padding-left:61px}.btn-social.btn-lg>:first-child{line-height:45px;width:45px;font-size:1.8em}*/
+/*.btn-social.btn-sm{padding-left:38px}.btn-social.btn-sm>:first-child{line-height:28px;width:28px;font-size:1.4em}*/
+/*.btn-social.btn-xs{padding-left:30px}.btn-social.btn-xs>:first-child{line-height:20px;width:20px;font-size:1.2em}*/
+/*.btn-social-icon{position:relative;padding-left:44px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;height:34px;width:34px;padding:0}.btn-social-icon>:first-child{position:absolute;left:0;top:0;bottom:0;width:32px;line-height:34px;font-size:1.6em;text-align:center;border-right:1px solid rgba(0,0,0,0.2)}*/
+/*.btn-social-icon.btn-lg{padding-left:61px}.btn-social-icon.btn-lg>:first-child{line-height:45px;width:45px;font-size:1.8em}*/
+/*.btn-social-icon.btn-sm{padding-left:38px}.btn-social-icon.btn-sm>:first-child{line-height:28px;width:28px;font-size:1.4em}*/
+/*.btn-social-icon.btn-xs{padding-left:30px}.btn-social-icon.btn-xs>:first-child{line-height:20px;width:20px;font-size:1.2em}*/
+/*.btn-social-icon>:first-child{border:none;text-align:center;width:100% !important}*/
+/*.btn-social-icon.btn-lg{height:45px;width:45px;padding-left:0;padding-right:0}*/
+/*.btn-social-icon.btn-sm{height:30px;width:30px;padding-left:0;padding-right:0}*/
+/*.btn-social-icon.btn-xs{height:22px;width:22px;padding-left:0;padding-right:0}*/
+.btn-facebook{color:#fff;background-color:#3b5998;border-color:rgba(0,0,0,0.2)}.btn-facebook:focus,.btn-facebook.focus{color:#fff;background-color:#2d4373;border-color:rgba(0,0,0,0.2)}
+.btn-facebook:hover{color:#fff;background-color:#2d4373;border-color:rgba(0,0,0,0.2)}
+.btn-facebook:active,.btn-facebook.active,.open>.dropdown-toggle.btn-facebook{color:#fff;background-color:#2d4373;border-color:rgba(0,0,0,0.2)}.btn-facebook:active:hover,.btn-facebook.active:hover,.open>.dropdown-toggle.btn-facebook:hover,.btn-facebook:active:focus,.btn-facebook.active:focus,.open>.dropdown-toggle.btn-facebook:focus,.btn-facebook:active.focus,.btn-facebook.active.focus,.open>.dropdown-toggle.btn-facebook.focus{color:#fff;background-color:#23345a;border-color:rgba(0,0,0,0.2)}
+.btn-facebook:active,.btn-facebook.active,.open>.dropdown-toggle.btn-facebook{background-image:none}
+.btn-facebook.disabled,.btn-facebook[disabled],fieldset[disabled] .btn-facebook,.btn-facebook.disabled:hover,.btn-facebook[disabled]:hover,fieldset[disabled] .btn-facebook:hover,.btn-facebook.disabled:focus,.btn-facebook[disabled]:focus,fieldset[disabled] .btn-facebook:focus,.btn-facebook.disabled.focus,.btn-facebook[disabled].focus,fieldset[disabled] .btn-facebook.focus,.btn-facebook.disabled:active,.btn-facebook[disabled]:active,fieldset[disabled] .btn-facebook:active,.btn-facebook.disabled.active,.btn-facebook[disabled].active,fieldset[disabled] .btn-facebook.active{background-color:#3b5998;border-color:rgba(0,0,0,0.2)}
+.btn-facebook .badge{color:#3b5998;background-color:#fff}
+
+
+.formDiv{
+    margin-top: 10px;
+    background-color: rgba(242, 243, 245, 0.52);
+    display:block;
+    text-align: center;
+    width:50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding:20px 0;
+}
+
+.css-form input.ng-invalid.ng-touched {
+    background-color: #FA787E;
+    color:white;
+}
+
+
+.css-form input.ng-valid.ng-touched {
+    background-color: #78FA89;
+    transition:0.5s linear all
+}
+
+.buttonClass{
+    float: right;
+    color: #C7C7C7;
+    position: relative;
+        right: 10px;
+        bottom: 15px;
+}
+
+.filledOutCorrectly {
+    color:black;
+}
+
+input, select{
+    width: 30%;
+}
+
+
+
+.formSectionTitle{
+    width: 30%;
+    font-size: 19px;
+    text-align: right;
+    position: relative;
+    right: 30px;
+}
+
+.redStar{
+    color:red;
+    position: relative;
+    top:2px;
+}
+
+
+
+
+@media screen and (min-width: 300px) and (max-width: 630px) {
+    body {
+    }
+
+    .formDiv{
+        width:95%;
+        text-align: left;
+
+    }
+
+    .formClass{
+        position: relative;
+        left:17px;
+    }
+
+    .formSectionTitle{
+        width: 30%;
+        position: relative;
+        right: 10px;
+    }
+
+    input, select{
+        width: 40%;
+    }
+
+    .buttonClass{
+        float:right;
+        position: relative;
+            right:27px;
+            bottom:15px;
+    }
+
+
+}
+
+
+/* ***************************** END SignUp FOR USER ********************************/
