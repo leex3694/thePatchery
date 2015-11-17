@@ -35,6 +35,9 @@ router.post('/volunteersData', function (req, res, next){
     Campaign.findOne({campaignName: req.body.campaignSelect.campaignName} ,function(err, campaign){
         console.log('this is the campaign name: ', campaign);
 
+        //Adds user to req.body so it can be passed into Volunteer model
+        req.body.user = req.user;
+
         var volunteer = new Volunteer(req.body);
 
         campaign.volunteers.push(volunteer);

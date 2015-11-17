@@ -20,22 +20,32 @@ app.controller('ViewCampaignController', ['$scope', '$http', function($scope, $h
         $scope.tempList = response.data;
         $scope.campaignList.selectedOption = {};
         $scope.campaignList.availableOptions = [];
-
+        console.log($scope.tempList);
         $scope.tempList.forEach(function(item){
             $scope.campaignList.availableOptions.push(item);
         });
 
-        $scope.campaignList.selectedOption = $scope.campaignList.availableOptions[0];
+        //Set to first available option
+        $scope.campaignList.selectedOption = $scope.campaignList.availableOptions[$scope.campaignList.availableOptions.length - 1];
 
         $scope.testerList = [];
-        var testers = ($scope.campaignList.selectedOption.testers[0].volunteer1);
-        console.log('these are the testers now');
-        console.log(testers);
-        for(var i = 0; i < testers.length; i++){
-            $scope.testerList.push(testers[i]);
-            console.log('testerList');
-            console.log($scope.testerList);
+
+
+        if($scope.campaignList.selectedOption.testers.length > 1){
+            //Possibly re-work model to be Mixed (Object) vs ArrayList
+            var testers = $scope.campaignList.selectedOption.testers[0].volunteer1;
+
+            console.log(testers);
+
+            console.log('these are the testers now');
+            console.log(testers);
+            for(var i = 0; i < testers.length; i++){
+                $scope.testerList.push(testers[i]);
+                console.log('testerList');
+                console.log($scope.testerList);
+            }
         }
+
 
 ////////////End GET to generate the campaign names for the drop-down menus///////////////
 
@@ -44,14 +54,17 @@ app.controller('ViewCampaignController', ['$scope', '$http', function($scope, $h
             $scope.hasChanged = function(){
                 $scope.testerList = [];
                 console.log('this is the changed function',$scope.campaignList.selectedOption);
-                var testers = ($scope.campaignList.selectedOption.testers[0].volunteer1);
-                console.log('these are the testers now');
-                console.log(testers);
+                if($scope.campaignList.selectedOption.testers.length > 1) {
 
-                for(var i = 0; i < testers.length; i++){
-                    $scope.testerList.push(testers[i]);
-                    console.log('testerList');
-                    console.log($scope.testerList);
+                    var testers = ($scope.campaignList.selectedOption.testers[0].volunteer1);
+                    console.log('these are the testers now');
+                    console.log(testers);
+
+                    for (var i = 0; i < testers.length; i++) {
+                        $scope.testerList.push(testers[i]);
+                        console.log('testerList');
+                        console.log($scope.testerList);
+                    }
                 }
             };
 
