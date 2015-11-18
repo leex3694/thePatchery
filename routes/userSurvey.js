@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/add', upload.single('file'), function (req, res, next) {
-    console.log('Body', req.body);
+    //console.log('Body', req.body);
     var createObj = req.body.formData;
     var campaignName1 = req.body.campaignName;
 
