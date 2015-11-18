@@ -4,6 +4,7 @@ var passport = require('passport');
 var path = require('path');
 var Volunteer = require('../models/volunteer').model;
 var Campaign = require('../models/campaign');
+var User = require('../models/user');
 
 
 /* GET users listing. */
@@ -15,21 +16,8 @@ router.get('/', function(req,res,next){
   res.sendFile(path.resolve(__dirname, '../public/views/users/volunteerSignUp.html'));
 });
 
-//router.post('/',
-//    passport.authenticate('local', {
-//      successRedirect: '/views/users/signUpForm.html',
-//      failureRedirect: '/'
-//    })
-//);
 
-//router.get('/facebook', passport.authenticate('facebook', { scope : 'email' }));
 
-// handle the callback after facebook has authenticated the user
-//router.get('/facebook/callback',
-//    passport.authenticate('facebook', {
-//        successRedirect : '/signUp',
-//        failureRedirect : '/'
-//    }));
 
 router.post('/volunteersData', function (req, res, next){
     Campaign.findOne({campaignName: req.body.campaignSelect.campaignName} ,function(err, campaign){
@@ -61,13 +49,13 @@ router.post('/volunteersData', function (req, res, next){
     res.sendStatus(200);
 });
 
-// =====================================
-// LOGOUT ==============================
-// =====================================
-//app.get('/logout', function(req, res) {
-//    req.logout();
-//    res.redirect('/');
-//});
+ //=====================================
+ //LOGOUT ==============================
+ //=====================================
+router.get('/logout', function(req, res) {
+    req.logout();
+    res.redirect('/facebookButton');
+});
 
 
 
