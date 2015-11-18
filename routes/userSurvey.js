@@ -35,12 +35,14 @@ router.post('/add', upload.single('file'), function (req, res, next) {
                 campaign.testers[0].surveyResults.push(survey); //THis is a hacky way to get it to post to the first person, needs to go by Tester
                 console.log('this is the survey ',survey);
                 console.log('something in model create');
-            console.log('campaignName1 ', campaignName1);
-            console.log('this is the campaign');
-            console.log(campaign);
-            console.log('this is campaignName');
-            console.log(campaignName1);
+                console.log('campaignName1 ', campaignName1);
+                console.log('this is the campaign');
+                console.log(campaign);
+                console.log('this is campaignName');
+                console.log(campaignName1);
 
+
+                console.log("trying to find the tester facebook id " ,campaign.testers[0].volunteer1[0].user[0].facebook.id);
 
 
 
