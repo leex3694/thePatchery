@@ -21,36 +21,21 @@ sign.controller('SignUpController', ['$scope','$http', function($scope, $http){
         method: 'GET',
         url: '/makeList/getVolunteers'
     }).then(function (response){
-        //$scope.volunteer = response.data;
-        //console.log($scope.volunteer);
-        //console.log($scope.volunteer.length);
-
-
 
         $scope.tempList = response.data;
-
-        //console.log($scope.campaignList.volunteers[0].length);
-
         $scope.campaignList.selectedOption = {};
         $scope.campaignList.availableOptions = [];
         $scope.tempList.forEach(function(item){
             $scope.campaignList.availableOptions.push(item);
         });
-
-        $scope.campaignList.selectedOption = $scope.campaignList.availableOptions[0];
+        //Sets to first available option
+        $scope.campaignList.selectedOption = $scope.campaignList.availableOptions[$scope.campaignList.availableOptions.length - 1];
 
         console.log($scope.campaignList);
         console.log($scope.campaignList.length);
     });
 
-    //$scope.goFacebook = function (){
-    //    $scope.signUpForm = true;
-    //    $scope.faceButtonShow = false;
-    //};
-
-
     $scope.formData ={};
-
 
     $scope.sendSignUpForm = function (isValid){
 

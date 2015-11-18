@@ -46,8 +46,9 @@ router.put('/postTesterArray', function(req, res, next){
                     sendgrid.send({
                         to:       to_address,
                         from:     'briandmpls@gmail.com',
-                        subject:  'This is a test from our group project',
-                        text:     'Please reply if it makes it to you.'
+                        subject:  'You have been chosen as a Patchery tester!',
+                        text:     'Congratulations.You have been chosen as a Patchery tester. ' +
+                        'We randomly select a volunteer from each size needed, and you have been chosen. '
                     }, function(err, json) {
                         if (err) { return res.send("email error"); }
                         //res.send("email success");
