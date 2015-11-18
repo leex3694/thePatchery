@@ -87,8 +87,8 @@ passport.use('local', new localStrategy({passReqToCallback : true, usernameField
 passport.use(new FacebookStrategy({
       clientID: 711298905667165,
       clientSecret: 'fbf9bc40358b4b2a03ca8c07934a7b63',
-      callbackURL: "https://limitless-cove-3511.herokuapp.com/facebookButton/facebook/callback",
-      //callbackURL: "http://localhost:3000/facebookButton/facebook/callback",
+      //callbackURL: "https://limitless-cove-3511.herokuapp.com/facebookButton/facebook/callback",
+      callbackURL: "http://localhost:3000/facebookButton/facebook/callback",
       profileFields: ["emails", "displayName", "name"]
     },
 
@@ -209,6 +209,7 @@ app.use('/makeList',makeList);
 app.use('/userSurvey', userSurvey);
 app.use('/facebookButton', facebookButton);
 app.use('/surveyLogin', surveyLogin);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
