@@ -2,10 +2,6 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
-a {
-  color: #00B7FF;
-}
 /* ***************************** START Home Page CSS **************************************/
 .navbar-brand img {
   height: 30px;
@@ -30,20 +26,27 @@ a.navbar-brand {
 
 
 /* ***************************** START CREATE CAMPAIGN CSS **************************************/
+.pageImg {
+    margin: 0 auto;
+    display: block;
+}
+
 .pageTitle,.test-title{
   text-align: center;
 }
 
 .overallContainer,.makeListContainer{
   width: 75%;
-  background-color: #E6E6E6;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 33px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: rgba(197, 197, 197, 0.33);
-  box-shadow: 10px 10px 10px #E0E0E0;
+    margin: 15px auto;
+    display: block;
+  /*background-color: #E6E6E6;*/
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+  /*padding: 33px;*/
+  /*border-width: 2px;*/
+  /*border-style: solid;*/
+  /*border-color: rgba(197, 197, 197, 0.33);*/
+  /*box-shadow: 10px 10px 10px #E0E0E0;*/
 }
 
 .createCampaignTitles{
@@ -95,9 +98,10 @@ a.navbar-brand {
 }
 
 .submitNewCampaign{
-  float:right;
-  width: 20%;
-  background-color: rgba(94, 141, 102, 0.76)
+  /*float:right;*/
+  margin: 0 auto;
+    display: block;
+    width: 20%;
 }
 
 .formText, .makeListBody,#dropdownTestName{
