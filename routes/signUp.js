@@ -44,8 +44,6 @@ router.post('/volunteersData', function (req, res, next){
 
         campaign.save(function(err){
             if (err) throw err
-
-
         })
 
 

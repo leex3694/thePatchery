@@ -17,33 +17,52 @@ router.get('/', function(req, res, next) {
 //('/add', upload.single('file'), function(req, res, next) {
 //upload.array('photos', 3)
 
+
+
 router.post('/add', upload.single('file'), function (req, res, next) {
     console.log('Body', req.body);
     var createObj = req.body.formData;
+    var campaignName1 = req.body.campaignName;
 
     createObj.img = req.file;
     console.log('Body with image ', createObj);
 
-   ////////////////Campaign FindOne - campaignName undefined////////////////////
+
+        //currently finding campaign and posting to the testers in the selected campaign, but needs to be updated to go by Tester
+        Campaign.findOne({campaignName:campaignName1} ,function(err, campaign){
+            console.log('testerssss ', campaign.testers[0].surveyResults);
+            SurveyResults.model.create(createObj, function (err, survey) {
+                campaign.testers[0].surveyResults.push(survey); //THis is a hacky way to get it to post to the first person, needs to go by Tester
+                console.log('this is the survey ',survey);
+                console.log('something in model create');
+            console.log('campaignName1 ', campaignName1);
+            console.log('this is the campaign');
+            console.log(campaign);
+            console.log('this is campaignName');
+            console.log(campaignName1);
 
 
-    SurveyResults.model.create(createObj, function (err, survey) {
-        console.log('something in model create');
 
-        Campaign.findOne({campaignName:req.body.selectedCampaign.campaignName} ,function(err, campaign){
 
-            console.log('this is the campaign name: ', campaign);
+                campaign.save(function(err) {
+                    if (err) throw err
+                });
+
+
+
             if (err) throw err;
 
-            var foundTester = {};
+            //    This is the facebook thing that Joel was helping out with...not currently working well
+            //var foundTester = {};
+            //
+            //for(var i = 0; i < campaign.testers.length; i++){
+            //    if (campaign.testers[i].id == req.user.facebook.id){
+            //        foundTester = campaign.testers[i];
+            //        console.log('found Tester ', foundTester);
+            //    }
+            //    console.log('does not match ', req.user.facebook.id, campaign.testers[i].id);
+            //}
 
-            for(var i = 0; i < campaign.testers.length; i++){
-                if (campaign.testers[i].id == req.user.facebook.id){
-                    foundTester = campaign.testers[i];
-                    console.log('found Tester ', foundTester);
-                }
-                console.log('does not match ', req.user.facebook.id, campaign.testers[i].id);
-            }
         });
 
     ///////////////////End of Campaign FindOne Issue/////////////////////////////////

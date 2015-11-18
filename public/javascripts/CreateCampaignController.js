@@ -61,11 +61,15 @@ app.controller('CreateCampaignController', ['$scope', '$http', function($scope, 
                 }).then(function (response) {
                     var res = response.data;
 
-                    $scope.resultedCampaignTitle = (res[res.length - 1].campaignName);
-                    $scope.resultedCampaignStartSignUp = (res[res.length - 1].signupStart);
-                    $scope.resultedCampaignEndSignUp = (res[res.length - 1].signupEnd);
-                    $scope.resultedCampaignStartSurvey = (res[res.length - 1].surveyStart);
-                    $scope.resultedCampaignEndSurvey = (res[res.length - 1].surveyEnd);
+                    alert('You successfully created a new campaign');
+
+
+                    //This was working at one point and displayed the recently created campaign but now is pulling the wrong campaign
+                    //$scope.resultedCampaignTitle = (res[res.length - 1].campaignName);
+                    //$scope.resultedCampaignStartSignUp = (res[res.length - 1].signupStart);
+                    //$scope.resultedCampaignEndSignUp = (res[res.length - 1].signupEnd);
+                    //$scope.resultedCampaignStartSurvey = (res[res.length - 1].surveyStart);
+                    //$scope.resultedCampaignEndSurvey = (res[res.length - 1].surveyEnd);
                 });
             });
         }
