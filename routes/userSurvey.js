@@ -32,12 +32,12 @@ router.post('/add', upload.single('file'), function (req, res, next) {
         Campaign.findOne({campaignName:campaignName1} ,function(err, campaign){
             //console.log('testerssss ', campaign.testers[0].surveyResults);
             SurveyResults.model.create(createObj, function (err, survey) {
-                campaign.testers[0].surveyResults.push(survey); //THis is a hacky way to get it to post to the first person, needs to go by Tester
-                console.log("trying to find the tester facebook id " ,campaign.testers[0].volunteer1[0].user[0].facebook.id);
+                //campaign.testers[0].surveyResults.push(survey); //THis is a hacky way to get it to post to the first person, needs to go by Tester
 
-                campaign.save(function(err) {
-                    if (err) throw err
-                });
+
+                //console.log("trying to find the tester facebook id " ,campaign.testers[0].volunteer1[0].user[0]);
+
+                //console.log("Trying to find facebook user ",campaign.testers[0].volunteer1[0].user[0]);
 
 
 
@@ -46,15 +46,21 @@ router.post('/add', upload.single('file'), function (req, res, next) {
             //    This is the facebook thing that Joel was helping out with...not currently working well
             var foundTester = {};
             //
-            for(var i = 0; i < campaign.testers.length; i++){
-                console.log('campaign testesrs ' , campaign.testers);
-            }
-            //    if (campaign.testers[i].id == req.user.facebook.id){
+            //for(var i = 0; i < campaign.testers.length; i++){
+            //    console.log('campaign testesrs ' , campaign.testers);
+            //
+            //    if (campaign.testers[i].volunteer1[0].user[0].facebook.id== req.user.facebook.id){
             //        foundTester = campaign.testers[i];
             //        console.log('found Tester ', foundTester);
+            //        campaign.foundTester.surveyResults.push(survey); //THis is a hacky way to get it to post to the first person, needs to go by Tester
+            //
+            //
             //    }
             //    console.log('does not match ', req.user.facebook.id, campaign.testers[i].id);
             //}
+            //    campaign.save(function(err) {
+            //        if (err) throw err
+            //    });
 
         });
 
