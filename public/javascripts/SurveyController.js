@@ -17,29 +17,14 @@ app.controller('SurveyController', ['$scope', '$http', '$location', 'Upload', fu
 
 
 
-            console.log($scope.formData);
+            console.log('this is form data ', $scope.formData);
 
             $scope.upload($scope.file);
 
             $location.path('/');
     };
 
-    $scope.upload = function (file){
-        var data = {file: file, formData: $scope.formData};
-        console.log(data);
-        Upload.upload({
-            url: '/userSurvey/add',
-            data: data
-        }).then(function (resp) {
-            console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
-        }, function (resp) {
-            console.log('Error status: ' + resp.status);
-        }, function (evt) {
-            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-            console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
-        });
 
-    };
 
     $scope.tempList = [];
     $scope.campaignList = [];
@@ -55,14 +40,15 @@ app.controller('SurveyController', ['$scope', '$http', '$location', 'Upload', fu
         $scope.tempList = response.data;
         $scope.campaignList.selectedOption = {};
         $scope.campaignList.availableOptions = [];
-        console.log($scope.tempList);
         $scope.tempList.forEach(function (item) {
             $scope.campaignList.availableOptions.push(item);
+            //console.log($scope.campaignList.availableOptions(item));
         });
+        console.log('this is templist ', $scope.tempList);
 
         //Set to first available option
         $scope.campaignList.selectedOption = $scope.campaignList.availableOptions[$scope.campaignList.availableOptions.length - 1];
-
+        console.log('selected option ', $scope.campaignList.selectedOption);
         $scope.testerList = [];
 
         if ($scope.campaignList.selectedOption.testers.length > 1) {
@@ -80,6 +66,28 @@ app.controller('SurveyController', ['$scope', '$http', '$location', 'Upload', fu
             }
         }
     });
+
+
+
+    $scope.upload = function (file){
+        var data = {file: file, formData: $scope.formData, campaignName: $scope.campaignList.selectedOption.campaignName};
+        console.log(data);
+        Upload.upload({
+            url: '/userSurvey/add',
+            data: data
+        }).then(function (resp) {
+            console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
+        }, function (resp) {
+            console.log('Error status: ' + resp.status);
+        }, function (evt) {
+            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+            console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+        });
+
+    };
+
+
+
 
 }]);
 

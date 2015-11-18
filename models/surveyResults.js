@@ -11,7 +11,7 @@ var surveySchema = new Schema ({
     question4b: String,
     question5: String,
     question6: String,
-    imgFront: Object,
+    file: Object,
     imgBack: Object,
     imgSide: Object
 });

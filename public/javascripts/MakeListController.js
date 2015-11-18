@@ -33,6 +33,7 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
 
         $scope.campaignList.selectedOption = $scope.campaignList.availableOptions[0];
 
+
     });
 
     $scope.sendData = function(){
