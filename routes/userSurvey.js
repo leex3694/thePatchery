@@ -24,27 +24,16 @@ router.post('/add', upload.single('file'), function (req, res, next) {
     var createObj = req.body.formData;
     var campaignName1 = req.body.campaignName;
 
-    createObj.img = req.file;
+    createObj.file = req.file;
     console.log('Body with image ', createObj);
 
 
         //currently finding campaign and posting to the testers in the selected campaign, but needs to be updated to go by Tester
         Campaign.findOne({campaignName:campaignName1} ,function(err, campaign){
-            console.log('testerssss ', campaign.testers[0].surveyResults);
+            //console.log('testerssss ', campaign.testers[0].surveyResults);
             SurveyResults.model.create(createObj, function (err, survey) {
                 campaign.testers[0].surveyResults.push(survey); //THis is a hacky way to get it to post to the first person, needs to go by Tester
-                console.log('this is the survey ',survey);
-                console.log('something in model create');
-                console.log('campaignName1 ', campaignName1);
-                console.log('this is the campaign');
-                console.log(campaign);
-                console.log('this is campaignName');
-                console.log(campaignName1);
-
-
                 console.log("trying to find the tester facebook id " ,campaign.testers[0].volunteer1[0].user[0].facebook.id);
-
-
 
                 campaign.save(function(err) {
                     if (err) throw err
@@ -55,9 +44,11 @@ router.post('/add', upload.single('file'), function (req, res, next) {
             if (err) throw err;
 
             //    This is the facebook thing that Joel was helping out with...not currently working well
-            //var foundTester = {};
+            var foundTester = {};
             //
-            //for(var i = 0; i < campaign.testers.length; i++){
+            for(var i = 0; i < campaign.testers.length; i++){
+                console.log('campaign testesrs ' , campaign.testers);
+            }
             //    if (campaign.testers[i].id == req.user.facebook.id){
             //        foundTester = campaign.testers[i];
             //        console.log('found Tester ', foundTester);
