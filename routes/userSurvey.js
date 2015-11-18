@@ -53,14 +53,17 @@ router.post('/add', upload.single('file'), function (req, res, next) {
                     console.log('found Tester ', foundTester);
 
                     SurveyResults.model.create(createObj, function (err, survey) {
+
                         campaign.testers[0].surveyResults.push(survey); //THis is a hacky way to get it to post to the first person, needs to go by Tester
+                        console.log(campaign.testers[0].surveyResults);
+                        campaign.save(function(err) {
+                            if (err) throw err
+                        });
+                    });
 
-                });
+                }
 
-            }
-                campaign.save(function(err) {
-                    if (err) throw err
-                });
+
 
         };
 
@@ -83,7 +86,6 @@ router.post('/add', upload.single('file'), function (req, res, next) {
         //    })
         //
         //});
-        res.sendStatus(200);
     });
 });
 
