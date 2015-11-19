@@ -17,13 +17,15 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/add', upload.single('file'), function (req, res, next) {
-    console.log('Body', req.body);
+    //console.log('Body', req.body);
     var createObj = req.body.formData;
     var campaignName1 = req.body.campaignName;
 
     createObj.file = req.file;
     console.log('Body with image ', createObj);
+    createObj.user = req.user;
 
+    console.log('user data' , createObj.user);
 
         //currently finding campaign and posting to the testers in the selected campaign, but needs to be updated to go by Tester
         Campaign.findOne({campaignName:campaignName1} ,function(err, campaign){
