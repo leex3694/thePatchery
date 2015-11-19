@@ -38,9 +38,6 @@ app.controller('ViewCampaignController', ['$scope', '$http', function($scope, $h
                 for (var surIt = 0; surIt < $scope.campaignList.selectedOption.testers[0].volunteer1.length; surIt++) {
 
 
-
-            console.log(testers);
-
                     if ($scope.campaignList.selectedOption.testers[0].volunteer1[volIt].user[0].facebook.id == $scope.campaignList.selectedOption.testers[0].surveyResults[surIt].user[0].facebook.id && $scope.campaignList.selectedOption.testers.length >= 1) {
 
                         //console.log("survey results id ", $scope.campaignList.selectedOption.testers[0].surveyResults[4].user[0].facebook.id);
