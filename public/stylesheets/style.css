@@ -61,20 +61,58 @@ header {
     margin: 20px auto 35px auto;
 }
 
-.createCampaignTitles{
-  font-size: 15px;
-  /*width:20%;*/
+.Grid {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
+
+.Grid-cell {
+    flex: 1;
+}
+
+.Grid--center {
+    align-items: center;
+}
+
+.Grid--guttersLg {
+    margin: -1.5em 0 1.5em -1.5em;
+}
+
+
+.InputAddOn {
+    display: flex;
+}
+
+.InputAddOn-field,
+.InputAddOn-item {
+    border: 1px solid rgba(147, 128, 108, 0.25);
+    padding: 0.5em 0.75em;
+}
+
+
+
+
+
+
+
+/*.createCampaignTitles{*/
+  /*font-size: 15px;*/
+  /*!*width:20%;*!*/
+/*}*/
 
 /*.createCampaignTitles input {*/
 
 /*}*/
 
-.createCampaignInputs{
-    width: 250px;
-    margin: 0;
-    box-sizing: border-box;
-}
+
+/*.createCampaignInputs{*/
+    /*width: 250px;*/
+    /*margin: 0;*/
+    /*box-sizing: border-box;*/
+/*}*/
 
 /*.oneLineCreateCampaign{*/
   /*display:block;*/
@@ -84,57 +122,44 @@ header {
 
 
 /*Individual titles on Create Campaign. Moving them a little bit so they align together. Also the resulted new Campaign */
-.startSignUp .endSignup .startSurvey .endSurvey {
-    font-size: 15px;
-    text-align: right;
-}
+/*.startSignUp .endSignup .startSurvey .endSurvey {*/
+    /*font-size: 15px;*/
+    /*!*text-align: right;*!*/
+/*}*/
 
-.dateLabels {
-    font-size: 15px;
-    text-align: center;
-}
+/*.dateLabels {*/
+    /*font-size: 15px;*/
+    /*text-align: center;*/
+/*}*/
 
-.formSignUpDates .formSurveyDates input {
-    width: 75px;
-    margin: 0;
-    box-sizing: border-box;
-    display: inline-block;
-}
+/*.formDates input {*/
+    /*width: 150px;*/
+    /*margin: 0;*/
+    /*box-sizing: border-box;*/
+    /*display: inline-block;*/
+/*}*/
 
-#middleRow {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 25px auto 20px auto;
-}
+/*#middleRow {*/
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*justify-content: center;*/
+    /*margin: 25px auto 20px auto;*/
+/*}*/
 
-.formSignUpDates {
-    display: flex;
-    flex-direction: column;
-    margin-right: 10px;
-    /*float: left;*/
-    /*margin-left: 20px;*/
-}
+/*.formSignUpDates {*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*margin-right: 10px;*/
+    /*!*float: left;*!*/
+    /*!*margin-left: 20px;*!*/
+/*}*/
 
-.formSurveyDates {
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
-    /*margin-left: 20px;*/
-}
-
-#signUp {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 25px auto 20px auto;
-}
-
-.startLabelSignUp {
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
-}
+/*.formSurveyDates {*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*margin-left: 10px;*/
+    /*!*margin-left: 20px;*!*/
+/*}*/
 
 
 /*.startSignUp{*/
