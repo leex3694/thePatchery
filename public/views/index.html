@@ -32,20 +32,30 @@
 </head>
 
 <header>
-    <div class="btn-group">
-        <button class="btn dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="100" aria-expanded="false">
-            <img src="../assets/logo_button.svg">
-            <b class="caret"></b>
-        </button>
+    <div class="container mainHeader">
 
-        <ul class="dropdown-menu">
-            <li><a tabindex="-1" href="/">Home</a></li>
+        <div class="row">
+            <div class="col-md-11 logoHeader">
+                <img src="../assets/mainLogo.svg">
+            </div>
+            <div class="col-md-1">
+                <div class="btn-group">
+                    <button class="btn dropdown-toggle menuButton" data-toggle="dropdown" data-hover="dropdown" data-delay="100" aria-expanded="false">
+                        Menu
+                        <b class="caret"></b>
+                    </button>
 
-            <li class="divider"></li>
-            <li><a tabindex="-1" href="/CreateCampaign">Create Campaign</a></li>
-            <li><a tabindex="-1" href="/MakeList">Make List</a></li>
-            <li><a tabindex="-1" href="/ViewCampaign">View Campaign</a></li>
-        </ul>
+                    <ul class="dropdown-menu">
+                        <li><a tabindex="-1" href="/">Home</a></li>
+
+                        <li class="divider"></li>
+                            <li><a tabindex="-1" href="/CreateCampaign">Create Campaign</a></li>
+                            <li><a tabindex="-1" href="/MakeList">Make List</a></li>
+                            <li><a tabindex="-1" href="/ViewCampaign">View Campaign</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
         <!--<nav class="navbar navbar-default">-->
             <!--<div class="container-fluid">-->

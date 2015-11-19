@@ -1,28 +1,51 @@
 
-<!--<h1 class="pageTitle">Create Campaign</h1>-->
-<img class="pageImg" src="../assets/createCampaign_button.svg">
+<h1 class="pageTitle">Create A Campaign</h1>
     <div class="overallContainer">
         <form>
             <div class="formText">
-                <div class="oneLineCreateCampaign"><label class="createCampaignTitles nameCampaign">Campaign Name </label>
-                    <input type="string" class="createCampaignInputs" ng-model="createNameOfCampaign"></div>
+                <div class="oneLineCreateCampaign">
+                    <label class="createCampaignTitles nameCampaign">Campaign Name </label>
+                    <input type="string" class="createCampaignInputs" ng-model="createNameOfCampaign">
+                    </div>
 
-                <p>Sign-Up Dates</p>
+                <div id="middleRow">
+                    <div class="formSignUpDates">
+                        <p class="dateLabels">Sign-Up</p>
 
-                <div class="oneLineCreateCampaign"><label class="createCampaignTitles startSignUp">Start</label>
-                    <input type="date" class="createCampaignInputs" ng-model="createStartSignUpDate"></div>
 
-                <div class="oneLineCreateCampaign"><label class="createCampaignTitles endSignup">End</label>
-                    <input type="date" class="createCampaignInputs" ng-model="createEndSignUpDate"></div>
+                        <div id="signUp">
+                            <div class="startLabelSignUp">
+                            <div class="oneLineCreateCampaign"><label class="createCampaignTitles startSignUp">Start</label>
+                            </div>
 
-                <p>Survey Dates</p>
+                            <div class="startInputSignUp">
+                            <input type="date" ng-model="createStartSignUpDate"></div>
+                            </div>
 
-                <div class="oneLineCreateCampaign"><label class="createCampaignTitles startSurvey">Start</label>
-                    <input type="date" class="createCampaignInputs" ng-model="createStartSurveyDate"></div>
+                            <div class="endLabelSignUp">
+                            <div class="oneLineCreateCampaign"><label class="createCampaignTitles endSignup">End</label>
+                            </div>
 
-                <div class="oneLineCreateCampaign"><label class="createCampaignTitles endSurvey">End</label>
-                    <input type="date" class="createCampaignInputs" ng-model="createEndSurveyDate"></div>
+                            <div class="endInputSignUp">
+                            <input type="date" ng-model="createEndSignUpDate"></div>
+                            </div>
+                        </div>
+                    </div>
 
+
+
+
+
+
+                    <div class="formSurveyDates">
+                    <p class="dateLabels">Survey</p>
+                        <div class="oneLineCreateCampaign"><label class="createCampaignTitles startSurvey">Start</label>
+                            <input type="date" ng-model="createStartSurveyDate"></div>
+
+                        <div class="oneLineCreateCampaign"><label class="createCampaignTitles endSurvey">End</label>
+                            <input type="date" ng-model="createEndSurveyDate"></div>
+                    </div>
+                </div>
                 <!--Different date picker-->
                 <!--<input type="text" name="daterange" value="01/01/2015 - 01/31/2015" />-->
 
