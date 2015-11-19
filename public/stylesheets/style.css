@@ -61,36 +61,55 @@ header {
     margin: 20px auto 35px auto;
 }
 
-.Grid {
-    display: flex;
+.grid {
+    border: solid 1px #e7e7e7;
+    diplay: flex;
     flex-wrap: wrap;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.Grid-cell {
-    flex: 1;
-}
-
-.Grid--center {
     align-items: center;
+
 }
 
-.Grid--guttersLg {
-    margin: -1.5em 0 1.5em -1.5em;
-}
-
-
-.InputAddOn {
+.grid__row {
     display: flex;
 }
 
-.InputAddOn-field,
-.InputAddOn-item {
-    border: 1px solid rgba(147, 128, 108, 0.25);
-    padding: 0.5em 0.75em;
+.grid__item {
+    flex: 1;
+    padding: 12px;
+    border: solid 1px #e7e7e7;
 }
+
+
+/*.Grid {*/
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+    /*list-style: none;*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+/*}*/
+
+/*.Grid-cell {*/
+    /*flex: 1;*/
+/*}*/
+
+/*.Grid--center {*/
+    /*align-items: center;*/
+/*}*/
+
+/*.Grid--guttersLg {*/
+    /*margin: -1.5em 0 1.5em -1.5em;*/
+/*}*/
+
+
+/*.InputAddOn {*/
+    /*display: flex;*/
+/*}*/
+
+/*.InputAddOn-field,*/
+/*.InputAddOn-item {*/
+    /*border: 1px solid rgba(147, 128, 108, 0.25);*/
+    /*padding: 0.5em 0.75em;*/
+/*}*/
 
 
 
