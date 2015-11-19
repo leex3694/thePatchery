@@ -29,7 +29,7 @@ router.put('/sizes', function(req, res, next) {
 
 router.put('/postTesterArray', function(req, res, next){
     var createTesterObj = req.body;
-    console.log("the requst body is ",createTesterObj);
+    console.log("the request body is ",createTesterObj);
     Campaign.findOne({campaignName:req.body.selectedCampaign.campaignName}, function(err, campaign) {
         Tester.model.create(createTesterObj, function (err, testers) {
             if (err) throw err;

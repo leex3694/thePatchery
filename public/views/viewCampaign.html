@@ -66,12 +66,14 @@
 
 
     <ul class="ulAccordian">
-        <li class="listItemSection" ng-repeat="tester in testerList" ng-click="accordion.current = tester.name">
-            <span class="accordianNameTitle">{{tester.name}}</span>
+        <li class="listItemSection" ng-repeat="tester in testerList" ng-click="accordion.current = tester.volunteer1.name">
+            <span class="accordianNameTitle">{{tester.volunteer1.name}}</span>
             <!--<ul ng-show="accordion.current == tester.name">-->
-            <ul class="surveyResultList" ng-show="accordion.current == tester.name">
-                <li>{{tester.city}}</li>
-                <li>{{tester.email}}</li>
+            <ul class="surveyResultList" ng-show="accordion.current == tester.volunteer1.name">
+                <li>{{tester.volunteer1.city}}</li>
+                <li>{{tester.volunteer1.email}}</li>
+                <li>{{tester.surveyResults.question6}}</li>
+                <img ng-src="{{tester.surveyResults.file.path}}"
             </ul>
         </li>
     </ul>
