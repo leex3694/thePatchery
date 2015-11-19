@@ -1,28 +1,125 @@
 
-<!--<h1 class="pageTitle">Create Campaign</h1>-->
-<img class="pageImg" src="../assets/createCampaign_button.svg">
+<h1 class="pageTitle">Create A Campaign</h1>
     <div class="overallContainer">
         <form>
-            <div class="formText">
-                <div class="oneLineCreateCampaign"><label class="createCampaignTitles nameCampaign">Campaign Name </label>
-                    <input type="string" class="createCampaignInputs" ng-model="createNameOfCampaign"></div>
+            <div class="oneLineCreateCampaign">
+                <label class="createCampaignTitles nameCampaign">Campaign Name </label>
+                <input type="string" class="createCampaignInputs" ng-model="createNameOfCampaign">
+            </div>
 
-                <p>Sign-Up Dates</p>
+            <div class="grid">
 
-                <div class="oneLineCreateCampaign"><label class="createCampaignTitles startSignUp">Start</label>
-                    <input type="date" class="createCampaignInputs" ng-model="createStartSignUpDate"></div>
+                <div class="grid__row">
+                    <div class="grid__item labelItem">
+                        <span class="InputAddOn-item">Start</span>
+                    </div>
 
-                <div class="oneLineCreateCampaign"><label class="createCampaignTitles endSignup">End</label>
-                    <input type="date" class="createCampaignInputs" ng-model="createEndSignUpDate"></div>
+                    <div class="grid__item">
+                        <input type="date" ng-model="createStartSignUpDate" class="InputAddOn-field">
+                    </div>
 
-                <p>Survey Dates</p>
+                    <div class="grid__item labelItem">
+                        <span class="InputAddOn-item">Start</span>
+                    </div>
 
-                <div class="oneLineCreateCampaign"><label class="createCampaignTitles startSurvey">Start</label>
-                    <input type="date" class="createCampaignInputs" ng-model="createStartSurveyDate"></div>
+                    <div class="grid__item">
+                        <input type="date" ng-model="createStartSurveyDate" class="InputAddOn-field">
+                    </div>
 
-                <div class="oneLineCreateCampaign"><label class="createCampaignTitles endSurvey">End</label>
-                    <input type="date" class="createCampaignInputs" ng-model="createEndSurveyDate"></div>
+                </div>
 
+                <div class="grid__row">
+                    <div class="grid__item labelItem">
+                        <span class="InputAddOn-item">End</span>
+                    </div>
+
+                    <div class="grid__item">
+                        <input type="date" ng-model="createEndSignUpDate" class="InputAddOn-field">
+                    </div>
+
+                    <div class="grid__item label">
+                        <span class="InputAddOn-item">End</span>
+                    </div>
+
+                    <div class="grid__item">
+                        <input type="date" ng-model="createEndSurveyDate" class="InputAddOn-field">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+                                                    <!--<div class="grid">-->
+
+                <!--<div class="Grid-cell">-->
+                  <!--<h2>Sign-Up</h2>-->
+
+                    <!--<div class="InputAddOn">-->
+                        <!--<span class="InputAddOn-item">Start</span>-->
+                        <!--<input type="date" ng-model="createStartSignUpDate" class="InputAddOn-field">-->
+                    <!--</div>-->
+
+                    <!--<div class="InputAddOn">-->
+                        <!--<span class="InputAddOn-item">End</span>-->
+                        <!--<input type="date" ng-model="createEndSignUpDate" class="InputAddOn-field">-->
+                    <!--</div>-->
+
+                <!--</div>-->
+
+                <!--<div class="Grid-cell">-->
+                    <!--<h2>Survey</h2>-->
+
+                        <!--<div class="InputAddOn">-->
+                            <!--<span class="InputAddOn-item">Start</span>-->
+                            <!--<input type="date" ng-model="createStartSurveyDate" class="InputAddOn-field">-->
+                        <!--</div>-->
+
+                        <!--<div class="InputAddOn">-->
+                            <!--<span class="InputAddOn-item">End</span>-->
+                            <!--<input type="date" ng-model="createEndSurveyDate" class="InputAddOn-field">-->
+                        <!--</div>-->
+                <!--</div>-->
+
+            <!--</div>-->
+                <!--<div id="middleRow">-->
+                    <!--<div class="formDates">-->
+                        <!--<p class="dateLabels">Sign-Up</p>-->
+
+                            <!--<div class="oneLineCreateCampaign">-->
+                                <!--<label class="startSignUp">Start</label>-->
+                                <!--<input type="date" ng-model="createStartSignUpDate">-->
+                            <!--</div>-->
+
+                            <!--<div class="oneLineCreateCampaign">-->
+                                <!--<label class="endSignup">End</label>-->
+                                <!--<input type="date" ng-model="createEndSignUpDate">-->
+                            <!--</div>-->
+
+                        <!--</div>-->
+
+
+                    <!--<div class="formDates">-->
+                        <!--<p class="dateLabels">Survey</p>-->
+
+                            <!--<div class="oneLineCreateCampaign">-->
+                                <!--<label class="startSurvey">Start</label>-->
+                                <!--<input type="date" ng-model="createStartSurveyDate">-->
+                            <!--</div>-->
+
+                            <!--<div class="oneLineCreateCampaign">-->
+                                <!--<label class="endSurvey">End</label>-->
+                                <!--<input type="date" ng-model="createEndSurveyDate">-->
+                            <!--</div>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+            <!--</div>-->
                 <!--Different date picker-->
                 <!--<input type="text" name="daterange" value="01/01/2015 - 01/31/2015" />-->
 
@@ -32,15 +129,9 @@
                     <!--});-->
                 <!--</script>-->
 
-            </div>
+            <!--</div>-->
             <div class="oneLineCreateCampaign createCampaignSubmit"><button ng-click="submitCreateSurveyData()" class="btn btn-default submitNewCampaign">Submit</button></div>
         </form>
     </div>
-    <div class="newCampaignDisplay">
-        <p class="displayFinalCampaign" ng-show="showNewCampaign">Name of Campaign: <span class="resultedCampaignTitle">{{resultedCampaignTitle}}</span></p>
-        <p class="displayFinalCampaign" ng-show="showNewCampaign">Start Sign Up Date: <span class="resultedCampaignStartSignUp">{{resultedCampaignStartSignUp}}</span></p>
-        <p class="displayFinalCampaign" ng-show="showNewCampaign">End Sign Up Date: <span class="resultedCampaignEndSignUp"> {{resultedCampaignEndSignUp}}</span></p>
-        <p class="displayFinalCampaign" ng-show="showNewCampaign">Start Survey Date: <span class="resultedCampaignStartSurvey">{{resultedCampaignStartSurvey}}</span></p>
-        <p class="displayFinalCampaign" ng-show="showNewCampaign">End Survey Date: <span class="resultedCampaignEndSurvey">{{resultedCampaignEndSurvey}}</span></p>
-    </div>
+
 
