@@ -8,8 +8,11 @@ app.controller('SurveyController', ['$scope', '$http', '$location', 'Upload', fu
     $scope.submitSurvey = function(isValid) {
 
         //check to make sure the form is completely valid
-        if (isValid) {
-            alert('Congrats! You\'ve successfully submitted the survey.');
+        //if (isValid) {
+        //    alert('Congrats! You\'ve successfully submitted the survey.');
+        //}
+        if (window.confirm('Thank You! You\'ve successfully submitted the survey' )){
+            window.location.href='https://www.facebook.com/groups/thepatchery/';
         }
     };
 
