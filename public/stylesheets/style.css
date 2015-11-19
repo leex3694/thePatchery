@@ -277,13 +277,11 @@ header {
     top:30px;
 }
 
-.backgroundDiv{
-    height: 382px;
+body, .surveyLoginBody{
     background-color: rgba(240, 240, 240, 0.85);
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
 }
+
+
 
 @media screen and (min-width: 750px) {
     .backgroundDiv{
