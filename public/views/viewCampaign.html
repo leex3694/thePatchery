@@ -1,68 +1,14 @@
 
-<h1>View Campaign</h1>
+<h1 class="fontColor">View Campaign</h1>
 
 <div class = "makeListBody">
     <form name="myForm">
-        <label for="mySelect">Select a Campaign:</label>
+        <label for="mySelect" class="fontColor">Select a Campaign:</label>
         <select name="mySelect" id="mySelect"
                 ng-options="option.campaignName for option in campaignList.availableOptions"
                 ng-model="campaignList.selectedOption" ng-change="hasChanged()"></select>
     </form>
 </div>
-
-    <!--<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">-->
-        <!--<div ng-repeat="tester in testerList track by $index">-->
-            <!--<div class="panel panel-default" >-->
-                <!--<div class="panel-heading" role="tab" id="headingOne">-->
-                    <!--<h4 class="panel-title">-->
-                        <!--<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">-->
-                            <!--{{tester.name}}-->
-                            <!--&lt;!&ndash;{{tester.campaignList.selectedOption.testers[0].volunteer1}}&ndash;&gt;-->
-                        <!--</a>-->
-                    <!--</h4>-->
-                <!--</div>-->
-                <!--<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">-->
-                    <!--<div class="panel-body">-->
-                       <!--{{tester.city}}-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-
-
-
-<!-- Old accordian made by Sarah. The accordian function doesn't work in this-->
-<!--<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">-->
-    <!--<div ng-repeat="tester in testerList track by $index">-->
-        <!--<div class="panel panel-default" >-->
-            <!--<div class="panel-heading" role="tab" id="headingOne">-->
-                <!--<h4 class="panel-title">-->
-                    <!--<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">-->
-                        <!--{{tester.name}}-->
-                        <!--&lt;!&ndash;{{tester.campaignList.selectedOption.testers[0].volunteer1}}&ndash;&gt;-->
-                    <!--</a>-->
-                <!--</h4>-->
-            <!--</div>-->
-            <!--<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">-->
-                <!--<div class="panel-body">-->
-                   <!--{{tester.city}}-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--*******************************************************************-->
-
-
-<!--<accordion>-->
-    <!--<accordion-group heading="Hello" ng-repeat="tester in testerList track by $index">-->
-        <!--<ul>-->
-            <!--<li ng-repeat="tester in testerList">{{tester]}}</li>-->
-        <!--</ul>-->
-    <!--</accordion-group>-->
-<!--</accordion>-->
-
-
 
 
     <ul class="ulAccordian">

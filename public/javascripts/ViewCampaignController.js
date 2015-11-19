@@ -35,6 +35,7 @@ app.controller('ViewCampaignController', ['$scope', '$http', function($scope, $h
             //Possibly re-work model to be Mixed (Object) vs ArrayList
             var testers = $scope.campaignList.selectedOption.testers[0].volunteer1;
 
+
             console.log(testers);
 
             console.log('these are the testers now');
