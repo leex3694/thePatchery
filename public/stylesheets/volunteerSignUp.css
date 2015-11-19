@@ -1,6 +1,12 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url('../fonts/KlinicSlabMedium.otf');
+}
+
 
 .pageTitle,.test-title{
     text-align: center;
+    font-family: myFirstFont;
     color: #FAA41A;
     margin-bottom: 20px;
 }
