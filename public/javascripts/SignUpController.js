@@ -1,6 +1,6 @@
 var sign = angular.module('sign', []);
 
-sign.controller('SignUpController', ['$scope','$http', function($scope, $http){
+sign.controller('SignUpController', ['$scope','$http', function($scope, $http, $location){
 
 
     $scope.campaignList = [];
@@ -9,13 +9,17 @@ sign.controller('SignUpController', ['$scope','$http', function($scope, $http){
     $scope.faceButtonShow = true;
     $scope.signUpForm = true;
 
-    $scope.submitForm = function(isValid) {
-
+    //$scope.submitForm = function(isValid) {
+    //
+    //    if (window.confirm('This form is valid. Redirect to website' )){
+    //        window.location.href='http://www.thepatchery.com';
+    //    }
         // check to make sure the form is completely valid
-        if (isValid) {
-            alert('Congrats! You\'ve successfully submitted the survey.');
-        }
-    };
+        //if (isValid) {
+        //    alert('Congrats! You\'ve successfully submitted the survey.');
+        //    window.location.href('http://www.thepatchery.com');
+        //}
+    //};
 
 
 
@@ -57,7 +61,11 @@ sign.controller('SignUpController', ['$scope','$http', function($scope, $http){
         };
         console.log(sendSignUpData);
 
-        alert('Thank you for signing up!');
+        if (window.confirm('Thank you! Please click OK' )){
+            window.location.href='https://www.thepatchery.com';
+        }
+        //
+        //alert('Thank you for signing up!');
 
 
         // This clears out the form on submission
