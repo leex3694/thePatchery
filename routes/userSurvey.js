@@ -14,9 +14,6 @@ router.get('/', function(req, res, next) {
     res.sendFile(path.join(__dirname, '../public/views/users/volunteerSurvey.html'));
 });
 
-//('/add', upload.single('file'), function(req, res, next) {
-//upload.array('photos', 3)
-
 
 
 router.post('/add', upload.single('file'), function (req, res, next) {
@@ -30,14 +27,8 @@ router.post('/add', upload.single('file'), function (req, res, next) {
 
         //currently finding campaign and posting to the testers in the selected campaign, but needs to be updated to go by Tester
         Campaign.findOne({campaignName:campaignName1} ,function(err, campaign){
-            //console.log('testerssss ', campaign.testers[0].surveyResults);
-            //SurveyResults.model.create(createObj, function (err, survey) {
-            //    campaign.testers[0].surveyResults.push(survey); //THis is a hacky way to get it to post to the first person, needs to go by Tester
-
 
                 console.log("Trying to find facebook user id",campaign.testers[0].volunteer1[0].user[0].facebook.id);
-
-
 
             if (err) throw err;
 
@@ -47,14 +38,14 @@ router.post('/add', upload.single('file'), function (req, res, next) {
             for(var i = 0; i < campaign.testers.length; i++){
                 console.log('campaign testesrs ' , campaign.testers);
 
-                if (campaign.testers[i].volunteer1[0].user[0].facebook.id === req.user.facebook.id){
-                    console.log('It\'s a match ', req.user.facebook.id, campaign.testers[i].volunteer1[0].user[0].facebook.id);
-                    foundTester = campaign.testers[i].volunteer1[0].user[0].facebook.id;
+                if (campaign.testers[0].volunteer1[i].user[0].facebook.id === req.user.facebook.id){
+                    //console.log('It\'s a match ', req.user.facebook.id, campaign.testers.volunteer1[i].user[0].facebook.id);
+                    foundTester = campaign.testers.volunteer1[i].user[0].facebook.id;
                     console.log('found Tester ', foundTester);
 
                     SurveyResults.model.create(createObj, function (err, survey) {
 
-                        campaign.testers[0].surveyResults.push(survey); //THis is a hacky way to get it to post to the first person, needs to go by Tester
+                        campaign.testers.surveyResults[i].push(survey); //THis is a hacky way to get it to post to the first person, needs to go by Tester
                         console.log(campaign.testers[0].surveyResults);
                         campaign.save(function(err) {
                             if (err) throw err
@@ -63,49 +54,12 @@ router.post('/add', upload.single('file'), function (req, res, next) {
 
                 }
 
-
-
         };
 
-    ///////////////////End of Campaign FindOne Issue/////////////////////////////////
 
-        //Tester.findOne({_id: id}, function (err, tester) {
-        //
-        //    console.log('this is the tester', tester);
-        //    console.log('this is the id ', id);
-        //    console.log('this is the survey', survey);
-        //
-        //    //if (!tester.surveyResults) {
-        //    //    tester.surveyResults = [];
-        //    //}
-        //
-        //    tester.surveyResults.push(survey);
-        //
-        //    tester.save(function (err) {
-        //        if (err) throw err;
-        //    })
-        //
-        //});
     });
 });
 
-
-
-
-
-//router.post('/postSurveyResults', function(req, res, next){
-//    console.log("hit survey Post Route");
-//    var saveSurveyResults = new SurveyResults(req.body);
-//    console.log("this is surveyresult in server");
-//    console.log(saveSurveyResults);
-//    saveSurveyResults.save(function(err){
-//        if(err)throw err;
-//        console.log("error : ", err);
-//        console.log("almost the end");
-//        //res.send(saveSurveyResults);
-//    });
-//    console.log("finished survey post route")
-//});
 
 
 module.exports = router;
