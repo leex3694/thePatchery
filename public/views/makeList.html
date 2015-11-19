@@ -1,54 +1,51 @@
+<h1 class="pageTitle">Make a List</h1>
+    <div class="overallContainer">
 
-    <div class = "test-title">
-        <h1 class = "nameOfTest">Name of Test: </h1>
-    </div>
-    <div class = "makeListContainer">
-
-        <div class = "makeListBody">
+    <!--Start choose a campaign dropdown-->
+        <div class="makeListBody">
             <form name="myForm">
-                <label for="mySelect">Make a choice:</label>
-                <select name="mySelect" id="mySelect"
-                ng-options="option.campaignName for option in campaignList.availableOptions"
-                ng-model="campaignList.selectedOption"></select>
+                <label for="mySelect">Choose a Campaign:</label>
+                <select name="mySelect" id="mySelect" ng-options="option.campaignName for option in campaignList.availableOptions" ng-model="campaignList.selectedOption"></select>
             </form>
-            <hr>
         </div>
+    <!--End choose a campaign dropdown-->
 
+        <hr>
 
-        <div class="peopleSignedUp">
-            <h3 class="numOfPeople">Total People Signed Up: {{campaignList.selectedOption.volunteers.length}}</h3>
-        </div>
+            <div class="volunteersSignedUp">
+                <h3>{{campaignList.selectedOption.volunteers.length}} People Signed Up!</h3>
+            </div>
 
-        <div class="makeListSizes">
-            <h3 class="sizesHeader">Sizes</h3>
-        </div>
+            <div class="sizeOptions">
+                <h3>Which sizes are you testing?</h3>
+            </div>
 
-            <!--inline checkboxes-->
+                <!--inline checkboxes-->
 
-        <div class="makeListCheckBoxes">
-            <form role="form">
-                <label class="checkbox-inline">
-                    <input type="checkbox" ng-model="formData.sizes.twoT">2T
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" ng-model="formData.sizes.threeT">3T
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" ng-model="formData.sizes.fourT">4T
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" ng-model="formData.sizes.fiveT">5T
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" ng-model="formData.sizes.six">6
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" ng-model="formData.sizes.seven_eight">7/8
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" ng-model="formData.sizes.nine_ten">9/10
-                </label>
-            </form><br>
+            <div class="makeListCheckBoxes">
+                <form role="form">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" ng-model="formData.sizes.twoT">2T
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" ng-model="formData.sizes.threeT">3T
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" ng-model="formData.sizes.fourT">4T
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" ng-model="formData.sizes.fiveT">5T
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" ng-model="formData.sizes.six">6
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" ng-model="formData.sizes.seven_eight">7/8
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" ng-model="formData.sizes.nine_ten">9/10
+                    </label>
+                </form><br>
         </div>
         <div class="generateList">
             <button class="generateListButton" ng-click="sendData()">Generate Random List</button>

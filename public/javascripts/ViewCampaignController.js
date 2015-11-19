@@ -31,7 +31,7 @@ app.controller('ViewCampaignController', ['$scope', '$http', function($scope, $h
         $scope.testerList = [];
 
 
-        if($scope.campaignList.selectedOption.testers.length > 1){
+        if($scope.campaignList.selectedOption.testers.length >= 1){
             //Possibly re-work model to be Mixed (Object) vs ArrayList
             var testers = $scope.campaignList.selectedOption.testers[0].volunteer1;
 
@@ -54,7 +54,7 @@ app.controller('ViewCampaignController', ['$scope', '$http', function($scope, $h
             $scope.hasChanged = function(){
                 $scope.testerList = [];
                 console.log('this is the changed function',$scope.campaignList.selectedOption);
-                if($scope.campaignList.selectedOption.testers.length > 1) {
+                if($scope.campaignList.selectedOption.testers.length >= 1) {
 
                     var testers = ($scope.campaignList.selectedOption.testers[0].volunteer1);
                     console.log('these are the testers now');
