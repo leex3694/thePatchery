@@ -1,6 +1,12 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url('../fonts/KlinicSlabMedium.otf');
+}
+
 
 .pageTitle,.test-title{
     text-align: center;
+    font-family: myFirstFont;
 }
 
 .navbar-brand img {
@@ -54,6 +60,7 @@ a.navbar-brand {
     margin-left: auto;
     margin-right: auto;
     padding:20px 0;
+
 }
 
 .css-form input.ng-invalid.ng-touched {
