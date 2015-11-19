@@ -1,4 +1,50 @@
 
+.logoHeader img {
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+.landingButtons {
+    /*margin: 15px 40px 15px 40px;*/
+    display: block;
+    margin: 20px auto;
+}
+
+header {
+    height: 175px;
+    background-color: #f2f2f2;
+
+}
+
+.mainHeader {
+    margin: 0 auto 10px auto;
+}
+
+.pageTitle{
+    text-align: center;
+    color: #FAA41A;
+    margin-bottom: 20px;
+}
+
+.ThankYouNote{
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    /*position:relative;*/
+    /*right:15px;*/
+    text-align: center;
+}
+
+.ThankYouNoteAndSignDiv{
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    /*position: relative;*/
+    /*left:50px;*/
+    text-align: center;
+}
+
 .loginContainer{
     background-color: grey;
 }
@@ -17,10 +63,11 @@
     margin-right: auto;
     padding: 25px 20px;
     background-color: rgba(228, 226, 230, 0.51);
+    box-shadow:1px 1px 10px #46413B;
 }
 
 .questionSurvey{
-    margin: 11px 0;
+    margin: 14px 0;
 }
 
 .questionSurvey fieldset, textarea{
@@ -31,3 +78,22 @@
 input[type="radio"] {
     margin: 4px 10px 5px;
 }
+
+.question4aAnd4B{
+    position: relative;
+    left: 20px;
+}
+
+.aAndbAQuestions{
+    font-weight:bold;
+}
+
+.photoUploadPart{
+    position:relative;
+    left:20px;
+}
+
+/*.frontImgUpload{*/
+    /*position:relative;*/
+    /*left:15px;*/
+/*}*/

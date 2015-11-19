@@ -191,24 +191,39 @@ header {
 
 /* ***************************** START VIEW CAMPAIGNS CSS ******************************/
 .listItemSection{
-    background-color: #EFEFEF;;
+    background-color: rgb(242, 242, 242);;
     padding: 5px;
-    margin: 10px;
+    margin: 6px;
     position: relative;
     right: 20px;
+    box-shadow: 2px 2px 5px;
 }
 
 .accordianNameTitle{
     list-style: none;
+    font-weight: bold;
+    font-size: 15px;
+    color: #46413B;
+}
+
+.fontColor{
+    color: #46413B;
 }
 
 .accordianNameTitle:hover{
     cursor: pointer;
+
 }
 
 .ulAccordian{
-    background-color: #F9F9F9;
+    background-color: rgb(255, 249, 242);
     list-style: none;
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 15px;
 }
 
 .surveyResultList{
