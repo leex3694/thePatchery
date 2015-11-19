@@ -22,31 +22,47 @@
     <div ng-controller="SurveyController">
         <header>
             <!--<img src="LOGO_SOURCE" alt="The Patchery logo" />-->
-            <p>The Patchery Product Test Survey</p>
-            <p>Infant Layette</p>
+            <div class="container mainHeader">
+
+                <div class="row">
+                    <div class="col-md-11 logoHeader">
+                        <img src="../assets/mainLogo.svg">
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                </div>
+            </div>
         </header>
 
-            <p>
-                Thank you for helping us in this critical step of our product development process.  Please be candid in your responses.  If something isn't right, we <i>need</i> to know.  Through your honest feedback, we can make the improvements necessary to deliver an exceptional product and experience.<br />
-
-                The survey should take under 10 minutes to complete.<br />
-
-                Thank you,<br />
-                The Patchery makers
-            </p>
 
 
-        <div class = "makeListBody">
-            <form name="myForm">
-                <label for="mySelect">Make a choice:</label>
+        <h1 class="pageTitle">Product Test Survey</h1>
+
+
+        <form method="POST" enctype="multipart/form-data" class="surveyForm" name="userForm" ng-submit="submitSurvey(userForm.$valid)">
+
+
+            <p class="ThankYouNote">
+                Thank you for helping us in this critical step of our product development process.  Please be candid in your responses.  If something isn't right, we <i>need</i> to know.  Through your honest feedback, we can make the improvements necessary to deliver an exceptional product and experience.</p>
+
+                <p class="ThankYouNote">The survey should take under 10 minutes to complete.</p>
+                <div class="ThankYouNoteAndSignDiv">
+                Thank you,<br>
+                <b>The Patchery Makers</b>
+                </div>
+            </p><br>
+
+
+            <div class = "makeListBody">
+                <!--<form name="myForm">-->
+                <label for="mySelect">Chose a Campaign:</label>
                 <select name="mySelect" id="mySelect"
                         ng-options="option.campaignName for option in campaignList.availableOptions"
                         ng-model="campaignList.selectedOption"></select>
-            </form>
-            <hr>
-        </div>
+                <!--</form>-->
+                <!--<hr>-->
+            </div>
 
-        <form method="POST" enctype="multipart/form-data" class="surveyForm" name="userForm" ng-submit="submitSurvey(userForm.$valid)">
             <div class="questionSurvey">
                 <label>1. What was your initial impression of the clothes?</label><br>
                 <textarea type="text" ng-model="formData.question1" required></textarea><br>
@@ -64,21 +80,27 @@
 
             <div class="questionSurvey">
                 <label>4. Based on your overall experience, how likely would you be to:</label><br>
-                <fieldset id="purchaseFrom" required>
-                    <input type="radio" value="Definitely will" name="purchaseFrom" ng-model="formData.question4a">Definitely will
-                    <input type="radio" value="Very likely" name="purchaseFrom" ng-model="formData.question4a">Very likely
-                    <input type="radio" value="Maybe, but not sure" name="purchaseFrom" ng-model="formData.question4a">Maybe, but not sure
-                    <input type="radio" value="Probably not" name="purchaseFrom" ng-model="formData.question4a" >Probably not
-                    <input type="radio" value="Definitely not" name="purchaseFrom" ng-model="formData.question4a">Definitely Not
-                </fieldset><br>
+                <div class="question4aAnd4B">
+                    <span class="aAndbAQuestions">a. Purchase from the Patchery</span>
+                    <fieldset id="purchaseFrom" required>
+                        <input type="radio" value="Definitely will" name="purchaseFrom" ng-model="formData.question4a">Definitely will
+                        <input type="radio" value="Very likely" name="purchaseFrom" ng-model="formData.question4a">Very likely
+                        <input type="radio" value="Maybe, but not sure" name="purchaseFrom" ng-model="formData.question4a">Maybe, but not sure
+                        <input type="radio" value="Probably not" name="purchaseFrom" ng-model="formData.question4a" >Probably not
+                        <input type="radio" value="Definitely not" name="purchaseFrom" ng-model="formData.question4a">Definitely Not
+                    </fieldset><br>
+                </div>
 
-                <fieldset id="recommend" required>
-                    <input type="radio" value="Definitely will" name="recommend" ng-model="formData.question4b">Definitely will
-                    <input type="radio" value="Very likely" name="recommend" ng-model="formData.question4b">Very likely
-                    <input type="radio" value="Maybe, but not sure" name="recommend" ng-model="formData.question4b">Maybe, but not sure
-                    <input type="radio" value="Probably not" name="recommend" ng-model="formData.question4b">Probably not
-                    <input type="radio" value="Definitely not" name="recommend" ng-model="formData.question4b">Definitely not
-                </fieldset><br>
+                <div class="question4aAnd4B">
+                    <span class="aAndbAQuestions">b. Recommend The Patchery to a friend</span>
+                    <fieldset id="recommend" required>
+                        <input type="radio" value="Definitely will" name="recommend" ng-model="formData.question4b">Definitely will
+                        <input type="radio" value="Very likely" name="recommend" ng-model="formData.question4b">Very likely
+                        <input type="radio" value="Maybe, but not sure" name="recommend" ng-model="formData.question4b">Maybe, but not sure
+                        <input type="radio" value="Probably not" name="recommend" ng-model="formData.question4b">Probably not
+                        <input type="radio" value="Definitely not" name="recommend" ng-model="formData.question4b">Definitely not
+                    </fieldset><br>
+                </div>
             </div>
 
             <div class="questionSurvey">
@@ -92,18 +114,25 @@
             </div>
 
             <div class="questionSurvey">
-                <p>Please upload three photos of your child wearing the outfit. Photos should be taken from the front, back, and side.</p><br>
+                <label>7.Please upload a photo of your child wearing the outfit. </label>
+                    <!--Photos should be taken from the front, back, and side.-->
 
-                <label>Front Image:</label>
-                <input type="file" ng-model="file" ngf-select="" name="file" accept="image/*" class="ng-pristine ng-invalid ng-invalid-required" required><br>
+                <div class="photoUploadPart">
+                    <div class="frontImgUpload">
+                        <label>Front Image:</label>
+                        <input type="file" ng-model="file" ngf-select="" name="file" accept="image/*" class="ng-pristine ng-invalid ng-invalid-required" required><br>
+                    </div>
 
                 <!--<label>Back Image:</label>-->
                 <!--<input type="file" ng-model="photos" ngf-select="" ng-model="picFile" name="photos" accept="image/*" required="" class="ng-pristine ng-invalid ng-invalid-required">-->
 
                 <!--<label>Side Image:</label>-->
                 <!--<input type="file" ng-model="photos" ngf-select="" ng-model="picFile" name="photos" accept="image/*" required="" class="ng-pristine ng-invalid ng-invalid-required">-->
+                </div>
             </div>
-            <button class="buttonClass" ng-click="submitSurveyForm()" ng-class="{filledOutCorrectly: userForm.$valid}" ng-disabled="userForm.$invalid"> Submit </button>
+            <p><i>Thank you for filling out our survey. Upon submitting, you will be re-directed to The Patchery's Facebook group. Please take the time
+            to share your photos with our community as well!</i></p><br>
+            <button class="buttonClass" ng-click="submitSurveyForm()" ng-class="{filledOutCorrectly: userForm.$valid}" ng-disabled="userForm.$invalid"> Submit </button><br>
 
         </form>
 
