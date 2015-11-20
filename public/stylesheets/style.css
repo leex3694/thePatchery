@@ -202,7 +202,7 @@ header {
 .accordianNameTitle{
     list-style: none;
     font-weight: bold;
-    font-size: 15px;
+    font-size:20px;
     color: #46413B;
 }
 
@@ -226,6 +226,15 @@ header {
     margin-top: 15px;
 }
 
+.accrodianSize{
+    margin-left: 40px;
+    font-weight: bold;
+}
+
+.accordianTitle{
+    margin-bottom: 8px;
+
+}
 
 .addressCityStateZip{
     margin-right: 15px;

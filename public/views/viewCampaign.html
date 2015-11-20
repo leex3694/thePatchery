@@ -13,8 +13,10 @@
 
     <ul class="ulAccordian">
         <li class="listItemSection" ng-repeat="tester in testerList" ng-click="accordion.current = tester.volunteer1.name">
-            <span class="accordianNameTitle">{{tester.volunteer1.name}}</span>
-            <span class="accrodianSize">{{tester.volunteer1.size}}</span>
+           <div class="accordianTitle">
+                <span class="accordianNameTitle">{{tester.volunteer1.name}}</span>
+                <span class="accrodianSize">{{tester.volunteer1.size}}</span>
+           </div>
 
             <div class="whiteBackground">
             <ul class="contactInfo " ng-show="accordion.current == tester.volunteer1.name">
