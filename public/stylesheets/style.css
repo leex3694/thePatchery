@@ -239,6 +239,12 @@ header {
 
 
 /* ***************************** START VIEW CAMPAIGNS CSS ******************************/
+
+.fontColor{
+    color: #46413B;
+    text-align: center;
+}
+
 .listItemSection{
     background-color: rgb(242, 242, 242);;
     padding: 5px;
@@ -255,9 +261,7 @@ header {
     color: #46413B;
 }
 
-.fontColor{
-    color: #46413B;
-}
+
 
 .accordianNameTitle:hover{
     cursor: pointer;
