@@ -268,8 +268,11 @@ header {
 
 }
 
+.viewCampaignBody body{
+    background-color:white;
+}
+
 .ulAccordian{
-    background-color: rgb(255, 249, 242);
     list-style: none;
     width: 96%;
     margin-left: auto;
@@ -297,13 +300,21 @@ header {
     display:block;
 }
 
+ .contactAddress label{
+    display:block;
+}
+
+ .contactEmail label{
+     display:block;
+ }
+
 .contactInfoDiv{
     list-style: none;
     background-color: white;
-    /*display: inline;*/
-    float: left;
+    display: block;
     margin-right: 123px;
     clear: right;
+    margin-bottom: 15px;
 }
 
 .whiteBackground{
@@ -362,9 +373,9 @@ header {
     top:30px;
 }
 
-body, .surveyLoginBody{
-    background-color: rgba(240, 240, 240, 0.85);
-}
+/*.surveyLoginBody body{*/
+    /*background-color: rgba(240, 240, 240, 0.85);*/
+/*}*/
 
 
 
