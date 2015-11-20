@@ -14,12 +14,19 @@
     <ul class="ulAccordian">
         <li class="listItemSection" ng-repeat="tester in testerList" ng-click="accordion.current = tester.volunteer1.name">
             <span class="accordianNameTitle">{{tester.volunteer1.name}}</span>
-            <!--<ul ng-show="accordion.current == tester.name">-->
+            <span class="accrodianSize">{{tester.volunteer1.size}}</span>
+
+            <ul class="contactInfo" ng-show="accordion.current == tester.volunteer1.name">
+                <li class="contactEmail">{{tester.volunteer1.email}}</li>
+                <li class="contactAddress">{{tester.volunteer1.street}}</li>
+                <li class="contactCity"><span>{{tester.volunteer1.city}}</span><span>{{tester.volunteer1.zip}}</span><span>{{tester.volunteer1.state}}</span></li>
+            </ul>
+
             <ul class="surveyResultList" ng-show="accordion.current == tester.volunteer1.name">
                 <li>{{tester.volunteer1.city}}</li>
                 <li>{{tester.volunteer1.email}}</li>
                 <li>{{tester.surveyResults.question6}}</li>
-                <img ng-src="{{tester.surveyResults.file.path}}"
+                <img ng-src="{{tester.surveyResults.file.path}}">
             </ul>
         </li>
     </ul>
