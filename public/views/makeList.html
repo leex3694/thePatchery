@@ -1,5 +1,5 @@
-<h1 class="pageTitle">Make a List</h1>
-    <div class="overallContainer">
+<h1 class="makeListPageTitle">Make a List</h1>
+    <div class="overallContainerMakeList">
 
     <!--Start choose a campaign dropdown-->
         <div class="makeListBody">
@@ -10,10 +10,10 @@
         </div>
     <!--End choose a campaign dropdown-->
 
-        <hr>
+
 
             <div class="volunteersSignedUp">
-                <h3>{{campaignList.selectedOption.volunteers.length}} People Signed Up!</h3>
+                <h3><span class="numberText">{{campaignList.selectedOption.volunteers.length}}</span> People Signed Up!</h3>
             </div>
 
             <div class="sizeOptions">
@@ -48,15 +48,45 @@
                 </form><br>
         </div>
         <div class="generateList">
-            <button class="generateListButton" ng-click="sendData()">Generate Random List</button>
-            <button ng-click="regenerateTesters()">Re-Generate</button>
+            <button class="btn btn-default generateListButton" ng-click="sendData()">Generate List</button>
+            <button id="regenButton" class="btn btn-default glyphicon glyphicon-refresh btn-default" ng-click="regenerateTesters()"></button>
         </div>
     </div>
 
-    <div class="displayFinalTesters">
-        <div ng-repeat="tester in tempTestersArray">
-            <p>{{tester.name}} {{tester.gender}} {{tester.size}} {{tester.sizeQualifying}} </p>
-        </div>
-        <button class="acceptListOfTesters" ng-click="acceptListandPost()">Accept List</button>
+<div class="col-md-6 col-md-offset-3">
+    <div id="testerTable" class="table-responsive">
+            <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Size</th>
+                    <th>How the Clothes Fit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="tester in tempTestersArray">
+                    <td>{{tester.name}}</td>
+                    <td>{{tester.gender}}</td>
+                    <td>{{tester.size}}</td>
+                    <td>{{tester.sizeQualifying}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+</div>
+
+    <div ng-show="showFinalTester">
+        <button class="btn btn-default acceptListOfTesters" ng-click="acceptListandPost()">Accept List</button>
+    </div>
+
+
+
+
+    <!--<div class="displayFinalTesters" ng-show="showFinalTester">-->
+        <!--<div ng-repeat="tester in tempTestersArray">-->
+            <!--<p>{{tester.name}} {{tester.gender}} {{tester.size}} {{tester.sizeQualifying}} </p>-->
+        <!--</div>-->
+        <!--<button class="acceptListOfTesters" ng-click="acceptListandPost()">Accept List</button>-->
+    <!--</div>-->
 

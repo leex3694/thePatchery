@@ -18,6 +18,8 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
     var sevenEightTempArray = [];
     var nineTenTempArray = [];
     $scope.tempTestersArray = [];
+    $scope.showFinalTester = false;
+
 
     $http({
         method: 'GET',
@@ -51,6 +53,8 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
                 url: '/makeList/sizes',
                 data: dataToSend
             }).then(function(response){
+                $scope.showFinalTester = true;
+
             });
 
         acceptNewList();

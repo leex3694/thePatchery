@@ -2,6 +2,10 @@ body {
   padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+@font-face {
+    font-family: myFirstFont;
+    src: url('../fonts/KlinicSlabMedium.otf');
+}
 /* ***************************** START Home Page CSS **************************************/
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
@@ -174,14 +178,59 @@ header {
 
 
 /* ***************************** START MAKE LIST CSS **************************************/
-.volunteersSignedUp .sizeOptions {
-    text-align:center;
-}
+/*.volunteersSignedUp .sizeOptions {*/
+    /*text-align:center;*/
+/*}*/
 
-.volunteersSignedUp .sizeOptions h3 {
-    font-size: 15px;
+/*.volunteersSignedUp  {*/
+    /*font-size: 15px;*/
+    /*text-align: center;*/
+/*}*/
+.makeListPageTitle {
+    color: #FAA41A;
+    font-family: myFirstFont;
+    font-size:50px;
     text-align: center;
 }
+
+.makeListBody {
+    font-size: 18px;
+    font-weight: lighter;
+
+}
+.checkbox-inline {
+    padding-right: 10px;
+}
+
+.overallContainerMakeList {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 60px;
+    /*background-color: rgba(242, 243, 245, 0.52);*/
+    display:block;
+    width:50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding:20px 0;
+    /*box-shadow: 1px 1px 10px #46413B;*/
+    /*font-weight: bold;*/
+    /*font-family: myFirstFont;*/
+}
+
+.numberText {
+    color: #FAA41A;
+}
+.generateListButton {
+    background-color: white;
+}
+#regenButton {
+    background-color: #FAA41A;
+}
+
+.displayFinalTesters {
+    text-align: center
+}
+
 
 
 
