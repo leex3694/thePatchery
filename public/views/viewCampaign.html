@@ -1,4 +1,4 @@
-
+<body class="viewCampaignBody">
 <h1 class="fontColor">View Campaign</h1>
 
 <div class = "makeListBody">
@@ -19,12 +19,12 @@
            </div>
 
             <div class="whiteBackground">
-            <ul class="contactInfo " ng-show="accordion.current == tester.volunteer1.name">
-                <div class="contactInfoDiv"><li class="contactEmail" ><label>Email</label>{{tester.volunteer1.email}}</li></div>
-                <div class="contactInfoDiv"><li class="contactAddress"><label>Address</label>{{tester.volunteer1.street}},</li>
-                <li class="contactCity"><span class="addressCityStateZip">{{tester.volunteer1.city}},</span><span>{{tester.volunteer1.state}}</span><span>{{tester.volunteer1.zip}}</span></li></div>
-            </ul>
-            </div>
+                <ul class="contactInfo " ng-show="accordion.current == tester.volunteer1.name">
+                    <div class="contactInfoDiv"><li class="contactEmail" ><label>Email</label>{{tester.volunteer1.email}}</li></div>
+                    <div class="contactInfoDiv"><li class="contactAddress"><label>Address</label>{{tester.volunteer1.street}},</li>
+                    <li class="contactCity"><span class="addressCityStateZip">{{tester.volunteer1.city}},</span><span>{{tester.volunteer1.state}}</span><span>{{tester.volunteer1.zip}}</span></li></div>
+                </ul>
+
 
             <ul class="surveyResultList" ng-show="accordion.current == tester.volunteer1.name">
                 <li><label>Question 1. What was your initial impression of the clothes?</label><p>{{tester.surveyResults.question1}}</p></li>
@@ -40,7 +40,7 @@
             </ul>
         </li>
     </ul>
+</div>
 
 
-
-
+</body>
