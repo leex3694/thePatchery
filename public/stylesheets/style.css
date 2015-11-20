@@ -226,7 +226,30 @@ header {
     margin-top: 15px;
 }
 
+
+.addressCityStateZip{
+    margin-right: 15px;
+}
+
+.surveyResultList label{
+    display:block;
+}
+
+.contactInfoDiv{
+    list-style: none;
+    background-color: white;
+    /*display: inline;*/
+    float: left;
+    margin-right: 123px;
+    clear: right;
+}
+
+.whiteBackground{
+    background-color: white;
+}
+
 .surveyResultList{
+    clear: both;
     list-style: none;
     background-color: white;
 }
