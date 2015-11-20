@@ -2,12 +2,12 @@
 <h1 class="fontColor">View Campaign</h1>
 
 <div class = "makeListBody">
-    <div name="myForm" class="fontColor">
+    <form name="myForm">
         <label for="mySelect" class="fontColor">Select a Campaign:</label>
         <select name="mySelect" id="mySelect"
                 ng-options="option.campaignName for option in campaignList.availableOptions"
                 ng-model="campaignList.selectedOption" ng-change="hasChanged()"></select>
-    </div>
+    </form>
 </div>
 
 
