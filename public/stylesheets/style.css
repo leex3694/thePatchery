@@ -240,27 +240,74 @@ header {
 
 /* ***************************** START VIEW CAMPAIGNS CSS ******************************/
 .listItemSection{
-    background-color: #EFEFEF;;
+    background-color: rgb(242, 242, 242);;
     padding: 5px;
-    margin: 10px;
+    margin: 6px;
     position: relative;
     right: 20px;
+    box-shadow: 2px 2px 5px;
 }
 
 .accordianNameTitle{
     list-style: none;
+    font-weight: bold;
+    font-size:20px;
+    color: #46413B;
+}
+
+.fontColor{
+    color: #46413B;
 }
 
 .accordianNameTitle:hover{
     cursor: pointer;
+
 }
 
 .ulAccordian{
-    background-color: #F9F9F9;
+    background-color: rgb(255, 249, 242);
     list-style: none;
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 15px;
+}
+
+.accrodianSize{
+    margin-left: 40px;
+    font-weight: bold;
+}
+
+.accordianTitle{
+    margin-bottom: 8px;
+
+}
+
+.addressCityStateZip{
+    margin-right: 15px;
+}
+
+.surveyResultList label{
+    display:block;
+}
+
+.contactInfoDiv{
+    list-style: none;
+    background-color: white;
+    /*display: inline;*/
+    float: left;
+    margin-right: 123px;
+    clear: right;
+}
+
+.whiteBackground{
+    background-color: white;
 }
 
 .surveyResultList{
+    clear: both;
     list-style: none;
     background-color: white;
 }
@@ -311,13 +358,11 @@ header {
     top:30px;
 }
 
-.backgroundDiv{
-    height: 382px;
+body, .surveyLoginBody{
     background-color: rgba(240, 240, 240, 0.85);
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
 }
+
+
 
 @media screen and (min-width: 750px) {
     .backgroundDiv{
