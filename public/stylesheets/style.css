@@ -55,9 +55,14 @@ header {
     /*display: block;*/
 /*}*/
 .overallContainer {
+    /*width: 75%;*/
+    /*margin: 15px auto;*/
+    /*display: block;*/
     width: 75%;
-    margin: 15px auto;
     display: block;
+    margin-left: auto;
+    /* margin-right: auto; */
+    text-align: center;
 }
 
 .pageTitle {
@@ -69,6 +74,12 @@ header {
 
 }
 
+.form-horizontal {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+
+}
 
 /*.createCampaignTitles{*/
   /*font-size: 15px;*/
