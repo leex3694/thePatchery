@@ -23,7 +23,7 @@ router.post('/add', upload.single('file'), function (req, res, next) {
 
     createObj.file = req.file;
     console.log('Body with image ', createObj);
-    createObj.user = req.user;
+    createObj.user = [req.user];
 
     console.log('user data' , createObj.user);
 

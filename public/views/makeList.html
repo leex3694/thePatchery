@@ -65,7 +65,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="tester in tempTestersArray">
+                <tr ng-repeat="tester in tempTestersArray track by $index">
                     <td>{{tester.name}}</td>
                     <td>{{tester.gender}}</td>
                     <td>{{tester.size}}</td>
