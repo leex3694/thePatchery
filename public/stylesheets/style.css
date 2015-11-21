@@ -81,6 +81,11 @@ header {
 
 }
 
+.createListHeadings {
+    text-align: center;
+    font-weight: bold;
+}
+
 /*.createCampaignTitles{*/
   /*font-size: 15px;*/
   /*!*width:20%;*!*/
