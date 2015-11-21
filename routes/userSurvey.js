@@ -30,7 +30,7 @@ router.post('/add', upload.single('file'), function (req, res, next) {
         //currently finding campaign and posting to the testers in the selected campaign, but needs to be updated to go by Tester
         Campaign.findOne({campaignName:campaignName1} ,function(err, campaign){
 
-                console.log("Trying to find facebook user id",campaign.testers[0].volunteer1[0].user[0].facebook.id);
+                //console.log("Trying to find facebook user id",campaign.testers[0].volunteer1[0].user[0].facebook.id);
 
             if (err) throw err;
 

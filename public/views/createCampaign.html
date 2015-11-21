@@ -3,51 +3,55 @@
     <div class="overallContainer">
         <form class="form-horizontal">
 
+            <div class="centerForm">
+
             <div class="form-group">
                 <label for="campName" class="col-sm-2 control-label">Campaign Name</label>
-                <div class="col-sm-10">
+                <div class="col-sm-4">
                     <input type="text" ng-model="createNameOfCampaign" id="campName" class="form-control" placeholder="Campaign Name">
                 </div>
             </div>
 
-            <!--Headings Needed-->
-
             <div class="form-group">
-                <label for="startSignupLabel" class="col-sm-2 control-label">Start</label>
-                <div class="col-sm-10">
+                <label for="startSignupLabel" class="col-sm-2 control-label">Sign Up: Start</label>
+                <div class="col-sm-4">
                     <input type="date" ng-model="createStartSignUpDate" id="startSignupLabel" class="form-control" placeholder="Campaign Name">
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="endSignupLabel" class="col-sm-2 control-label">End</label>
-                <div class="col-sm-10">
+                <div class="col-sm-4">
                     <input type="date" ng-model="createEndSignUpDate" id="endSignupLabel" class="form-control" placeholder="Campaign Name">
                 </div>
             </div>
 
 
             <div class="form-group">
-                <label for="startSurveyLabel" class="col-sm-2 control-label">Start</label>
-                <div class="col-sm-10">
+                <label for="startSurveyLabel" class="col-sm-2 control-label">Survey: Start</label>
+                <div class="col-sm-4">
                     <input type="date" ng-model="createStartSurveyDate" id="startSurveyLabel" class="form-control" placeholder="Campaign Name">
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="endSurveyLabel" class="col-sm-2 control-label">End</label>
-                <div class="col-sm-10">
+                <div class="col-sm-4">
                     <input type="date" ng-model="createEndSurveyDate" id="endSurveyLabel" class="form-control" placeholder="Campaign Name">
                 </div>
             </div>
 
             <div class="form-group">
-                <div class="oneLineCreateCampaign createCampaignSubmit"><button ng-click="submitCreateSurveyData()" class="btn btn-default submitNewCampaign">Submit</button></div>
+                <div class="col-sm-offset-2 col-sm-4">
+                    <button ng-click="submitCreateSurveyData()" class="btn btn-default">Submit</button>
+                </div>
             </div>
-
+            <!--<div class="form-group">-->
+                <!--<div class="oneLineCreateCampaign createCampaignSubmit"></div>-->
+            <!--</div>-->
         </form>
     </div>
-
+</div>
 
 <!--<div class="oneLineCreateCampaign">-->
     <!--<label class="createCampaignTitles nameCampaign">Campaign Name </label>-->

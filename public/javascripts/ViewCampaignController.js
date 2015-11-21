@@ -9,9 +9,9 @@ app.controller('ViewCampaignController', ['$scope', '$http', function($scope, $h
 
 
 
-    $scope.accordion = {
-        current: null
-    };
+    //$scope.accordion = {
+    //    current: null
+    //};
 
 
 
@@ -34,35 +34,45 @@ app.controller('ViewCampaignController', ['$scope', '$http', function($scope, $h
 
             console.log( "length of tester array ", $scope.campaignList.selectedOption.testers[0].volunteer1.length);
             //if($scope.campaignList.selectedOption.testers.length >= 1){
-
+            var tempTester = {};
             for(var volIt = 0; volIt < $scope.campaignList.selectedOption.testers[0].volunteer1.length; volIt++) {
+
+                tempTester.volunteer1 = $scope.campaignList.selectedOption.testers[0].volunteer1[volIt];
+                $scope.testerList.push(tempTester);
                 for (var surIt = 0; surIt < $scope.campaignList.selectedOption.testers[0].volunteer1.length; surIt++) {
 
+                    if(!$scope.campaignList.selectedOption.testers[0].volunteer1[volIt].user[0].facebook.id == null) {
+                        if ($scope.campaignList.selectedOption.testers[0].volunteer1[volIt].user[0].facebook.id == $scope.campaignList.selectedOption.testers[0].surveyResults[surIt].user[0].facebook.id && $scope.campaignList.selectedOption.testers.length >= 1) {
 
-                    if ($scope.campaignList.selectedOption.testers[0].volunteer1[volIt].user[0].facebook.id == $scope.campaignList.selectedOption.testers[0].surveyResults[surIt].user[0].facebook.id && $scope.campaignList.selectedOption.testers.length >= 1) {
+                            //console.log("survey results id ", $scope.campaignList.selectedOption.testers[0].surveyResults[4].user[0].facebook.id);
 
-                        //console.log("survey results id ", $scope.campaignList.selectedOption.testers[0].surveyResults[4].user[0].facebook.id);
+                            //Possibly re-work model to be Mixed (Object) vs ArrayList
 
-                        //Possibly re-work model to be Mixed (Object) vs ArrayList
-
-                        var tempTester = {};
-                        //
-                        //
-                        tempTester.volunteer1 = $scope.campaignList.selectedOption.testers[0].volunteer1[volIt];
-                        tempTester.surveyResults = $scope.campaignList.selectedOption.testers[0].surveyResults[surIt];
-                        //console.log(testers);
-                        //
-                        //console.log('these are the testers now');
-                        console.log('tempTester', tempTester);
-                        ////for(var i = 0; i < testers.length; i++){
-                        $scope.testerList.push(tempTester);
-                        //    console.log('testerList');
-                        //    console.log($scope.testerList);
-                        //}
+                            //var tempTester = {};
+                            //
+                            //
+                            //tempTester.volunteer1 = $scope.campaignList.selectedOption.testers[0].volunteer1[volIt];
+                            tempTester.surveyResults = $scope.campaignList.selectedOption.testers[0].surveyResults[surIt];
+                            //console.log(testers);
+                            //
+                            //console.log('these are the testers now');
+                            console.log('tempTester', tempTester);
+                            ////for(var i = 0; i < testers.length; i++){
+                            $scope.testerList.push(tempTester);
+                            //    console.log('testerList');
+                            //    console.log($scope.testerList);
+                            //}
+                        }
                     }
+                    //else{
+                    //    tempTester = {};
+                    //    tempTester.volunteer1 = $scope.campaignList.selectedOption.testers[0].volunteer1[volIt];
+                    //    $scope.testerList.push(tempTester);
+                    //}
 
                 }
             }
+
         }
 
         generateData();
