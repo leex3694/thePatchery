@@ -131,6 +131,7 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
             });
 
         };
+        alert("You successfully made a new tester list");
     }
 
 //switch function for putting volunteers into tempArrays, depending on what sizes are selected in the makeList
