@@ -30,6 +30,7 @@ app.controller('ViewCampaignController', ['$scope', '$http', function($scope, $h
 
         function generateData() {
             $scope.testerList = [];
+            var tempTester = {};
 
             console.log( "length of tester array ", $scope.campaignList.selectedOption.testers[0].volunteer1.length);
             //if($scope.campaignList.selectedOption.testers.length >= 1){
