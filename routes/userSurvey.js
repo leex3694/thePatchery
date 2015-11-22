@@ -48,7 +48,7 @@ router.post('/add', upload.single('file'), function (req, res, next) {
                 //console.log('campaign testesrs ' , campaign.testers);
                 //console.log("Facebook ID of person running through loop", campaign.testers[0].volunteer1.user[0].facebook.id);
                 console.log(i);
-                console.log("req.user log ", req.user.facebook.id);
+                //console.log("req.user log ", req.user.facebook.id);
                 if (campaign.testers[0].volunteer1[i].user[0].facebook.id === req.user.facebook.id){
                     //console.log('It\'s a match ', req.user.facebook.id, campaign.testers.volunteer1[i].user[0].facebook.id);
                     foundTester = campaign.testers[0].volunteer1[i].user[0].facebook.id;
