@@ -90,6 +90,7 @@ passport.use(new FacebookStrategy({
       //callbackURL: "https://limitless-cove-3511.herokuapp.com/facebookButton/facebook/callback",
       callbackURL: "http://localhost:3000/facebookButton/facebook/callback",
       profileFields: ["emails", "displayName", "name"]
+
     },
 
     // facebook will send back the token and profile
