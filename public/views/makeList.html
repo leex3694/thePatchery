@@ -62,7 +62,10 @@
                     <th>Gender</th>
                     <th>Size</th>
                     <th>How the Clothes Fit</th>
-                    <th>Email</th>
+                    <th>Street</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip</th>
                 </tr>
             </thead>
             <tbody>
@@ -71,6 +74,10 @@
                     <td>{{tester.gender}}</td>
                     <td>{{tester.size}}</td>
                     <td>{{tester.sizeQualifying}}</td>
+                    <td>{{tester.street}}</td>
+                    <td>{{tester.city}}</td>
+                    <td>{{tester.state}}</td>
+                    <td>{{tester.zip}}</td>
                 </tr>
             </tbody>
         </table>
@@ -78,7 +85,9 @@
 </div>
 
     <div ng-show="showFinalTester">
-        <button class="btn btn-default acceptListOfTesters" ng-click="acceptListandPost()">Accept List</button>
+        <div class="acceptListButtonDiv">
+            <button class="btn btn-default acceptListOfTesters" ng-click="acceptListandPost()">Accept List</button>
+        </div>
     </div>
 
 
