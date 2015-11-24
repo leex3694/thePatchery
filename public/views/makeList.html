@@ -10,18 +10,13 @@
         </div>
     <!--End choose a campaign dropdown-->
 
+        <div class="volunteersSignedUp">
+            <h3><span class="numberText">{{campaignList.selectedOption.volunteers.length}}</span> People Signed Up!</h3>
+        </div>
 
-
-            <div class="volunteersSignedUp">
-                <h3><span class="numberText">{{campaignList.selectedOption.volunteers.length}}</span> People Signed Up!</h3>
-            </div>
-
-            <div class="sizeOptions">
-                <h3>Which sizes are you testing?</h3>
-            </div>
-
-                <!--inline checkboxes-->
-
+        <div class="sizeOptions">
+            <h3>Which sizes are you testing?</h3>
+        </div>
             <div class="makeListCheckBoxes">
                 <form role="form">
                     <label class="checkbox-inline">
@@ -46,7 +41,8 @@
                         <input type="checkbox" ng-model="formData.sizes.nine_ten">9/10
                     </label>
                 </form><br>
-        </div>
+            </div>
+
         <div class="generateList">
             <button class="btn btn-default generateListButton" ng-click="sendData()">Generate List</button>
             <button id="regenButton" class="btn btn-default glyphicon glyphicon-refresh btn-default" ng-click="regenerateTesters()"></button>
@@ -55,19 +51,19 @@
 
 <div class="col-md-6 col-md-offset-3">
     <div id="testerTable" class="table-responsive">
-            <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Gender</th>
-                    <th>Size</th>
-                    <th>How the Clothes Fit</th>
-                    <th>Street</th>
-                    <th>City</th>
-                    <th>State</th>
-                    <th>Zip</th>
-                </tr>
-            </thead>
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Size</th>
+                <th>How the Clothes Fit</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip</th>
+            </tr>
+        </thead>
             <tbody>
                 <tr ng-repeat="tester in tempTestersArray track by $index">
                     <td>{{tester.name}}</td>
@@ -84,19 +80,9 @@
     </div>
 </div>
 
-    <div ng-show="showFinalTester">
-        <div class="acceptListButtonDiv">
-            <button class="btn btn-default acceptListOfTesters" ng-click="acceptListandPost()">Accept List</button>
-        </div>
+<div ng-show="showFinalTester">
+    <div class="acceptListButtonDiv">
+        <button class="btn btn-default acceptListOfTesters" ng-click="acceptListandPost()">Accept List</button>
     </div>
-
-
-
-
-    <!--<div class="displayFinalTesters" ng-show="showFinalTester">-->
-        <!--<div ng-repeat="tester in tempTestersArray">-->
-            <!--<p>{{tester.name}} {{tester.gender}} {{tester.size}} {{tester.sizeQualifying}} </p>-->
-        <!--</div>-->
-        <!--<button class="acceptListOfTesters" ng-click="acceptListandPost()">Accept List</button>-->
-    <!--</div>-->
+</div>
 

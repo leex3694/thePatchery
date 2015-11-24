@@ -27,8 +27,6 @@ var surveyLogin = require('./routes/surveyLogin');
 
 var app = express();
 
-
-
 //var mongoURI = "mongodb://localhost:27017/thepatchery";
 var mongoURI = "mongodb://patches:kids_clothes@ds053194.mongolab.com:53194/the_patchery";
 var MongoDB = mongoose.connect(mongoURI).connection;
@@ -40,7 +38,6 @@ MongoDB.on('error', function (err) {
 MongoDB.once('open', function () {
   console.log('mongodb connection open');
 });
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'public/views'));
@@ -199,7 +196,6 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-
 app.use('/', routes);
 app.use('/signUp', signUp);
 app.use('/register', register);
@@ -210,7 +206,6 @@ app.use('/makeList',makeList);
 app.use('/userSurvey', userSurvey);
 app.use('/facebookButton', facebookButton);
 app.use('/surveyLogin', surveyLogin);
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

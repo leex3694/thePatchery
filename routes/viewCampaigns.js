@@ -13,16 +13,13 @@ router.get('/getCampaigns', function(req, res, next){
     })
 });
 
-
 router.get('/getTesters', function(req, res, next) {
-
-    //var tester = req.body;
 
     Campaign.find(function(err, campaigns){
         console.log('campaign from the view campaign js ', campaigns);
+
         if(err) throw err;
-        res.json(campaigns);
-        //response.sendStatus(200);
+            res.json(campaigns);
     });
 });
 

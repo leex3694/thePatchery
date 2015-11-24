@@ -1,8 +1,10 @@
 <body class="viewCampaignBody">
 <h1 class="fontColor">View Campaign</h1>
 
+<!--START CAMPAIGN DROPDOWN MENU-->
+
 <div class = "makeListBody">
-    <form name="myForm" style="text-align: center">
+    <form name="myForm">
         <label for="mySelect" class="fontColor">Select a Campaign:</label>
         <select name="mySelect" id="mySelect"
                 ng-options="option.campaignName for option in campaignList.availableOptions"
@@ -10,37 +12,244 @@
     </form>
 </div>
 
-
-    <ul class="ulAccordian">
-        <li class="listItemSection" ng-repeat="tester in testerList" ng-click="accordion.current = tester.volunteer1.name">
-           <div class="accordianTitle">
-                <span class="accordianNameTitle">{{tester.volunteer1.name}}</span>
-                <span class="accrodianSize">{{tester.volunteer1.size}}</span>
-           </div>
-
-            <div class="whiteBackground">
-                <ul class="contactInfo " ng-show="accordion.current == tester.volunteer1.name">
-                    <div class="contactInfoDiv"><li class="contactEmail" ><label>Email</label>{{tester.volunteer1.email}}</li></div>
-                    <div class="contactInfoDiv"><li class="contactAddress"><label>Address</label>{{tester.volunteer1.street}},</li>
-                    <li class="contactCity"><span class="addressCityStateZip">{{tester.volunteer1.city}},</span><span>{{tester.volunteer1.state}}</span><span>{{tester.volunteer1.zip}}</span></li></div>
-                </ul>
+<!--START CAMPAIGN DROPDOWN MENU-->
 
 
-            <ul class="surveyResultList" ng-show="accordion.current == tester.volunteer1.name">
-                <li><label>Question 1. What was your initial impression of the clothes?</label><p>{{tester.surveyResults.question1}}</p></li>
-                <li><label>Question 2. What did you think of the quality of the fabric and sewing?</label><p>{{tester.surveyResults.question2}}</p></li>
-                <li><label>Question 3. How did the product fit? Was it too loose or too tight? Was it too long or too short? Are the arm, neck and leg openings big enough?</label><p>{{tester.surveyResults.question3}}</p></li>
-                <li><label>Question 4a. Based on your overall experience, how likely would you be to purchase from the Patchery</label><p>{{tester.surveyResults.question4a}}</p></li>
-                <li><label>Question 4b. Based on your overall experience, how likely would you be to recommend The Patchery to a friend</label><p>{{tester.surveyResults.question4b}}</p></li>
-                <li><label>Question 5. If "maybe," "probably not" or "definitely not" for either of the above, why?</label><p>{{tester.surveyResults.question5}}</p></li>
-                <li><label>Question 6. Anything on your mind that we didn't ask about?  Here's your chance to say anything!</label><p>{{tester.surveyResults.question6}}</p></li>
-                <li><img ng-src="{{tester.surveyResults.file.path}}"></li>
+<!--START HARD CODED ACCORDION-->
 
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Sarah Marrone
+                </a>
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+                <p>222 Fry Street<br />
+                St. Paul, MN 55113</p>
 
-            </ul>
-        </li>
-    </ul>
+                <p>sarah@gmail.com</p>
+
+                <p>6 - Typically fits just right</p>
+
+                <p><b>What was your initial impression of the clothes?</b><br />
+                The dress is adorable, my daughter loves it!</p>
+
+                <p><b>What did you think of the quality of the fabric and sewing?</b><br />
+                    The quality is great! Even after multiple washings the colors are bright.</p>
+
+                <p><b>How did the product fit? Was it too loose or too tight? Was it too long or too short? Are the arm, neck and leg openings big enough?</b><br />
+                    Overall the fit is great.  The neck was a little tight when taking on and off.</p>
+
+                <p><b>Based on your overall experience, how likely would you be to:</b><br />
+                    a. Purchase from The Patchery: Very likely<br/>
+                    b. Recommend The Patchery to a friend: Definitely will</p>
+
+                <p><b>If "maybe," "probably not" or "definitely not" for either of the above, why?</b><br />
+                    NA</p>
+
+                <p><b>Anything on your mind that we didn't ask about? Here's your chance to say anything!</b><br />
+                    I love all the fabric options!</p>
+
+                <div class="col-xs-7 col-md-3">
+                <img src="../assets/frontPic.jpg" alt="front image" class="img-thumbnail">
+                </div>
+                <div class="col-xs-7 col-md-3">
+                <img src="../assets/frontPic2.jpg" alt="back image" class="img-thumbnail">
+                </div>
+                <div class="col-xs-7 col-md-3">
+                <img src="../assets/frontPic3.jpg" alt="side image" class="img-thumbnail">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Zach Turner
+                </a>
+            </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="panel-body">
+                <p>222 Apple Ave.<br />
+                    St. Paul, MN 55113</p>
+
+                <p>zach@gmail.com</p>
+
+                <p>5 - Typically fits just right</p>
+
+                <p><b>What was your initial impression of the clothes?</b><br />
+                    The dress is adorable, my daughter loves it!</p>
+
+                <p><b>What did you think of the quality of the fabric and sewing?</b><br />
+                    The quality is great! Even after multiple washings the colors are bright.</p>
+
+                <p><b>How did the product fit? Was it too loose or too tight? Was it too long or too short? Are the arm, neck and leg openings big enough?</b><br />
+                    Overall the fit is great.  The neck was a little tight when taking on and off.</p>
+
+                <p><b>Based on your overall experience, how likely would you be to:</b><br />
+                    a. Purchase from The Patchery: Very likely<br/>
+                    b. Recommend The Patchery to a friend: Definitely will</p>
+
+                <p><b>If "maybe," "probably not" or "definitely not" for either of the above, why?</b><br />
+                    NA</p>
+
+                <p><b>Anything on your mind that we didn't ask about? Here's your chance to say anything!</b><br />
+                    I love all the fabric options!</p>
+
+                <div class="col-xs-7 col-md-3">
+                    <img src="../assets/frontPic.jpg" alt="front image" class="img-thumbnail">
+                </div>
+                <div class="col-xs-7 col-md-3">
+                    <img src="../assets/frontPic2.jpg" alt="back image" class="img-thumbnail">
+                </div>
+                <div class="col-xs-7 col-md-3">
+                    <img src="../assets/frontPic3.jpg" alt="side image" class="img-thumbnail">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingThree">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Erick Lee
+                </a>
+            </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="panel-body">
+                <p>765 Bridges Lane<br />
+                    St. Paul, MN 55113</p>
+
+                <p>erick@gmail.com</p>
+
+                <p>4T - Typically fits just right</p>
+
+                <p><b>What was your initial impression of the clothes?</b><br />
+                    The dress is adorable, my daughter loves it!</p>
+
+                <p><b>What did you think of the quality of the fabric and sewing?</b><br />
+                    The quality is great! Even after multiple washings the colors are bright.</p>
+
+                <p><b>How did the product fit? Was it too loose or too tight? Was it too long or too short? Are the arm, neck and leg openings big enough?</b><br />
+                    Overall the fit is great.  The neck was a little tight when taking on and off.</p>
+
+                <p><b>Based on your overall experience, how likely would you be to:</b><br />
+                    a. Purchase from The Patchery: Very likely<br/>
+                    b. Recommend The Patchery to a friend: Definitely will</p>
+
+                <p><b>If "maybe," "probably not" or "definitely not" for either of the above, why?</b><br />
+                    NA</p>
+
+                <p><b>Anything on your mind that we didn't ask about? Here's your chance to say anything!</b><br />
+                    I love all the fabric options!</p>
+
+                <div class="col-xs-7 col-md-3">
+                    <img src="../assets/frontPic.jpg" alt="front image" class="img-thumbnail">
+                </div>
+                <div class="col-xs-7 col-md-3">
+                    <img src="../assets/frontPic2.jpg" alt="back image" class="img-thumbnail">
+                </div>
+                <div class="col-xs-7 col-md-3">
+                    <img src="../assets/frontPic3.jpg" alt="side image" class="img-thumbnail">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingFour">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                    Brian Daves
+                </a>
+            </h4>
+        </div>
+        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+            <div class="panel-body">
+                <p>987 Garden Blvd. W.<br />
+                    St. Paul, MN 55113</p>
+
+                <p>brian@gmail.com</p>
+
+                <p>9/10 - Typically fits just right</p>
+
+                <p><b>What was your initial impression of the clothes?</b><br />
+                    The dress is adorable, my daughter loves it!</p>
+
+                <p><b>What did you think of the quality of the fabric and sewing?</b><br />
+                    The quality is great! Even after multiple washings the colors are bright.</p>
+
+                <p><b>How did the product fit? Was it too loose or too tight? Was it too long or too short? Are the arm, neck and leg openings big enough?</b><br />
+                    Overall the fit is great.  The neck was a little tight when taking on and off.</p>
+
+                <p><b>Based on your overall experience, how likely would you be to:</b><br />
+                    a. Purchase from The Patchery: Very likely<br/>
+                    b. Recommend The Patchery to a friend: Definitely will</p>
+
+                <p><b>If "maybe," "probably not" or "definitely not" for either of the above, why?</b><br />
+                    NA</p>
+
+                <p><b>Anything on your mind that we didn't ask about? Here's your chance to say anything!</b><br />
+                    I love all the fabric options!</p>
+
+                <div class="col-xs-7 col-md-3">
+                    <img src="../assets/frontPic.jpg" alt="front image" class="img-thumbnail">
+                </div>
+                <div class="col-xs-7 col-md-3">
+                    <img src="../assets/frontPic2.jpg" alt="back image" class="img-thumbnail">
+                </div>
+                <div class="col-xs-7 col-md-3">
+                    <img src="../assets/frontPic3.jpg" alt="side image" class="img-thumbnail">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<!--END HARD CODED ACCORDION-->
+
+
+
+<!--START ORIGINAL ACCORDION-->
+
+    <!--<ul class="ulAccordian">-->
+        <!--<li class="listItemSection" ng-repeat="tester in testerList" ng-click="accordion.current = tester.volunteer1.name">-->
+           <!--<div class="accordianTitle">-->
+                <!--<span class="accordianNameTitle">{{tester.volunteer1.name}}</span>-->
+                <!--<span class="accrodianSize">{{tester.volunteer1.size}}</span>-->
+           <!--</div>-->
+
+            <!--<div class="whiteBackground">-->
+                <!--<ul class="contactInfo " ng-show="accordion.current == tester.volunteer1.name">-->
+                    <!--<div class="contactInfoDiv"><li class="contactEmail" ><label>Email</label>{{tester.volunteer1.email}}</li></div>-->
+                    <!--<div class="contactInfoDiv"><li class="contactAddress"><label>Address</label>{{tester.volunteer1.street}},</li>-->
+                    <!--<li class="contactCity"><span class="addressCityStateZip">{{tester.volunteer1.city}},</span><span>{{tester.volunteer1.state}}</span><span>{{tester.volunteer1.zip}}</span></li></div>-->
+                <!--</ul>-->
+
+            <!--<ul class="surveyResultList" ng-show="accordion.current == tester.volunteer1.name">-->
+                <!--<li><label>Question 1. What was your initial impression of the clothes?</label><p>{{tester.surveyResults.question1}}</p></li>-->
+                <!--<li><label>Question 2. What did you think of the quality of the fabric and sewing?</label><p>{{tester.surveyResults.question2}}</p></li>-->
+                <!--<li><label>Question 3. How did the product fit? Was it too loose or too tight? Was it too long or too short? Are the arm, neck and leg openings big enough?</label><p>{{tester.surveyResults.question3}}</p></li>-->
+                <!--<li><label>Question 4a. Based on your overall experience, how likely would you be to purchase from the Patchery</label><p>{{tester.surveyResults.question4a}}</p></li>-->
+                <!--<li><label>Question 4b. Based on your overall experience, how likely would you be to recommend The Patchery to a friend</label><p>{{tester.surveyResults.question4b}}</p></li>-->
+                <!--<li><label>Question 5. If "maybe," "probably not" or "definitely not" for either of the above, why?</label><p>{{tester.surveyResults.question5}}</p></li>-->
+                <!--<li><label>Question 6. Anything on your mind that we didn't ask about?  Here's your chance to say anything!</label><p>{{tester.surveyResults.question6}}</p></li>-->
+                <!--<li><img ng-src="{{tester.surveyResults.file.path}}"></li>-->
+            <!--</ul>-->
+        <!--</li>-->
+    <!--</ul>-->
+<!--</div>-->
+
+<!--END ORIGINAL ACCORDION-->
 
 
 </body>
