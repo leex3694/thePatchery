@@ -19,10 +19,6 @@ header {
     margin: 0 auto 10px auto;
 }
 
-/*.headerLogo {*/
-  /*height: 200px;*/
-/*}*/
-
 .menuButton {
     margin: 15px 20px auto auto;
     background-color: #FFA500;
@@ -50,10 +46,7 @@ header {
 
 
 /* ***************************** START CREATE CAMPAIGN CSS **************************************/
-/*.pageImg {*/
-    /*margin: 0 auto;*/
-    /*display: block;*/
-/*}*/
+
 .overallContainer {
     /*width: 75%;*/
     /*margin: 15px auto;*/
@@ -86,91 +79,6 @@ header {
     font-weight: bold;
 }
 
-/*.createCampaignTitles{*/
-  /*font-size: 15px;*/
-  /*!*width:20%;*!*/
-/*}*/
-
-/*.createCampaignTitles input {*/
-
-/*}*/
-
-
-/*.createCampaignInputs{*/
-    /*width: 250px;*/
-    /*margin: 0;*/
-    /*box-sizing: border-box;*/
-/*}*/
-
-/*.oneLineCreateCampaign{*/
-  /*display:block;*/
-  /*margin-bottom: 9px;*/
-/*}*/
-
-
-
-/*Individual titles on Create Campaign. Moving them a little bit so they align together. Also the resulted new Campaign */
-/*.startSignUp .endSignup .startSurvey .endSurvey {*/
-    /*font-size: 15px;*/
-    /*!*text-align: right;*!*/
-/*}*/
-
-/*.dateLabels {*/
-    /*font-size: 15px;*/
-    /*text-align: center;*/
-/*}*/
-
-/*.formDates input {*/
-    /*width: 150px;*/
-    /*margin: 0;*/
-    /*box-sizing: border-box;*/
-    /*display: inline-block;*/
-/*}*/
-
-/*#middleRow {*/
-    /*display: flex;*/
-    /*flex-direction: row;*/
-    /*justify-content: center;*/
-    /*margin: 25px auto 20px auto;*/
-/*}*/
-
-/*.formSignUpDates {*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*margin-right: 10px;*/
-    /*!*float: left;*!*/
-    /*!*margin-left: 20px;*!*/
-/*}*/
-
-/*.formSurveyDates {*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*margin-left: 10px;*/
-    /*!*margin-left: 20px;*!*/
-/*}*/
-
-
-/*.startSignUp{*/
-  /*position: relative;*/
-  /*left: 5px;*/
-/*}*/
-
-/*.endSignup{*/
-    /*position: relative;*/
-  /*left: 10px;*/
-/*}*/
-
-/*.startSurvey{*/
-    /*position: relative;*/
-  /*left: 10px;*/
-/*}*/
-
-/*.endSurvey{*/
-  /*position: relative;*/
-  /*left: 17px;*/
-/*}*/
-/******* END ************/
-
 .displayFinalCampaign{
   font-size: 20px;
   font-weight:bold;
@@ -192,20 +100,11 @@ header {
   text-align:center;
 }
 
-
-
 /* ***************************** END CREATE CAMPAIGN CSS **************************************/
 
 
 /* ***************************** START MAKE LIST CSS **************************************/
-/*.volunteersSignedUp .sizeOptions {*/
-    /*text-align:center;*/
-/*}*/
 
-/*.volunteersSignedUp  {*/
-    /*font-size: 15px;*/
-    /*text-align: center;*/
-/*}*/
 .makeListPageTitle {
     color: #FAA41A;
     font-family: myFirstFont;
@@ -232,9 +131,6 @@ header {
     margin-left: auto;
     margin-right: auto;
     padding:20px 0;
-    /*box-shadow: 1px 1px 10px #46413B;*/
-    /*font-weight: bold;*/
-    /*font-family: myFirstFont;*/
 }
 
 .numberText {
@@ -271,6 +167,11 @@ header {
 
 
 /* ***************************** START VIEW CAMPAIGNS CSS ******************************/
+#accordion {
+    width: 650px;
+    margin: 20px auto;
+    display: block;
+}
 
 .fontColor{
     color: #46413B;
@@ -292,8 +193,6 @@ header {
     font-size:20px;
     color: #46413B;
 }
-
-
 
 .accordianNameTitle:hover{
     cursor: pointer;
@@ -367,17 +266,6 @@ header {
   width: 230px;
 }
 .btn-social{position:relative;padding-left:44px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.btn-social>:first-child{position:absolute;left:0;top:0;bottom:0;width:32px;line-height:34px;font-size:1.6em;text-align:center;border-right:1px solid rgba(0,0,0,0.2)}
-/*.btn-social.btn-lg{padding-left:61px}.btn-social.btn-lg>:first-child{line-height:45px;width:45px;font-size:1.8em}*/
-/*.btn-social.btn-sm{padding-left:38px}.btn-social.btn-sm>:first-child{line-height:28px;width:28px;font-size:1.4em}*/
-/*.btn-social.btn-xs{padding-left:30px}.btn-social.btn-xs>:first-child{line-height:20px;width:20px;font-size:1.2em}*/
-/*.btn-social-icon{position:relative;padding-left:44px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;height:34px;width:34px;padding:0}.btn-social-icon>:first-child{position:absolute;left:0;top:0;bottom:0;width:32px;line-height:34px;font-size:1.6em;text-align:center;border-right:1px solid rgba(0,0,0,0.2)}*/
-/*.btn-social-icon.btn-lg{padding-left:61px}.btn-social-icon.btn-lg>:first-child{line-height:45px;width:45px;font-size:1.8em}*/
-/*.btn-social-icon.btn-sm{padding-left:38px}.btn-social-icon.btn-sm>:first-child{line-height:28px;width:28px;font-size:1.4em}*/
-/*.btn-social-icon.btn-xs{padding-left:30px}.btn-social-icon.btn-xs>:first-child{line-height:20px;width:20px;font-size:1.2em}*/
-/*.btn-social-icon>:first-child{border:none;text-align:center;width:100% !important}*/
-/*.btn-social-icon.btn-lg{height:45px;width:45px;padding-left:0;padding-right:0}*/
-/*.btn-social-icon.btn-sm{height:30px;width:30px;padding-left:0;padding-right:0}*/
-/*.btn-social-icon.btn-xs{height:22px;width:22px;padding-left:0;padding-right:0}*/
 .btn-facebook{color:#fff;background-color:#3b5998;border-color:rgba(0,0,0,0.2)}.btn-facebook:focus,.btn-facebook.focus{color:#fff;background-color:#2d4373;border-color:rgba(0,0,0,0.2)}
 .btn-facebook:hover{color:#fff;background-color:#2d4373;border-color:rgba(0,0,0,0.2)}
 .btn-facebook:active,.btn-facebook.active,.open>.dropdown-toggle.btn-facebook{color:#fff;background-color:#2d4373;border-color:rgba(0,0,0,0.2)}.btn-facebook:active:hover,.btn-facebook.active:hover,.open>.dropdown-toggle.btn-facebook:hover,.btn-facebook:active:focus,.btn-facebook.active:focus,.open>.dropdown-toggle.btn-facebook:focus,.btn-facebook:active.focus,.btn-facebook.active.focus,.open>.dropdown-toggle.btn-facebook.focus{color:#fff;background-color:#23345a;border-color:rgba(0,0,0,0.2)}
@@ -404,12 +292,6 @@ header {
     position:relative;
     top:30px;
 }
-
-/*.surveyLoginBody body{*/
-    /*background-color: rgba(240, 240, 240, 0.85);*/
-/*}*/
-
-
 
 @media screen and (min-width: 750px) {
     .backgroundDiv{

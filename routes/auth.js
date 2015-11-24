@@ -1,5 +1,4 @@
 
-
 module.exports = {
 
     'facebookAuth': {
@@ -8,7 +7,6 @@ module.exports = {
         'callbackURL': 'http://localhost:3000/signUp/facebook/callback'
     }
 };
-
 
 //passport.use(new FacebookStrategy({
 //    clientID: 711298905667165,

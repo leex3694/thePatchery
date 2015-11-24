@@ -14,58 +14,44 @@ router.get('/', function(req, res, next) {
     res.sendFile(path.join(__dirname, '../public/views/users/volunteerSurvey.html'));
 });
 
-
+//BEGIN FILE UPLOADING
 
 router.post('/add', upload.single('file'), function (req, res, next) {
-    console.log('Body', req.body);
     var createObj = req.body.formData;
     var campaignName1 = req.body.campaignName;
 
+    //ADDS FILE UPLOAD INFORMATION TO BODY
     createObj.file = req.file;
-    console.log('Body with image ', createObj);
+        console.log('Body with image ', createObj);
+
+    //ADDS USER INFORMATION TO BODY
     createObj.user = [req.user];
+        console.log('user data' , createObj.user);
 
-
-   console.log('user data' , req.user.facebook.id);
-
-        //currently finding campaign and posting to the testers in the selected campaign, but needs to be updated to go by Tester
-        Campaign.findOne({campaignName:campaignName1} ,function(err, campaign){
-
-
-
-            if (err) throw err;
-
-
-            var foundTester = {};
-
+    Campaign.findOne({campaignName:campaignName1} ,function(err, campaign){
+        if (err) throw err;
+        var foundTester = {};
 
         for(var i = 0; i < campaign.testers[0].volunteer1.length; i++){
 
-                console.log("tester facebook id ", campaign.testers[0].volunteer1[i].user[0].facebook.id);
+            if (campaign.testers[0].volunteer1[i].user[0].facebook.id === req.user.facebook.id){
 
-                if (campaign.testers[0].volunteer1[i].user[0].facebook.id  === req.user.facebook.id){
+            foundTester = campaign.testers[0].volunteer1[i].user[0].facebook.id;
+                console.log('found Tester ', foundTester);
 
-                    foundTester = campaign.testers[0].volunteer1[i].user[0].facebook.id;
+            SurveyResults.model.create(createObj, function (err, survey) {
 
-                    console.log('found Tester ', foundTester);
+                campaign.testers[0].surveyResults.push(survey);
+                    console.log(campaign.testers[0].surveyResults);
 
-                    SurveyResults.model.create(createObj, function (err, survey) {
-
-                        campaign.testers[0].surveyResults.push(survey);
-                            console.log(campaign.testers[0].surveyResults);
-                        campaign.save(function(err) {
-                            if (err) throw err
-                        });
-                    });
-                    res.sendStatus(200);
-                }
-
-       };
-
-
+                campaign.save(function(err) {
+                    if (err) throw err
+                });
+            });
+            res.sendStatus(200);
+            }
+        };
     });
 });
-
-
 
 module.exports = router;

@@ -4,30 +4,20 @@ var app = angular.module('UserSurveyApp', ['ngFileUpload']);
 app.controller('SurveyController', ['$scope', '$http', '$location', 'Upload', function($scope, $http, $location, Upload){
     $scope.formData = {};
 
-
     $scope.submitSurvey = function(isValid) {
 
-        //check to make sure the form is completely valid
-        //if (isValid) {
-        //    alert('Congrats! You\'ve successfully submitted the survey.');
-        //}
         if (window.confirm('Thank You! You\'ve successfully submitted the survey' )){
             window.location.href='https://www.facebook.com/groups/thepatchery/';
         }
     };
 
     $scope.submitSurveyForm = function(event){
+        console.log('this is form data ', $scope.formData);
 
+        $scope.upload($scope.file);
 
-
-            console.log('this is form data ', $scope.formData);
-
-            $scope.upload($scope.file);
-
-            $location.path('/');
+        $location.path('/');
     };
-
-
 
     $scope.tempList = [];
     $scope.campaignList = [];
@@ -43,15 +33,17 @@ app.controller('SurveyController', ['$scope', '$http', '$location', 'Upload', fu
         $scope.tempList = response.data;
         $scope.campaignList.selectedOption = {};
         $scope.campaignList.availableOptions = [];
+
         $scope.tempList.forEach(function (item) {
             $scope.campaignList.availableOptions.push(item);
-            //console.log($scope.campaignList.availableOptions(item));
         });
+
         console.log('this is templist ', $scope.tempList);
 
-        //Set to first available option
+        //SET DROP DOWN MENUS TO DISPLAY FIRST OPTION
         $scope.campaignList.selectedOption = $scope.campaignList.availableOptions[$scope.campaignList.availableOptions.length - 1];
-        console.log('selected option ', $scope.campaignList.selectedOption);
+            console.log('selected option ', $scope.campaignList.selectedOption);
+
         $scope.testerList = [];
 
         if ($scope.campaignList.selectedOption.testers.length > 1) {
@@ -59,9 +51,9 @@ app.controller('SurveyController', ['$scope', '$http', '$location', 'Upload', fu
             var testers = $scope.campaignList.selectedOption.testers[0].volunteer1;
 
             console.log(testers);
-
             console.log('these are the testers now');
             console.log(testers);
+
             for (var i = 0; i < testers.length; i++) {
                 $scope.testerList.push(testers[i]);
                 console.log('testerList');
@@ -70,11 +62,11 @@ app.controller('SurveyController', ['$scope', '$http', '$location', 'Upload', fu
         }
     });
 
-
-
+    //FILE UPLOADING
     $scope.upload = function (file){
         var data = {file: file, formData: $scope.formData, campaignName: $scope.campaignList.selectedOption.campaignName};
-        console.log(data);
+            console.log(data);
+
         Upload.upload({
             url: '/userSurvey/add',
             data: data
@@ -86,12 +78,7 @@ app.controller('SurveyController', ['$scope', '$http', '$location', 'Upload', fu
             var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
             console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
         });
-
     };
-
-
-
-
 }]);
 
 
