@@ -45,7 +45,7 @@ router.put('/postTesterArray', function(req, res, next){
                 //This is the start of the email functionality
                     sendgrid.send({
                         to:       to_address,
-                        from:     'briandmpls@gmail.com',
+                        from:     'Info@thepatchery.com',
                         subject:  'You have been chosen as a Patchery tester!',
                         text:     'Congratulations.You have been chosen as a Patchery tester. ' +
                         'We randomly select a volunteer from each size needed, and you have been chosen. '
