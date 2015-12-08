@@ -118,11 +118,11 @@ app.controller('MakeListController', ['$scope','$http', function($scope,$http){
         $scope.acceptListandPost = function(){
             var sendTesterArrayData = {};
             sendTesterArrayData.selectedCampaign = $scope.campaignList.selectedOption;
-            console.log($scope.campaignList.selectedOption);
+            console.log("selected option ",$scope.campaignList.selectedOption);
             sendTesterArrayData.volunteer1 = $scope.tempTestersArray;
             console.log('this is tester array we are trying to send ');
-            console.log($scope.tempTestersArray);
-            console.log($scope.tempTestersArray[0].email);
+            console.log("temp testers array ",$scope.tempTestersArray);
+            console.log("First array place email ",$scope.tempTestersArray[0].email);
 
             $http({
                 method:'PUT',

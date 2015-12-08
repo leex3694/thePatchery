@@ -33,8 +33,13 @@ router.post('/add', upload.single('file'), function (req, res, next) {
         var foundTester = {};
 
         for(var i = 0; i < campaign.testers[0].volunteer1.length; i++){
+            console.log("length ",campaign.testers[0].volunteer1.length);
+            console.log("campaign testers facebook id ",campaign.testers[0].volunteer1[i].user[0].facebook.id);
+            console.log("req.user facebook id ",req.user.facebook.id);
 
-            if (campaign.testers[0].volunteer1[i].user[0].facebook.id === req.user.facebook.id){
+
+                // Right now this line doesn't evaluate to be true ??????
+            if (campaign.testers[0].volunteer1[i].user[0].facebook.id == req.user.facebook.id){
 
             foundTester = campaign.testers[0].volunteer1[i].user[0].facebook.id;
                 console.log('found Tester ', foundTester);

@@ -48,12 +48,11 @@ app.controller('ViewCampaignController', ['$scope', '$http', function($scope, $h
                 for (var surIt = 0; surIt < $scope.campaignList.selectedOption.testers[0].volunteer1.length; surIt++) {
 
                     console.log($scope.campaignList.selectedOption.testers[0].volunteer1[volIt].user[0].facebook.id);
-                    console.log($scope.campaignList.selectedOption.testers[0].surveyResults[surIt].user[0].facebook.id);
+                    //console.log($scope.campaignList.selectedOption.testers[0].surveyResults[surIt].user[0].facebook.id);
 
-
-
-
-                    if ($scope.campaignList.selectedOption.testers[0].volunteer1[volIt].user[0].facebook.id == $scope.campaignList.selectedOption.testers[0].surveyResults[surIt].user[0].facebook.id && $scope.campaignList.selectedOption.testers.length >= 1) {
+                    if($scope.campaignList.selectedOption.testers[0].surveyResults[surIt] == undefined){
+                        console.log("value undefined");
+                    }else if ($scope.campaignList.selectedOption.testers[0].volunteer1[volIt].user[0].facebook.id == $scope.campaignList.selectedOption.testers[0].surveyResults[surIt].user[0].facebook.id && $scope.campaignList.selectedOption.testers.length >= 1) {
 
                         var tempTester = {};
 
