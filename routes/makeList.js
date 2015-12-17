@@ -41,16 +41,33 @@ router.put('/postTesterArray', function(req, res, next){
                 var to_address = testers.volunteer1[i].email;
                     console.log('this is the address of' ,to_address);
 
+
+
+
+
+
+
+
+
+
+
                 //This is the start of the email functionality
+                // Change the from address and text of the message
+                //
+                //
+                //
+
+
+
                 sendgrid.send({
                     to:       to_address,
                     from:     'briandmpls@gmail.com',
                     subject:  'You have been chosen as a Patchery tester!',
                     text:     'Congratulations.You have been chosen as a Patchery tester. ' +
-                    'We randomly select a volunteer from each size needed, and you have been chosen. '
+                        'We randomly select a volunteer from each size needed, and you have been chosen. '
                 }, function(err, json) {
                     if (err) { return res.send("email error"); }
-                    //res.send("email success");
+
                     console.log("email sent");
                 });
             }
@@ -62,6 +79,20 @@ router.put('/postTesterArray', function(req, res, next){
     });
     res.sendStatus(200);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 router.get('/getVolunteers', function(req,res,next){
     Campaign.find(function(err,volunteers){
